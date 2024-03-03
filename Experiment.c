@@ -1,6 +1,8 @@
 #include <stdio.h>
+
 int main(){
-   printf("This is a computer");
-   
-   return 0;
+	
+	printf("%lu", sizeof("main()"));
+	
+	return 0;
 }
