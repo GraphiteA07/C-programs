@@ -2,14 +2,16 @@
 
 int main(){
 	
-	char a[3];
+	printf("\t\t\tRANDOM THINGS\n");
 	
-	printf("Enter");
+	char a[20];
+	printf("What is your name? \n");
 	scanf("%s",&a);
 	
-	if(a=="yes"){
-		
-		int Cyear;
+	
+	printf("\n Hi! %s\n",a);
+	
+	int Cyear;
 	int Byear;
 	
 	printf("\nWant to know your age?\n");
@@ -23,13 +25,8 @@ int main(){
 	int age =Cyear-Byear;
 	
 	printf("\nYou are %d years old",age);
-}
-	else{
-		printf("OK");
-	}
 	
+
 	
 	return 0;
-}	
-
-
+}
