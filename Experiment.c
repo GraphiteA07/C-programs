@@ -1,18 +1,22 @@
+
 #include <stdio.h>
 
 int main(){
 	
-	char a[3];
+    int a;
 	
-	printf("Enter");
-	scanf("%s",&a);
+	printf("Want to know your age?\n");
+	printf("\n(1 means 'yes' and   0 means 'no')\n")
+	;scanf("\n%d",&a);
 	
-	if(a=="yes"){
+	
+	
+	if(a==1){
+	
 		
-		int Cyear;
+	int Cyear;
 	int Byear;
 	
-	printf("\nWant to know your age?\n");
 	
 	printf("\nEnter the current year\n");
 	scanf("%d",&Cyear);
@@ -22,14 +26,19 @@ int main(){
 	
 	int age =Cyear-Byear;
 	
-	printf("\nYou are %d years old",age);
-}
-	else{
+	printf("\nYou are %d years old\n",age);
+	}
+	
+	
+
+	if (a==0);{
 		printf("OK");
 	}
 	
 	
 	return 0;
 }	
+
+
 
 

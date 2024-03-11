@@ -1,6 +1,8 @@
-//Random Things 
+//Random Things  
 
 #include <stdio.h>
+
+
 
 int main(){
 	
