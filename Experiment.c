@@ -1,4 +1,4 @@
-
+/*
 #include <stdio.h>
 
 int main(){
@@ -35,6 +35,32 @@ int main(){
 		printf("OK");
 	}
 	
+	
+	return 0;
+}*/ 
+
+
+
+#include <stdio.h>
+
+int main(){
+	
+	
+	int a;
+	
+	printf("Enter your age");
+	scanf("%d",&a);
+	
+	if(a>=18){
+		
+	printf("You can vote");
+	
+	}
+	
+	else(a<=17);{
+		
+		printf("Wait");
+	}
 	
 	return 0;
 }	
