@@ -28,11 +28,11 @@ int main() {
 
     printf("\a\n");
 
-    printf("\tMYSTERIOUS ERROR:\n");
+    printf("\tERROR:\n");
     sleep(delay);
 
     printf("\a\a");
-    printf("\tUnexpected biryani coming from space!\n");
+    printf("\tBiryani coming from space!\n");
 
   }
 
