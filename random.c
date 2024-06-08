@@ -5,46 +5,30 @@
 
 int main() {
 
-  char a[20];
+  char UserInput;
+  char name[20];
+  char c[4]= "yes";
+  char f[4]= "Yes";
+  char g[3]= "no";
+  char h[3]= "No";
+ 
+  int e;
+  int d;
 
-  int b,e,d;
 
-   printf("\n\tWhat's your name?\n\n");
-  scanf("%s",&a);
+    printf("\n\tWhat's your name?\n\n");
+  scanf("%s",&name);
 
-  printf("\nWelcome %s \n",a);
+  printf("\nWelcome, %s \n",name);
 
-  printf("\n\tWant to know your age?\n\n ");
+  printf("\n\tWant to know your age? (y/N)\n\n ");
+  scanf("%s",&UserInput);
 
-  printf("\n\tPressing 0 means 'no'\n\tPressing 1 means 'yes'\n");
 
-  scanf("%d",&b);
 
-  
-  if(b!=0 && b!=1) {
+  if (UserInput=='Y' || UserInput=='y'|| UserInput=='c'|| UserInput=='f')  {
 
-    int delay=1.2;
-    sleep(delay);
-
-    printf("\a\n");
-
-    printf("\tERROR:\n");
-    sleep(delay);
-
-    printf("\a\a");
-    printf("\tBiryani coming from space!\n");
-
-  }
-
-  if (b==0) {
-    
-    printf("OK");
-
-  }
-
-  if (b==1) {
-
-    printf("\nLet's Begin!\n");
+     printf("\nLet's Begin!\n");
     
     printf("\n Enter the current year \n\t");
     scanf("%d",&e);
@@ -56,8 +40,34 @@ int main() {
 
     printf("\n You are %d years old \n",c);
 
+    return 0;
   }
 
-   
+
+
+  if (UserInput=='n'|| UserInput=='N'|| UserInput=='g'|| UserInput=='h') {
+    printf("\nOK");
+  }
+
+
+
+
+  else  {
+
+    int wait=1;
+    sleep(wait);
+
+    printf("\a\n");
+
+    printf("\tERROR:\n");
+    sleep(wait);
+
+    printf("\a\a");
+    printf("\tBiryani coming from space!\n");
+  
+
+  }
+
   return 0;
+
 }
