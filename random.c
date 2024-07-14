@@ -43,13 +43,11 @@ int main() {
     return 0;
   }
 
-
-
+  
   if (UserInput=='n'|| UserInput=='N'|| UserInput=='g'|| UserInput=='h') {
     printf("\nOK");
+
   }
-
-
 
 
   else  {
@@ -64,7 +62,6 @@ int main() {
 
     printf("\a\a");
     printf("\tBiryani coming from space!\n");
-  
 
   }
 
