@@ -9,7 +9,7 @@ int main() {
 
 
   char choice;
-// char after_calc;
+ char after_calc;
   
 //divide
   float d1;  
@@ -117,6 +117,8 @@ int main() {
   printf("\n\t OUTPUT : %.2f ",&square1);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
+
+  goto User_Input;
 	 
   }
 
@@ -128,6 +130,8 @@ int main() {
   printf("\n\t OUTPUT : %.2f ",&cube1);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
+
+  goto User_Input;
 	 
   }
 
@@ -706,16 +710,16 @@ int main() {
 
   User_Input:
 
-  printf("\n\t For Division          ( d )\n");
-  printf("\n\t For Multiplication    ( m )\n");
-  printf("\n\t For Addition          ( a )\n");
-  printf("\n\t For Subtraction       ( s )\n");
-  printf("\n\t For Square            ( S )\n");
-  printf("\n\t For Cube              ( q )\n");
-  printf("\n\t Exit                  ( e )\n");
+  printf("\n\t[ d ]   Division        \n");
+  printf("\n\t[ m ]   Multiplication  \n");
+  printf("\n\t[ a ]   Addition        \n");
+  printf("\n\t[ s ]   Subtraction     \n");
+  printf("\n\t[ S ]   Square          \n");
+  printf("\n\t[ q ]   Cube            \n");
+  printf("\n\t[ e ]   Exit            \n");
 
   
-  printf("\n\n\tWhat would it be :  ");
+  printf("\n\n\tWhat would it be : ");
   scanf("%s",&choice);
 
 
@@ -1634,6 +1638,8 @@ int main() {
   printf("\n\n\tOUTPUT = %.2f",square);
   printf("\n\n--------------------------------------------------------------------");
 
+  goto end;
+
       break;
 
     case 'q':
@@ -1654,6 +1660,8 @@ int main() {
   printf("\n\n--------------------------------------------------------------------");
   printf("\n\n\tOUTPUT = %.2f",cube);
   printf("\n\n--------------------------------------------------------------------");
+
+  goto end;
 
       break;
 
@@ -1682,7 +1690,7 @@ int main() {
 
   //THIS WILL COME IN END
   
-    char after_calc;
+    //char after_calc;
 
     // Enhanced menu presentation
  printf("\n\n\n\n\t Where to proceed \n ");
@@ -1731,3 +1739,4 @@ int main() {
 
   return 0;
 }
+
