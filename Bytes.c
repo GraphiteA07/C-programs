@@ -2,7 +2,7 @@
 
 int main(){
 	
-	printf("%lu", sizeof("printf"));
+	printf("%lu", sizeof("long int"));
 	
 	return 0;
 

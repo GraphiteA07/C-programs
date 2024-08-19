@@ -17,12 +17,12 @@ int main() {
   int d;
 
 
-  printf("\n\twhat's your name?\n\n-> ");
+  printf("\n\tWhat's your name?\n\n > ");
   scanf("%s",&name);
 
-  printf("\nwelcome, %s \n",name);
+  printf("\nWelcome, %s \n",name);
 
-  printf("\n\twant to know your age? (y/n)\n\n-> ");
+  printf("\n\tWant to know your age? (y/n)\n\n > ");
   scanf("%s",&userinput);
 
 
@@ -31,15 +31,15 @@ int main() {
 
      printf("\nlet's begin!\n");
     
-    printf("\n enter the current year \n\n-> ");
+    printf("\n Enter the current year \n\n > ");
     scanf("%d",&e);
 
-    printf("\n enter your birth year \n\n-> ");
+    printf("\n Enter your birth year \n\n > ");
     scanf("%d",&d);
 
     int c =(e-d);
 
-    printf("\n you are %d years old! \n",c);
+    printf("\n You are %d years old! \n",c);
 
     return 0;
   }
@@ -47,9 +47,8 @@ int main() {
 
 
   if (userinput=='n'|| userinput=='n'|| userinput=='g'|| userinput=='h') {
-    printf("\nok");
+    printf("\nOk");
   }
-
 
   else  {
 
@@ -58,11 +57,11 @@ int main() {
 
     printf("\a\n");
 
-    printf("\terror:\n");
+    printf("\tError:\n");
     sleep(wait);
 
     printf("\a\a");
-    printf("\tbiryani coming from space!\n");
+    printf("\tBiryani coming from space!\n");
   
 
   }

@@ -1,6 +1,32 @@
+//Working Accordingly!
 
 #include <stdio.h>
 #include <unistd.h>
+
+ int delay2 = 50000;   /*41900*/
+
+void ASCII_S() {
+
+
+printf("\n\n     8888b.  8b    d8    db    .dP\"Y8    dP\"\"b8    db    88      dP\"\"b8 \n");
+ usleep(delay2);
+printf("      8I  Yb 88b  d88   dPYb   `Ybo.\"   dP   `\"   dPYb   88     dP   `\" \n");
+ usleep(delay2);
+printf("      8I  dY 88YbdP88  dP__Yb  o.`Y8b   Yb       dP__Yb  88  .o Yb     \n");
+ usleep(delay2);
+printf("     8888Y\"  88 YY 88 dP\"\"\"\"Yb 8bodP'    YboodP dP\"\"\"\"Yb 88ood8  YboodP `  \n\n");
+printf("   _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n\n");
+}
+
+void ASCII() {
+
+printf("\n\n     8888b.  8b    d8    db    .dP\"Y8    dP\"\"b8    db    88      dP\"\"b8 \n");
+printf("      8I  Yb 88b  d88   dPYb   `Ybo.\"   dP   `\"   dPYb   88     dP   `\" \n");
+printf("      8I  dY 88YbdP88  dP__Yb  o.`Y8b   Yb       dP__Yb  88  .o Yb     \n");
+printf("     8888Y\"  88 YY 88 dP\"\"\"\"Yb 8bodP'    YboodP dP\"\"\"\"Yb 88ood8  YboodP `  \n\n");
+
+
+}
 
 int main() {
 
@@ -8,7 +34,7 @@ int main() {
 
 
 
-  char choice;
+ char choice;
  char after_calc;
   
 //divide
@@ -103,18 +129,32 @@ int main() {
 
 //special
   float zero = 0;
-
+ 
   start:
 
-  printf("\n\n\n\t\tDMAS CALCULATOR\n");
-  printf("\t============================\n\n\n");
+  if (after_calc != 'c') {
+
+    system("cls");
+    ASCII_S();
+
+}
+
+else {
+
+  system("cls");
+  ASCII();
+}
+
+  /* printf("\n\n\n\n\t\tDMAS CALCULATOR\n"); */
+  /* printf("\t============================\n\n"); */
 
  //square output 
 
   if (choice == 'S'){
 
+
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&square1);
+  printf("\n\t OUTPUT : %.3f ",&square1);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
 
@@ -124,10 +164,10 @@ int main() {
 
 //cube output  
 
-  if (choice == 'q'){
+  if (choice == 'c'){
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&cube1);
+  printf("\n\t OUTPUT : %.3f ",&cube1);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
 
@@ -140,7 +180,7 @@ int main() {
   if (choice == 'd' && d3 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&d3);
+  printf("\n\t OUTPUT : %.3f ",&d3);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -150,7 +190,7 @@ int main() {
   if (choice == 'd' && d4 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&d4);
+  printf("\n\t OUTPUT : %.3f ",&d4);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -160,7 +200,7 @@ int main() {
   if (choice == 'd' && d5 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&d5);
+  printf("\n\t OUTPUT : %.3f ",&d5);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -170,7 +210,7 @@ int main() {
   if (choice == 'd' && d6 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&d6);
+  printf("\n\t OUTPUT : %.3f ",&d6);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -180,7 +220,7 @@ int main() {
   if (choice == 'd' && d7 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&d7);
+  printf("\n\t OUTPUT : %.3f ",&d7);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -190,7 +230,7 @@ int main() {
   if (choice == 'd' && d8 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&d8);
+  printf("\n\t OUTPUT : %.3f ",&d8);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -200,7 +240,7 @@ int main() {
   if (choice == 'd' && d9 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&d9);
+  printf("\n\t OUTPUT : %.3f ",&d9);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -210,7 +250,7 @@ int main() {
   if (choice == 'd' && d10 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&d10);
+  printf("\n\t OUTPUT : %.3f ",&d10);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -220,7 +260,7 @@ int main() {
   if (choice == 'd' && d11 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&d11);
+  printf("\n\t OUTPUT : %.3f ",&d11);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -230,7 +270,7 @@ int main() {
   if (choice == 'd' && d12 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&d12);
+  printf("\n\t OUTPUT : %.3f ",&d12);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -240,7 +280,7 @@ int main() {
   if (choice == 'd' && d13 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&d13);
+  printf("\n\t OUTPUT : %.3f ",&d13);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -250,7 +290,7 @@ int main() {
   if (choice == 'd' && d14 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&d14);
+  printf("\n\t OUTPUT : %.3f ",&d14);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -260,7 +300,7 @@ int main() {
   if (choice == 'd' && d15 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&d15);
+  printf("\n\t OUTPUT : %.3f ",&d15);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -270,7 +310,7 @@ int main() {
   if (choice == 'd' && d16 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&d16);
+  printf("\n\t OUTPUT : %.3f ",&d16);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -284,7 +324,7 @@ int main() {
   if (choice == 'm' && m3 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&m3);
+  printf("\n\t OUTPUT : %.3f ",&m3);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -294,7 +334,7 @@ int main() {
   if (choice == 'm' && m4 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&m4);
+  printf("\n\t OUTPUT : %.3f ",&m4);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -304,7 +344,7 @@ int main() {
   if (choice == 'm' && m5 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&m5);
+  printf("\n\t OUTPUT : %.3f ",&m5);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -314,7 +354,7 @@ int main() {
   if (choice == 'm' && m6 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&m6);
+  printf("\n\t OUTPUT : %.3f ",&m6);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -324,7 +364,7 @@ int main() {
   if (choice == 'm' && m7 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&m7);
+  printf("\n\t OUTPUT : %.3f ",&m7);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -334,7 +374,7 @@ int main() {
   if (choice == 'm' && m8 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&m8);
+  printf("\n\t OUTPUT : %.3f ",&m8);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -344,7 +384,7 @@ int main() {
   if (choice == 'm' && m9 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&m9);
+  printf("\n\t OUTPUT : %.3f ",&m9);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -354,7 +394,7 @@ int main() {
   if (choice == 'm' && m10 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&m10);
+  printf("\n\t OUTPUT : %.3f ",&m10);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -364,7 +404,7 @@ int main() {
   if (choice == 'm' && m11 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&m11);
+  printf("\n\t OUTPUT : %.3f ",&m11);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -374,7 +414,7 @@ int main() {
   if (choice == 'm' && m12 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&m12);
+  printf("\n\t OUTPUT : %.3f ",&m12);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -384,7 +424,7 @@ int main() {
   if (choice == 'm' && m13 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&m13);
+  printf("\n\t OUTPUT : %.3f ",&m13);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -394,7 +434,7 @@ int main() {
   if (choice == 'm' && m14 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&m14);
+  printf("\n\t OUTPUT : %.3f ",&m14);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -404,7 +444,7 @@ int main() {
   if (choice == 'm' && m15 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&m15);
+  printf("\n\t OUTPUT : %.3f ",&m15);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -414,7 +454,7 @@ int main() {
   if (choice == 'm' && m16 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&m16);
+  printf("\n\t OUTPUT : %.3f ",&m16);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -427,7 +467,7 @@ int main() {
   if (a3 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&a3);
+  printf("\n\t OUTPUT : %.3f ",&a3);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
 
@@ -438,7 +478,7 @@ int main() {
   if ( a4 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&a4);
+  printf("\n\t OUTPUT : %.3f ",&a4);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -448,7 +488,7 @@ int main() {
   if (choice == 'a' && a5 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&a5);
+  printf("\n\t OUTPUT : %.3f ",&a5);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -458,7 +498,7 @@ int main() {
   if (choice == 'a' && a6 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&a6);
+  printf("\n\t OUTPUT : %.3f ",&a6);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -468,7 +508,7 @@ int main() {
   if (choice == 'a' && a7 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&a7);
+  printf("\n\t OUTPUT : %.3f ",&a7);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -478,7 +518,7 @@ int main() {
   if (choice == 'a' && a8 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&a8);
+  printf("\n\t OUTPUT : %.3f ",&a8);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -488,7 +528,7 @@ int main() {
   if (choice == 'a' && a9 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&a9);
+  printf("\n\t OUTPUT : %.3f ",&a9);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -498,7 +538,7 @@ int main() {
   if (choice == 'a' && a10 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&a10);
+  printf("\n\t OUTPUT : %.3f ",&a10);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -508,7 +548,7 @@ int main() {
   if (choice == 'a' && a11 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&a11);
+  printf("\n\t OUTPUT : %.3f ",&a11);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -518,7 +558,7 @@ int main() {
   if (choice == 'a' && a12 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&a12);
+  printf("\n\t OUTPUT : %.3f ",&a12);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -528,7 +568,7 @@ int main() {
   if (choice == 'a' && a13 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&a13);
+  printf("\n\t OUTPUT : %.3f ",&a13);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -538,7 +578,7 @@ int main() {
   if (choice == 'a' && a14 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&a14);
+  printf("\n\t OUTPUT : %.3f ",&a14);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -548,7 +588,7 @@ int main() {
   if (choice == 'a' && a15 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&a15);
+  printf("\n\t OUTPUT : %.3f ",&a15);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -558,7 +598,7 @@ int main() {
   if (choice == 'a' && a16 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&a16);
+  printf("\n\t OUTPUT : %.3f ",&a16);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -570,7 +610,7 @@ int main() {
   if (choice == 's' && s3 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&s3);
+  printf("\n\t OUTPUT : %.3f ",&s3);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -580,7 +620,7 @@ int main() {
   if (choice == 's' && s4 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&s4);
+  printf("\n\t OUTPUT : %.3f ",&s4);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -590,7 +630,7 @@ int main() {
   if (choice == 's' && s5 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&s5);
+  printf("\n\t OUTPUT : %.3f ",&s5);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -600,7 +640,7 @@ int main() {
   if (choice == 's' && s6 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&s6);
+  printf("\n\t OUTPUT : %.3f ",&s6);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -610,7 +650,7 @@ int main() {
   if (choice == 's' && s7 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&s7);
+  printf("\n\t OUTPUT : %.3f ",&s7);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -620,7 +660,7 @@ int main() {
   if (choice == 's' && s8 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&s8);
+  printf("\n\t OUTPUT : %.3f ",&s8);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -630,7 +670,7 @@ int main() {
   if (choice == 's' && s9 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&s9);
+  printf("\n\t OUTPUT : %.3f ",&s9);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -640,7 +680,7 @@ int main() {
   if (choice == 's' && s10 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&s10);
+  printf("\n\t OUTPUT : %.3f ",&s10);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -650,7 +690,7 @@ int main() {
   if (choice == 's' && s11 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&s11);
+  printf("\n\t OUTPUT : %.3f ",&s11);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -660,7 +700,7 @@ int main() {
   if (choice == 's' && s12 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&s12);
+  printf("\n\t OUTPUT : %.3f ",&s12);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -670,7 +710,7 @@ int main() {
   if (choice == 's' && s13 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&s13);
+  printf("\n\t OUTPUT : %.3f ",&s13);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -680,7 +720,7 @@ int main() {
   if (choice == 's' && s14 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&s14);
+  printf("\n\t OUTPUT : %.3f ",&s14);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -690,7 +730,7 @@ int main() {
   if (choice == 's' && s15 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&s15);
+  printf("\n\t OUTPUT : %.3f ",&s15);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -700,7 +740,7 @@ int main() {
   if (choice == 's' && s16 == zero) {
 
   printf("   --------------------------------------------------------------------\n");
-  printf("\n\t OUTPUT : %.2f ",&s16);
+  printf("\n\t OUTPUT : %.3f ",&s16);
   printf("\n\n   --------------------------------------------------------------------\n");
   printf("\n");
     
@@ -710,13 +750,13 @@ int main() {
 
   User_Input:
 
-  printf("\n\t[ d ]   Division        \n");
-  printf("\n\t[ m ]   Multiplication  \n");
-  printf("\n\t[ a ]   Addition        \n");
-  printf("\n\t[ s ]   Subtraction     \n");
-  printf("\n\t[ S ]   Square          \n");
-  printf("\n\t[ q ]   Cube            \n");
-  printf("\n\t[ e ]   Exit            \n");
+  printf("\n\t  [ d ]   Division        \n");
+  printf("\n\t  [ m ]   Multiplication  \n");
+  printf("\n\t  [ a ]   Addition        \n");
+  printf("\n\t  [ s ]   Subtraction     \n");
+  printf("\n\t  [ S ]   Square          \n");
+  printf("\n\t  [ c ]   Cube            \n");
+  printf("\n\t  [ e ]   Exit            \n");
 
   
   printf("\n\n\tWhat would it be : ");
@@ -735,7 +775,7 @@ int main() {
     if ( d1 == zero) {
 
       sleep(delay);
-      printf("\n\tMinimum 2 numbers required\n");
+      printf("\n\tMinimum 2 numbers required!\n");
       return 0;
     } 
 
@@ -745,7 +785,7 @@ int main() {
     if ( d2 == zero) {
 
       sleep(delay);
-      printf("\n\tMinimum 2 numbers required\n");
+      printf("\n\tMinimum 2 numbers required!\n");
       return 0;
 
     } 
@@ -758,7 +798,7 @@ int main() {
 
     
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",divider3);
+  printf("\n\n\tOUTPUT = %.3f",divider3);
   printf("\n\n--------------------------------------------------------------------\n");
 
   goto end;
@@ -773,7 +813,7 @@ int main() {
       float divider4 = (d1/d2/d3);
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",divider4);
+  printf("\n\n\tOUTPUT = %.3f",divider4);
   printf("\n\n--------------------------------------------------------------------\n");
 
   goto end;
@@ -787,7 +827,7 @@ int main() {
       float divider5 = (d1/d2/d3/d4);
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",divider5);
+  printf("\n\n\tOUTPUT = %.3f",divider5);
   printf("\n\n--------------------------------------------------------------------\n");
 
   goto end;
@@ -801,7 +841,7 @@ int main() {
       float divider6 = (d1/d2/d3/d4/d5);
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",divider6);
+  printf("\n\n\tOUTPUT = %.3f",divider6);
   printf("\n\n--------------------------------------------------------------------\n");
 
   goto end;
@@ -815,7 +855,7 @@ int main() {
       float divider7 = (d1/d2/d3/d4/d5/d6);
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",divider7);
+  printf("\n\n\tOUTPUT = %.3f",divider7);
   printf("\n\n--------------------------------------------------------------------\n");
 
   goto end;
@@ -829,7 +869,7 @@ int main() {
       float divider8 = (d1/d2/d3/d4/d5/d6/d7);
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",divider8);
+  printf("\n\n\tOUTPUT = %.3f",divider8);
   printf("\n\n--------------------------------------------------------------------\n");
 
   goto end;
@@ -843,7 +883,7 @@ int main() {
       float divider9 = (d1/d2/d3/d4/d5/d6/d7/d8);
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",divider9);
+  printf("\n\n\tOUTPUT = %.3f",divider9);
   printf("\n\n--------------------------------------------------------------------\n");
 
   goto end;
@@ -857,7 +897,7 @@ int main() {
       float divider10 = (d1/d2/d3/d4/d5/d6/d7/d8/d9);
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",divider10);
+  printf("\n\n\tOUTPUT = %.3f",divider10);
   printf("\n\n--------------------------------------------------------------------\n");
 
   goto end;
@@ -871,7 +911,7 @@ int main() {
       float divider11 = (d1/d2/d3/d4/d5/d6/d7/d8/d9/d10);
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",divider11);
+  printf("\n\n\tOUTPUT = %.3f",divider11);
   printf("\n\n--------------------------------------------------------------------\n");
 
   goto end;
@@ -885,7 +925,7 @@ int main() {
       float divider12 = (d1/d2/d3/d4/d5/d6/d7/d8/d9/d10/d11);
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",divider12);
+  printf("\n\n\tOUTPUT = %.3f",divider12);
   printf("\n\n--------------------------------------------------------------------\n");
 
   goto end;
@@ -899,7 +939,7 @@ int main() {
       float divider13 = (d1/d2/d3/d4/d5/d6/d7/d8/d9/d10/d11/d12);
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",divider13);
+  printf("\n\n\tOUTPUT = %.3f",divider13);
   printf("\n\n--------------------------------------------------------------------\n");
 
   goto end;
@@ -913,7 +953,7 @@ int main() {
       float divider14 = (d1/d2/d3/d4/d5/d6/d7/d8/d9/d10/d11/d12/d13);
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",divider14);
+  printf("\n\n\tOUTPUT = %.3f",divider14);
   printf("\n\n--------------------------------------------------------------------\n");
 
   goto end;
@@ -927,13 +967,13 @@ int main() {
       float divider15 = (d1/d2/d3/d4/d5/d6/d7/d8/d9/d10/d11/d12/d13/d14);
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",divider15);
+  printf("\n\n\tOUTPUT = %.3f",divider15);
   printf("\n\n--------------------------------------------------------------------\n");
 
   goto end;
     }
 
-    printf("\n\tMax limit reached! : ");
+   printf("\n\tMax limit reached! ( Press {0} ) : ");
     scanf("%f",&d16);
 
     if (d16 == zero) {
@@ -941,7 +981,7 @@ int main() {
       float divider16 = (d1/d2/d3/d4/d5/d6/d7/d8/d9/d10/d11/d12/d13/d14/d15);
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",divider16);
+  printf("\n\n\tOUTPUT = %.3f",divider16);
   printf("\n\n--------------------------------------------------------------------\n");
 
   goto end;
@@ -959,7 +999,7 @@ int main() {
     if (m1 == zero) {
 
       sleep(delay);
-      printf("\n\tMinimum 2 numbers required\n");
+      printf("\n\tMinimum 2 numbers required!\n");
       return 0;
 
     }
@@ -970,7 +1010,7 @@ int main() {
     if (m2 == zero) {
 
       sleep(delay);
-      printf("\n\tMinimum 2 numbers required\n");
+      printf("\n\tMinimum 2 numbers required!\n");
       return 0;
 
     }
@@ -982,7 +1022,7 @@ int main() {
     float multiplier3 = m1 * m2;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",multiplier3);
+  printf("\n\n\tOUTPUT = %.3f",multiplier3);
   printf("\n\n--------------------------------------------------------------------\n");
   
   goto end;
@@ -997,7 +1037,7 @@ int main() {
     float multiplier4 = m1 * m2 * m3;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",multiplier4);
+  printf("\n\n\tOUTPUT = %.3f",multiplier4);
   printf("\n\n--------------------------------------------------------------------\n");
   
   goto end;
@@ -1012,7 +1052,7 @@ int main() {
     float multiplier5 = m1 * m2 * m3 * m4;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",multiplier5);
+  printf("\n\n\tOUTPUT = %.3f",multiplier5);
   printf("\n\n--------------------------------------------------------------------\n");
   
   goto end;
@@ -1027,7 +1067,7 @@ int main() {
     float multiplier6 = m1 * m2 * m3 * m4 * m5;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",multiplier6);
+  printf("\n\n\tOUTPUT = %.3f",multiplier6);
   printf("\n\n--------------------------------------------------------------------\n");
   
   goto end;
@@ -1042,7 +1082,7 @@ int main() {
     float multiplier7 = m1 * m2 * m3 * m4 * m5 * m6;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",multiplier7);
+  printf("\n\n\tOUTPUT = %.3f",multiplier7);
   printf("\n\n--------------------------------------------------------------------\n");
   
   goto end;
@@ -1057,7 +1097,7 @@ int main() {
     float multiplier8 = m1 * m2 * m3 * m4 * m5 * m6 * m7;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",multiplier8);
+  printf("\n\n\tOUTPUT = %.3f",multiplier8);
   printf("\n\n--------------------------------------------------------------------\n");
   
   goto end;
@@ -1072,7 +1112,7 @@ int main() {
     float multiplier9 = m1 * m2 * m3 * m4 * m5 * m6 * m7 * m8;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",multiplier9);
+  printf("\n\n\tOUTPUT = %.3f",multiplier9);
   printf("\n\n--------------------------------------------------------------------\n");
   
   goto end;
@@ -1087,7 +1127,7 @@ int main() {
     float multiplier10 = m1 * m2 * m3 * m4 * m5 * m6 * m7 * m8 * m9;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",multiplier10);
+  printf("\n\n\tOUTPUT = %.3f",multiplier10);
   printf("\n\n--------------------------------------------------------------------\n");
   
   goto end;
@@ -1102,7 +1142,7 @@ int main() {
     float multiplier11 = m1 * m2 * m3 * m4 * m5 * m6 * m7 * m8 * m9 * m10;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",multiplier11);
+  printf("\n\n\tOUTPUT = %.3f",multiplier11);
   printf("\n\n--------------------------------------------------------------------\n");
   
   goto end;
@@ -1117,7 +1157,7 @@ int main() {
     float multiplier12 = m1 * m2 * m3 * m4 * m5 * m6 * m7 * m8 * m9 * m10 *m11;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",multiplier12);
+  printf("\n\n\tOUTPUT = %.3f",multiplier12);
   printf("\n\n--------------------------------------------------------------------\n");
   
   goto end;
@@ -1132,7 +1172,7 @@ int main() {
     float multiplier13 = m1 * m2 * m3 * m4 * m5 * m6 * m7 * m8 * m9 * m10 * m11 * m12;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",multiplier13);
+  printf("\n\n\tOUTPUT = %.3f",multiplier13);
   printf("\n\n--------------------------------------------------------------------\n");
   
   goto end;
@@ -1147,7 +1187,7 @@ int main() {
     float multiplier14 = m1 * m2 * m3 * m4 * m5 * m6 * m7 * m8 * m9 * m10 * m11 * m12 * m13;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",multiplier14);
+  printf("\n\n\tOUTPUT = %.3f",multiplier14);
   printf("\n\n--------------------------------------------------------------------\n");
   
   goto end;
@@ -1162,14 +1202,14 @@ int main() {
     float multiplier15 = m1 * m2 * m3 * m4 * m5 * m6 * m7 * m8 * m9 * m10 * m11 * m12 * m14;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",multiplier15);
+  printf("\n\n\tOUTPUT = %.3f",multiplier15);
   printf("\n\n--------------------------------------------------------------------\n");
   
   goto end;
      
     }
 
-    printf("\n\tMax limit reached! : ");
+   printf("\n\tMax limit reached! ( Press {0} ) : ");
     scanf("%f",&m16);
 
     if (m16 == zero) {
@@ -1177,7 +1217,7 @@ int main() {
     float multiplier16 = m1 * m2 * m3 * m4 * m5 * m6 * m7 * m8 * m9 * m10 * m11 * m12 * m14 * m15;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",multiplier16);
+  printf("\n\n\tOUTPUT = %.3f",multiplier16);
   printf("\n\n--------------------------------------------------------------------\n");
   
   goto end;
@@ -1196,7 +1236,7 @@ int main() {
    if (a1 == zero) {
 
       sleep(delay);
-      printf("\n\tMinimum 2 numbers required\n");
+      printf("\n\tMinimum 2 numbers required!\n");
       return 0;
    }
 
@@ -1206,7 +1246,7 @@ int main() {
    if (a2 == zero) {
 
       sleep(delay);
-      printf("\n\tMinimum 2 numbers required\n");
+      printf("\n\tMinimum 2 numbers required!\n");
       return 0;
    }
 
@@ -1218,7 +1258,7 @@ int main() {
     float adder3 = a1 + a2;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",adder3);
+  printf("\n\n\tOUTPUT = %.3f",adder3);
   printf("\n\n--------------------------------------------------------------------\n");
 
   goto end;
@@ -1232,7 +1272,7 @@ int main() {
     float adder4 = a1 + a2 + a3;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",adder4);
+  printf("\n\n\tOUTPUT = %.3f",adder4);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
    }
@@ -1245,7 +1285,7 @@ int main() {
     float adder5 = a1 + a2 + a3 + a4;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",adder5);
+  printf("\n\n\tOUTPUT = %.3f",adder5);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
    }
@@ -1258,7 +1298,7 @@ int main() {
     float adder6 = a1 + a2 + a3 + a4 + a5;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",adder6);
+  printf("\n\n\tOUTPUT = %.3f",adder6);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
    }
@@ -1271,7 +1311,7 @@ int main() {
     float adder7 = a1 + a2 + a3 + a4 + a5 + a6;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",adder7);
+  printf("\n\n\tOUTPUT = %.3f",adder7);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
    }
@@ -1284,7 +1324,7 @@ int main() {
     float adder8 = a1 + a2 + a3 + a4 + a5 + a6 + a7;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",adder8);
+  printf("\n\n\tOUTPUT = %.3f",adder8);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
    }
@@ -1297,7 +1337,7 @@ int main() {
     float adder9 = a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",adder9);
+  printf("\n\n\tOUTPUT = %.3f",adder9);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
    }
@@ -1310,7 +1350,7 @@ int main() {
     float adder10 = a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",adder10);
+  printf("\n\n\tOUTPUT = %.3f",adder10);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
    }
@@ -1323,7 +1363,7 @@ int main() {
     float adder11 = a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9 + a10;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",adder11);
+  printf("\n\n\tOUTPUT = %.3f",adder11);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
    }
@@ -1336,7 +1376,7 @@ int main() {
     float adder12 = a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9 + a10 + a11;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",adder12);
+  printf("\n\n\tOUTPUT = %.3f",adder12);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
    }
@@ -1349,7 +1389,7 @@ int main() {
     float adder13 = a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9 + a10 + a11 + a12;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",adder13);
+  printf("\n\n\tOUTPUT = %.3f",adder13);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
    }
@@ -1362,7 +1402,7 @@ int main() {
     float adder14 = a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9 + a10 + a11 + a12 + a13;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",adder14);
+  printf("\n\n\tOUTPUT = %.3f",adder14);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
    }
@@ -1375,12 +1415,13 @@ int main() {
     float adder15 = a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9 + a10 + a11 + a12 + a13 + a14;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",adder15);
+  printf("\n\n\tOUTPUT = %.3f",adder15);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
    }
 
-   printf("\n\tEnter 16th number : ");
+   printf("\n\tMax limit reached! ( Press {0} ) : ");
+   
    scanf("%f",&a16);
 
    if (a16 == zero) {
@@ -1388,7 +1429,7 @@ int main() {
     float adder16 = a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9 + a10 + a11 + a12 + a13 + a14 + a15;
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",adder16);
+  printf("\n\n\tOUTPUT = %.3f",adder16);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
    }
@@ -1406,7 +1447,7 @@ int main() {
    if (s1 == zero) {
 
       sleep(delay);
-      printf("\n\tMinimum 2 numbers required\n");
+      printf("\n\tMinimum 2 numbers required!\n");
       return 0;
    }
 
@@ -1416,7 +1457,7 @@ int main() {
    if (s2 == zero) {
 
       sleep(delay);
-      printf("\n\tMinimum 2 numbers required\n");
+      printf("\n\tMinimum 2 numbers required!\n");
       return 0;
    }
 
@@ -1428,7 +1469,7 @@ int main() {
       float subtractor3 = s1 - s2;
       
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",subtractor3);
+  printf("\n\n\tOUTPUT = %.3f",subtractor3);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
 
@@ -1442,7 +1483,7 @@ int main() {
       float subtractor4 = s1 - s2 - s3;
       
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",subtractor4);
+  printf("\n\n\tOUTPUT = %.3f",subtractor4);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
 
@@ -1456,7 +1497,7 @@ int main() {
       float subtractor5 = s1 - s2 - s3 - s4;
       
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",subtractor5);
+  printf("\n\n\tOUTPUT = %.3f",subtractor5);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
 
@@ -1470,7 +1511,7 @@ int main() {
       float subtractor6 = s1 - s2 - s3 - s4 - s5;
       
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",subtractor6);
+  printf("\n\n\tOUTPUT = %.3f",subtractor6);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
 
@@ -1484,7 +1525,7 @@ int main() {
       float subtractor7 = s1 - s2 - s3 - s4 - s5 - s6;
       
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",subtractor7);
+  printf("\n\n\tOUTPUT = %.3f",subtractor7);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
 
@@ -1498,7 +1539,7 @@ int main() {
       float subtractor8 = s1 - s2 - s3 - s4 - s5 - s6 - s7;
       
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",subtractor8);
+  printf("\n\n\tOUTPUT = %.3f",subtractor8);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
 
@@ -1512,7 +1553,7 @@ int main() {
       float subtractor9 = s1 - s2 - s3 - s4 - s5 - s6 - s7 - s8;
       
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",subtractor9);
+  printf("\n\n\tOUTPUT = %.3f",subtractor9);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
 
@@ -1526,7 +1567,7 @@ int main() {
       float subtractor10 = s1 - s2 - s3 - s4 - s5 - s6 - s7 - s8 - s9;
       
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",subtractor10);
+  printf("\n\n\tOUTPUT = %.3f",subtractor10);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
 
@@ -1540,7 +1581,7 @@ int main() {
       float subtractor11 = s1 - s2 - s3 - s4 - s5 - s6 - s7 - s8 - s9 - s10;
       
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",subtractor11);
+  printf("\n\n\tOUTPUT = %.3f",subtractor11);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
 
@@ -1554,7 +1595,7 @@ int main() {
       float subtractor12 = s1 - s2 - s3 - s4 - s5 - s6 - s7 - s8 - s9 - s10 - s11;
       
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",subtractor12);
+  printf("\n\n\tOUTPUT = %.3f",subtractor12);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
 
@@ -1568,7 +1609,7 @@ int main() {
       float subtractor13 = s1 - s2 - s3 - s4 - s5 - s6 - s7 - s8 - s9 - s10 - s11 - s12;
       
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",subtractor13);
+  printf("\n\n\tOUTPUT = %.3f",subtractor13);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
 
@@ -1582,7 +1623,7 @@ int main() {
       float subtractor14 = s1 - s2 - s3 - s4 - s5 - s6 - s7 - s8 - s9 - s10 - s11 - s12 - s13;
       
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",subtractor14);
+  printf("\n\n\tOUTPUT = %.3f",subtractor14);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
 
@@ -1596,13 +1637,13 @@ int main() {
       float subtractor15 = s1 - s2 - s3 - s4 - s5 - s6 - s7 - s8 - s9 - s10 - s11 - s12 - s13 - s14;
       
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",subtractor15);
+  printf("\n\n\tOUTPUT = %.3f",subtractor15);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
 
     }
 
-    printf("\n\tMax limit reached! : ");
+   printf("\n\tMax limit reached! ( Press {0} ) : ");
     scanf("%f",&s16);
 
     if (s16 == zero) {
@@ -1610,7 +1651,7 @@ int main() {
       float subtractor16 = s1 - s2 - s3 - s4 - s5 - s6 - s7 - s8 - s9 - s10 - s11 - s12 - s13 - s14 - s15;
       
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",subtractor16);
+  printf("\n\n\tOUTPUT = %.3f",subtractor16);
   printf("\n\n--------------------------------------------------------------------\n");
   goto end;
 
@@ -1626,7 +1667,7 @@ int main() {
       //float square1;
 
 
-      printf("\n\tEnter value : ");
+      printf("\n\tEnter number : ");
       scanf("%f",&square1);
 
       float square;
@@ -1635,21 +1676,21 @@ int main() {
       
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",square);
+  printf("\n\n\tOUTPUT = %.3f",square);
   printf("\n\n--------------------------------------------------------------------");
 
   goto end;
 
       break;
 
-    case 'q':
+    case 'c':
       
     printf("\n\tOperator : Cube\n\n");
 
       //float cube1;
 
 
-      printf("\n\tEnter value : ");
+      printf("\n\tEnter number : ");
       scanf("%f",&cube1);
 
       float cube;
@@ -1658,7 +1699,7 @@ int main() {
       
 
   printf("\n\n--------------------------------------------------------------------");
-  printf("\n\n\tOUTPUT = %.2f",cube);
+  printf("\n\n\tOUTPUT = %.3f",cube);
   printf("\n\n--------------------------------------------------------------------");
 
   goto end;
@@ -1693,7 +1734,7 @@ int main() {
     //char after_calc;
 
     // Enhanced menu presentation
- printf("\n\n\n\n\t Where to proceed \n ");
+ printf("\n\n\n\n\t WHERE TO PROCEED \n ");
  printf("  ==========================\n\n\n");
 
     printf("\n\t  Continue           ( c )\n");
@@ -1712,7 +1753,7 @@ int main() {
     switch (after_calc) {
         case 'c':
             // Implement save functionality here
-	  printf("\n\tDirecting");
+	  printf("\n\tDirecting.");
 	 sleep(delay); 
 
 	 printf(".");
@@ -1732,9 +1773,9 @@ int main() {
 
 	    
         default:
-            // This shouldn't be reached due to validation
+            //This shouldn't be reached due to validation. 
 
-            printf("\n\tAn unexpected error occurred.\n");
+            printf("\n\tAn unexpected error occured.\n");
     }  
 
   return 0;
