@@ -29,7 +29,7 @@ int main() {
 
   if (userinput=='y' || userinput=='y'|| userinput=='c'|| userinput=='f')  {
 
-     printf("\nlet's begin!\n");
+     printf("\nLet's begin!\n");
     
     printf("\n Enter the current year \n\n > ");
     scanf("%d",&e);
