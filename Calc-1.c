@@ -40,10 +40,10 @@ void sum_2() {
  // float b;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&a);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&b);
 
   float adder2 = (a+b);
@@ -68,13 +68,13 @@ void sum_3() {
  
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&c);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&d);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&e);
 
   float adder3 = (c+d+e);
@@ -94,16 +94,16 @@ void sum_4() {
   float i;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&f);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&g);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&h);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&i);
 
  
@@ -124,19 +124,19 @@ void sum_5() {
   float n;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&j);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&k);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&l);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&m);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&n);
  
   float adder5 = (j+k+l+m+n);
@@ -158,22 +158,22 @@ void sum_6() {
   float t;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&o);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&p);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&q);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&r);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&s);
  
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&t);
 
   float adder6 = (o+p+q+r+s+t);
@@ -196,25 +196,25 @@ void sum_7() {
   float aa;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&u);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&v);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&w);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&x);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&y);
  
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&z);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&aa);
 
   float adder7 = (u+v+w+x+y+z+aa);
@@ -238,28 +238,28 @@ void sum_8() {
   float ai;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&ab);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&ac);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&ad);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&ae);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&af);
  
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&ag);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&ah);
   
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&ai);
 
   float adder8 = (ab+ac+ad+ae+af+ag+ah+ai);
@@ -283,31 +283,31 @@ void sum_9() {
   float ar;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&aj);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&ak);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&al);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&am);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&an);
  
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&ao);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&ap);
   
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&aq);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&ar);
   
   float adder9 = (aj+ak+al+am+an+ao+ap+aq+ar);
@@ -333,34 +333,34 @@ void sum_10() {
   float bb;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&as);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&at);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&au);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&av);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&aw);
  
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&ax);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&ay);
   
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&az);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&ba);
   
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&bb);
 
   float adder10 = (as+at+au+av+aw+ax+ay+az+ba+bb);
@@ -388,37 +388,37 @@ void sum_11() {
   float bm;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&bc);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&bd);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&be);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&bf);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&bg);
  
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&bh);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&bi);
   
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&bj);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&bk);
   
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&bl);
 
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&bm);
 
   float adder11 = (bc+bd+be+bf+bg+bh+bi+bj+bk+bl+bm);
@@ -447,40 +447,40 @@ void sum_12() {
   float by;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&bn);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&bo);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&bp);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&bq);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&br);
  
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&bs);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&bt);
   
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&bu);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&bv);
   
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&bw);
 
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&bx);
 
-  printf("\n\tEnter 12th value : ");
+  printf("\n\tEnter 12th number : ");
   scanf("%f",&by);
 
   float adder12 = (bn+bo+bp+bq+br+bs+bt+bu+bv+bw+bx+by);
@@ -509,43 +509,43 @@ void sum_13() {
   float ck;
   float cl;
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&bz);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&ca);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&cb);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&cc);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&cd);
  
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&ce);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&cf);
   
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&cg);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&ch);
   
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&ci);
 
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&cj);
 
-  printf("\n\tEnter 12th value : ");
+  printf("\n\tEnter 12th number : ");
   scanf("%f",&ck);
 
-  printf("\n\tEnter 13th value : ");
+  printf("\n\tEnter 13th number : ");
   scanf("%f",&cl);
 
   float adder13 = (bz+ca+cb+cc+cd+ce+cf+cg+ch+ci+cj+ck+cl);
@@ -575,46 +575,46 @@ void sum_14() {
   float cy;
   float cz;
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&cm);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&cn);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&co);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&cp);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&cq);
  
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&cr);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&cs);
   
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&ct);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&cu);
   
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&cv);
 
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&cw);
 
-  printf("\n\tEnter 12th value : ");
+  printf("\n\tEnter 12th number : ");
   scanf("%f",&cx);
 
-  printf("\n\tEnter 13th value : ");
+  printf("\n\tEnter 13th number : ");
   scanf("%f",&cy);
 
-  printf("\n\tEnter 14th value : ");
+  printf("\n\tEnter 14th number : ");
   scanf("%f",&cz);
 
   float adder14 = (cm+cn+co+cp+cq+cr+cs+ct+cu+cv+cw+cx+cy+cz);
@@ -646,49 +646,49 @@ void sum_15() {
   float dn;
   float dp;  //do becomes do ->do while
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&da);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&db);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&dc);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&dd);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&de);
  
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&df);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&dg);
   
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&dh);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&di);
   
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&dj);
 
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&dk);
 
-  printf("\n\tEnter 12th value : ");
+  printf("\n\tEnter 12th number : ");
   scanf("%f",&dl);
 
-  printf("\n\tEnter 13th value : ");
+  printf("\n\tEnter 13th number : ");
   scanf("%f",&dm);
 
-  printf("\n\tEnter 14th value : ");
+  printf("\n\tEnter 14th number : ");
   scanf("%f",&dn);
 
-  printf("\n\tEnter 15th value : ");
+  printf("\n\tEnter 15th number : ");
   scanf("%f",&dp);
 
   float adder15 = (da+db+dc+dd+de+df+dg+dh+di+dj+dk+dl+dm+dn+dp);
@@ -707,10 +707,10 @@ void subt_2() {
   float dr;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&dq);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&dr);
 
   float subtractor2 = (dq-dr);
@@ -729,13 +729,13 @@ void subt_3() {
   float du;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&ds);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&dt);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&du);
 
   float subtractor3 = (ds-dt-du);
@@ -755,16 +755,16 @@ void subt_4() {
   float dy;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&dv);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&dw);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&dx);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&dy);
   
   float subtractor4 = (dv-dw-dx-dy);
@@ -784,19 +784,19 @@ void subt_5() {
   float ed;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&dz);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&ea);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&eb);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&ec);
   
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&ed);
 
   float subtractor5 = (dz-ea-eb-ec-ed);
@@ -818,22 +818,22 @@ void subt_6() {
   float ej;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&ee);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&ef);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&eg);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&eh);
   
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&ei);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&ej);
 
   float subtractor6 = (ee-ef-eg-eh-ei-ej);
@@ -857,25 +857,25 @@ void subt_7() {
   float eq;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&ek);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&el);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&em);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&en);
   
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&eo);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&ep);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&eq);
 
   float subtractor7 = (ek-el-em-en-eo-ep-eq);
@@ -900,28 +900,28 @@ void subt_8() {
   float ey;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&er);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&es);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&et);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&eu);
   
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&ev);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&ew);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&ex);
 
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&ey);
   
   float subtractor8 = (er-es-et-eu-ev-ew-ex-ey);
@@ -947,31 +947,31 @@ void subt_9() {
   float fh;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&ez);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&fa);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&fb);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&fc);
   
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&fd);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&fe);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&ff);
 
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&fg);
   
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&fh);
 
   float subtractor9 = (ez-fa-fb-fc-fd-fe-ff-fg-fh);
@@ -998,34 +998,34 @@ void subt_10() {
   float fr;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&fi);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&fj);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&fk);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&fl);
   
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&fm);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&fn);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&fo);
 
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&fp);
   
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&fq);
 
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&fr);
 
   float subtractor10 = (fi-fj-fk-fl-fm-fn-fo-fp-fq-fr);
@@ -1053,37 +1053,37 @@ void subt_11() {
   float gc;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&fs);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&ft);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&fu);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&fv);
   
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&fw);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&fx);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&fy);
 
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&fz);
   
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&ga);
 
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&gb);
 
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&gc);
 
   float subtractor11 = (fs-ft-fu-fv-fw-fx-fy-fz-ga-gb-gc);
@@ -1112,40 +1112,40 @@ void subt_12() {
   float go;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&gd);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&ge);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&gf);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&gg);
   
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&gh);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&gi);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&gj);
 
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&gk);
   
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&gl);
 
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&gm);
 
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&gn);
 
-  printf("\n\tEnter 12th value : ");
+  printf("\n\tEnter 12th number : ");
   scanf("%f",&go);
 
   float subtractor12 = (gd-ge-gf-gg-gh-gi-gj-gk-gl-gm-gn-go);
@@ -1175,43 +1175,43 @@ void subt_13() {
   float hb;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&gp);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&gq);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&gr);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&gs);
   
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&gt);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&gu);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&gv);
 
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&gw);
   
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&gx);
 
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&gy);
 
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&gz);
 
-  printf("\n\tEnter 12th value : ");
+  printf("\n\tEnter 12th number : ");
   scanf("%f",&ha);
 
-  printf("\n\tEnter 13th value : ");
+  printf("\n\tEnter 13th number : ");
   scanf("%f",&hb);
 
   float subtractor13 = (gp-gq-gr-gs-gt-gu-gv-gw-gx-gy-gz-ha-hb);
@@ -1243,46 +1243,46 @@ void subt_14() {
   float hp;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&hc);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&hd);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&he);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&hf);
   
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&hg);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&hh);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&hi);
 
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&hj);
   
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&hk);
 
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&hl);
 
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&hm);
 
-  printf("\n\tEnter 12th value : ");
+  printf("\n\tEnter 12th number : ");
   scanf("%f",&hn);
 
-  printf("\n\tEnter 13th value : ");
+  printf("\n\tEnter 13th number : ");
   scanf("%f",&ho);
 
-  printf("\n\tEnter 14th value : ");
+  printf("\n\tEnter 14th number : ");
   scanf("%f",&hp);
 
   float subtractor14 = (hc-hd-he-hf-hg-hh-hi-hj-hk-hl-hm-hn-ho-hp);
@@ -1315,49 +1315,49 @@ void subt_15() {
   
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&hq);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&hr);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&hs);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&ht);
   
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&hu);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&hv);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&hw);
 
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&hx);
   
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&hy);
 
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&hz);
 
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&ia);
 
-  printf("\n\tEnter 12th value : ");
+  printf("\n\tEnter 12th number : ");
   scanf("%f",&ib);
 
-  printf("\n\tEnter 13th value : ");
+  printf("\n\tEnter 13th number : ");
   scanf("%f",&ic);
 
-  printf("\n\tEnter 14th value : ");
+  printf("\n\tEnter 14th number : ");
   scanf("%f",&id);
 
-  printf("\n\tEnter 15th value : : ");
+  printf("\n\tEnter 15th number : : ");
   scanf("%f",&ie);
 
   float subtractor15 = (hq-hr-hs-ht-hu-hv-hw-hx-hy-hz-ia-ib-ic-id-ie);
@@ -1376,10 +1376,10 @@ void mult_2() {
   float ih;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&ig);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&ih);
 
   float multiplier2 = (ig*ih);
@@ -1398,13 +1398,13 @@ void mult_3() {
   float ik;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&ii);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&ij);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&ik);
 
   float multiplier3 = (ii*ij*ik);
@@ -1424,16 +1424,16 @@ void mult_4() {
   float io;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&il);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&im);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&in);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&io);
 
   float multiplier4 = (il*im*in*io);
@@ -1454,19 +1454,19 @@ void mult_5() {
   float iu;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&iq);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&ir);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&is);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&it);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&iu);
 
   float multiplier5 = (iq*ir*is*it*iu);
@@ -1487,22 +1487,22 @@ void mult_6() {
   float ja;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&iv);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&iw);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&ix);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&iy);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&iz);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&ja);
 
   float multiplier6 = (iv*iw*ix*iy*iz*ja);
@@ -1524,25 +1524,25 @@ void mult_7() {
   float jh;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&jb);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&jc);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&jd);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&je);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&jf);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&jg);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&jh);
 
   float multiplier7 = (jb*jc*jd*je*jf*jg*jh);
@@ -1566,28 +1566,28 @@ void mult_8() {
   float jp;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&ji);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&jj);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&jk);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&jl);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&jm);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&jn);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&jo);
 
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&jp);
 
   float multiplier8 = (ji*jj*jk*jl*jm*jn*jo*jp);
@@ -1612,31 +1612,31 @@ void mult_9() {
   float jy;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&jq);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&jr);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&js);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&jt);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&ju);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&jv);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&jw);
 
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&jx);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&jy);
 
   float multiplier9 = (jq*jr*js*jt*ju*jv*jw*jx*jy);
@@ -1662,34 +1662,34 @@ void mult_10() {
   float ki;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&jz);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&ka);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&kb);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&kc);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&kd);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&ke);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&kf);
 
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&kg);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&kh);
 
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&ki);
 
   float multiplier10 = (jz*ka*kb*kc*kd*ke*kf*kg*kh*ki);
@@ -1716,37 +1716,37 @@ void mult_11() {
   float kt;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&kj);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&kk);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&kl);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&km);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&kn);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&ko);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&kp);
 
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&kq);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&kr);
 
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&ks);
   
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&kt);
 
   float multiplier11 = (kj*kk*kl*km*kn*ko*kp*kq*kr*ks*kt);
@@ -1774,40 +1774,40 @@ void mult_12() {
   float lf;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&ku);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&kv);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&kw);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&kx);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&ky);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&kz);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&la);
 
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&lb);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&lc);
 
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&ld);
   
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&le);
 
-  printf("\n\tEnter 12th value : ");
+  printf("\n\tEnter 12th number : ");
   scanf("%f",&lf);
 
   float multiplier12 = (ku*kv*kw*kx*ky*kz*la*lb*lc*ld*le*lf);
@@ -1836,43 +1836,43 @@ void mult_13() {
   float ls;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&lg);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&lh);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&li);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&lj);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&lk);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&ll);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&lm);
 
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&ln);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&lo);
 
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&lp);
   
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&lq);
 
-  printf("\n\tEnter 12th value : ");
+  printf("\n\tEnter 12th number : ");
   scanf("%f",&lr);
 
-  printf("\n\tEnter 13th value : ");
+  printf("\n\tEnter 13th number : ");
   scanf("%f",&ls);
 
   float multiplier13 = (lg*lh*li*lj*lk*ll*lm*ln*lo*lp*lq*lr*ls);
@@ -1902,46 +1902,46 @@ void mult_14() {
   float mg;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&lt);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&lu);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&lv);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&lw);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&lx);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&ly);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&lz);
 
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&ma);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&mb);
 
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&mc);
   
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&md);
 
-  printf("\n\tEnter 12th value : ");
+  printf("\n\tEnter 12th number : ");
   scanf("%f",&me);
 
-  printf("\n\tEnter 13th value : ");
+  printf("\n\tEnter 13th number : ");
   scanf("%f",&mf);
 
-  printf("\n\tEnter 14th value : ");
+  printf("\n\tEnter 14th number : ");
   scanf("%f",&mg);
 
   float multiplier14 = (lt*lu*lv*lw*lx*ly*lz*ma*mb*mc*md*me*mf*mg);
@@ -1972,49 +1972,49 @@ void mult_15() {
   float mv;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&mh);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&mi);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&mj);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&mk);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&ml);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&mm);
 
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&mn);
 
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&mo);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&mp);
 
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&mq);
   
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&mr);
 
-  printf("\n\tEnter 12th value : ");
+  printf("\n\tEnter 12th number : ");
   scanf("%f",&ms);
 
-  printf("\n\tEnter 13th value : ");
+  printf("\n\tEnter 13th number : ");
   scanf("%f",&mt);
 
-  printf("\n\tEnter 14th value : ");
+  printf("\n\tEnter 14th number : ");
   scanf("%f",&mu);
 
-  printf("\n\tEnter 15th value : : ");
+  printf("\n\tEnter 15th number : : ");
   scanf("%f",&mv);
 
   float multiplier15 = (mh*mi*mj*mk*ml*mm*mn*mo*mp*mq*mr*ms*mt*mu*mv);
@@ -2032,10 +2032,10 @@ void div_2() {
   float mx;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&mw);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&mx);
 
   float divider2 = (mw/mx);
@@ -2054,13 +2054,13 @@ void div_3() {
   float na;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&my);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&mz);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&na);
 
   float divider3 = (my/mz/na);
@@ -2080,16 +2080,16 @@ void div_4() {
   float ne;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&nb);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&nc);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&nd);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&ne);
 
   float divider4 = (nb/nc/nd/ne);
@@ -2110,19 +2110,19 @@ void div_5() {
   float nj;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&nf);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&ng);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&nh);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&ni);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&nj);
 
   float divider5 = (nf/ng/nh/ni/nj);
@@ -2144,22 +2144,22 @@ void div_6() {
   float np;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&nk);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&nl);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&nm);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&nn);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&no);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&np);
   
   float divider6 = (nk/nl/nm/nn/no/np);
@@ -2182,25 +2182,25 @@ void div_7() {
   float nw;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&nq);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&nr);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&ns);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&nt);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&nu);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&nv);
   
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&nw);
   
   float divider7 = (nq/nr/ns/nt/nu/nv/nw);
@@ -2224,28 +2224,28 @@ void div_8() {
   float oe;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&nx);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&ny);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&nz);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&oa);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&ob);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&oc);
   
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&od);
   
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&oe);
 
   float divider8 = (nx/ny/nz/oa/ob/oc/od/oe);
@@ -2270,31 +2270,31 @@ void div_9() {
   float on;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&of);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&og);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&oh);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&oi);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&oj);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&ok);
   
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&ol);
   
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&om);
 
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&on);
 
   float divider9 = (of/og/oh/oi/oj/ok/ol/om/on);
@@ -2320,34 +2320,34 @@ void div_10() {
   float ox;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&oo);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&op);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&oq);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&o1);          //changed from 'or' to o1  
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&os);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&ot);
   
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&ou);
   
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&ov);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&ow);
 
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&ox);
 
   float divider10 = (oo/op/oq/o1/os/ot/ou/ov/ow/ox);
@@ -2374,37 +2374,37 @@ void div_11() {
   float pi;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&oy);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&oz);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&pa);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&pb);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&pc);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&pd);
   
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&pe);
   
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&pf);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&pg);
 
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&ph);
 
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&pi);
 
   float divider11 = (oy/oz/pa/pb/pc/pd/pe/pf/pg/ph/pi);
@@ -2432,40 +2432,40 @@ void div_12() {
   float pu;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&pj);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&pk);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&pl);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&pm);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&pn);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&po);
   
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&pp);
   
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&pq);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&pr);
 
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&ps);
 
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&pt);
 
-  printf("\n\tEnter 12th value : ");
+  printf("\n\tEnter 12th number : ");
   scanf("%f",&pu);
 
   float divider12 = (pj/pk/pl/pm/pn/po/pp/pq/pr/ps/pt/pu);
@@ -2494,43 +2494,43 @@ void div_13() {
   float qh;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&pv);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&pw);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&px);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&py);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&pz);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&qa);
   
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&qb);
   
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&qc);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&qd);
 
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&qe);
 
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&qf);
 
-  printf("\n\tEnter 12th value : ");
+  printf("\n\tEnter 12th number : ");
   scanf("%f",&qg);
 
-  printf("\n\tEnter 13th value : ");
+  printf("\n\tEnter 13th number : ");
   scanf("%f",&qh);
 
   float divider13 = (pv/pw/px/py/pz/qa/qb/qc/qd/qe/qf/qg/qh);
@@ -2560,46 +2560,46 @@ void div_14() {
   float qv;
 
 
-  printf("\n\n\tEnter 1st value : ");
+  printf("\n\n\tEnter 1st number : ");
   scanf("%f",&qi);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&qj);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&qk);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&ql);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&qm);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&qn);
   
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&qo);
   
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&qp);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&qq);
 
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&qr);
 
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&qs);
 
-  printf("\n\tEnter 12th value : ");
+  printf("\n\tEnter 12th number : ");
   scanf("%f",&qt);
 
-  printf("\n\tEnter 13th value : ");
+  printf("\n\tEnter 13th number : ");
   scanf("%f",&qu);
 
-  printf("\n\tEnter 14th value : ");
+  printf("\n\tEnter 14th number : ");
   scanf("%f",&qv);
 
   float divider14 = (qi/qj/qk/ql/qm/qn/qo/qp/qq/qr/qs/qt/qu/qv);
@@ -2630,49 +2630,49 @@ void div_15() {
   float rk;
 
 
-  printf("\n\tEnter 1st value : ");
+  printf("\n\tEnter 1st number : ");
   scanf("%f",&qw);
 
-  printf("\n\tEnter 2nd value : ");
+  printf("\n\tEnter 2nd number : ");
   scanf("%f",&qx);
 
-  printf("\n\tEnter 3rd value : ");
+  printf("\n\tEnter 3rd number : ");
   scanf("%f",&qy);
 
-  printf("\n\tEnter 4th value : ");
+  printf("\n\tEnter 4th number : ");
   scanf("%f",&qz);
 
-  printf("\n\tEnter 5th value : ");
+  printf("\n\tEnter 5th number : ");
   scanf("%f",&ra);
 
-  printf("\n\tEnter 6th value : ");
+  printf("\n\tEnter 6th number : ");
   scanf("%f",&rb);
   
-  printf("\n\tEnter 7th value : ");
+  printf("\n\tEnter 7th number : ");
   scanf("%f",&rc);
   
-  printf("\n\tEnter 8th value : ");
+  printf("\n\tEnter 8th number : ");
   scanf("%f",&rd);
 
-  printf("\n\tEnter 9th value : ");
+  printf("\n\tEnter 9th number : ");
   scanf("%f",&re);
 
-  printf("\n\tEnter 10th value : ");
+  printf("\n\tEnter 10th number : ");
   scanf("%f",&rf);
 
-  printf("\n\tEnter 11th value : ");
+  printf("\n\tEnter 11th number : ");
   scanf("%f",&rg);
 
-  printf("\n\tEnter 12th value : ");
+  printf("\n\tEnter 12th number : ");
   scanf("%f",&rh);
 
-  printf("\n\tEnter 13th value : ");
+  printf("\n\tEnter 13th number : ");
   scanf("%f",&ri);
 
-  printf("\n\tEnter 14th value : ");
+  printf("\n\tEnter 14th number : ");
   scanf("%f",&rj);
 
-  printf("\n\tEnter 15th value : ");
+  printf("\n\tEnter 15th number : ");
   scanf("%f",&rk);
 
   float divider15 = (qw/qx/qy/qz/ra/rb/rc/rd/re/rf/rg/rh/ri/rj/rk);
@@ -2708,7 +2708,7 @@ void div_15() {
    printf("\n\tOperator : Division\n");
 
       //int input_division; 
-      printf("\n\tHow many values: ");
+      printf("\n\tHow many numbers: ");
       scanf("%d",&input_division);
       printf("\n");
 
@@ -2752,7 +2752,7 @@ void div_15() {
    if (input_division == 1) {
 
      sleep(delay);
-     printf("\n\tMinimun two values required.\n");
+     printf("\n\tMinimun two numbers required.\n");
 
    
    }
@@ -2871,7 +2871,7 @@ void div_15() {
    printf("\n\tOperator : Multiplication\n");
 
       //int input_multiplication; 
-      printf("\n\tHow many values: ");
+      printf("\n\tHow many numbers: ");
       scanf("%d",&input_multiplication);
 
 
@@ -2911,7 +2911,7 @@ void div_15() {
    if (input_multiplication == 1) {
 
      sleep(delay);
-     printf("\n\tMinimun two values required.\n");
+     printf("\n\tMinimun two numbers required.\n");
  
 
    }
@@ -3032,7 +3032,7 @@ if (choice !='d'&& choice !='m'&& choice !='a' && choice !='s'&& choice !='S' &&
    printf("\n\tOperator : Addition\n");
 
       //int input_addition; 
-      printf("\n\tHow many values: ");
+      printf("\n\tHow many numbers: ");
       scanf("%d",&input_addition);
 
   if (input_addition > 15) {
@@ -3071,7 +3071,7 @@ if (choice !='d'&& choice !='m'&& choice !='a' && choice !='s'&& choice !='S' &&
    if (input_addition == 1) {
 
      sleep(delay);
-     printf("\n\tMinimun two values required.\n");
+     printf("\n\tMinimun two numbers required.\n");
 
 
    }
@@ -3172,7 +3172,7 @@ if (choice !='d'&& choice !='m'&& choice !='a' && choice !='s'&& choice !='S' &&
    printf("\n\tOperator : Subtraction\n");
 
       //int input_subtraction; 
-      printf("\n\tHow many values: ");
+      printf("\n\tHow many numbers: ");
       scanf("%d",&input_subtraction);
 
 
@@ -3212,7 +3212,7 @@ if (choice !='d'&& choice !='m'&& choice !='a' && choice !='s'&& choice !='S' &&
    if (input_subtraction == 1) {
 
      sleep(delay);
-     printf("\n\tMinimun two values required.\n");
+     printf("\n\tMinimun two numbers required.\n");
 
 
 
@@ -3311,7 +3311,7 @@ if (choice !='d'&& choice !='m'&& choice !='a' && choice !='s'&& choice !='S' &&
   if (choice =='S') { //parent bracket
 printf("\n\tOperator : Square\n\n");
 
-      printf("\n\tHow many values: ");
+      printf("\n\tHow many numbers: ");
       scanf("%d",&input_square);
 
 
@@ -3348,7 +3348,7 @@ printf("\n\tOperator : Square\n\n");
 
       //float square1;
 
-      printf("\n\tEnter value : ");
+      printf("\n\tEnter number : ");
       scanf("%f",square1);
 
       
@@ -3365,7 +3365,7 @@ printf("\n\tOperator : Square\n\n");
 //   if (input_square == 1) {
 
  //    sleep(delay);
-//     printf("\n\tMinimun two values required.\n");
+//     printf("\n\tMinimun two numbers required.\n");
   } //parent bracket of square
 
 
@@ -3399,6 +3399,7 @@ int main() {
   printf("\n\tFor Subtraction     ( s )\n");
   printf("\n\tFor Square          ( S )\n");
   printf("\n\tFor Cube            ( q )\n");
+  printf("\n\tExit                ( e )\n");
 
   
   printf("\n\n\tWhat would it be :  ");
@@ -3406,6 +3407,12 @@ int main() {
   
  
 
+  if (choice == 'e') {
+
+    printf("\n\tExited Successfully..\n\n");
+
+    return 0;
+  }
 
   
   
@@ -3415,7 +3422,7 @@ int main() {
    printf("\n\tOperator : Division\n");
 
       //int input_division; 
-      printf("\n\tHow many values: ");
+      printf("\n\tHow many numbers: ");
       scanf("%d",&input_division);
       printf("\n");
 
@@ -3459,7 +3466,7 @@ int main() {
    if (input_division == 1) {
 
      sleep(delay);
-     printf("\n\tMinimun two values required.\n");
+     printf("\n\tMinimun two numbers required.\n");
 
      return 0;
    }
@@ -3578,7 +3585,7 @@ int main() {
    printf("\n\tOperator : Multiplication\n");
 
       //int input_multiplication; 
-      printf("\n\tHow many values: ");
+      printf("\n\tHow many numbers: ");
       scanf("%d",&input_multiplication);
 
 
@@ -3618,7 +3625,7 @@ int main() {
    if (input_multiplication == 1) {
 
      sleep(delay);
-     printf("\n\tMinimun two values required.\n");
+     printf("\n\tMinimun two numbers required.\n");
      return 0;
 
    }
@@ -3717,7 +3724,7 @@ int main() {
   } //parent bracket of multiplication
 
    
-if (choice !='d'&& choice !='m'&& choice !='a' && choice !='s'&& choice !='S' && choice !='q') {
+if (choice !='d'&& choice !='m'&& choice !='a' && choice !='s'&& choice !='S' && choice !='q' && choice !='e') {
 
       printf("\n\t.");
       sleep (delay);
@@ -3739,7 +3746,7 @@ if (choice !='d'&& choice !='m'&& choice !='a' && choice !='s'&& choice !='S' &&
    printf("\n\tOperator : Addition\n");
 
       //int input_addition; 
-      printf("\n\tHow many values: ");
+      printf("\n\tHow many numbers: ");
       scanf("%d",&input_addition);
 
   if (input_addition > 15) {
@@ -3778,7 +3785,7 @@ if (choice !='d'&& choice !='m'&& choice !='a' && choice !='s'&& choice !='S' &&
    if (input_addition == 1) {
 
      sleep(delay);
-     printf("\n\tMinimun two values required.\n");
+     printf("\n\tMinimun two numbers required.\n");
 
      return 0;
    }
@@ -3879,7 +3886,7 @@ if (choice !='d'&& choice !='m'&& choice !='a' && choice !='s'&& choice !='S' &&
    printf("\n\tOperator : Subtraction\n");
 
       //int input_subtraction; 
-      printf("\n\tHow many values: ");
+      printf("\n\tHow many numbers: ");
       scanf("%d",&input_subtraction);
 
 
@@ -3919,7 +3926,7 @@ if (choice !='d'&& choice !='m'&& choice !='a' && choice !='s'&& choice !='S' &&
    if (input_subtraction == 1) {
 
      sleep(delay);
-     printf("\n\tMinimun two values required.\n");
+     printf("\n\tMinimun two numbers required.\n");
 
      return 0;
 
@@ -4020,7 +4027,7 @@ printf("\n\tOperator : Square\n\n");
 
       //float square1;
 
-      printf("\n\tEnter value : ");
+      printf("\n\tEnter number : ");
       scanf("%f",&square1);
 
 
@@ -4076,7 +4083,7 @@ printf("\n\tOperator : Square\n\n");
 //   if (square1 == 1) {
 
  //    sleep(delay);
-//     printf("\n\tMinimun two values required.\n");
+//     printf("\n\tMinimun two numbers required.\n");
    //parent bracket of square
   } //parent bracket of square
 
@@ -4086,7 +4093,7 @@ printf("\n\tOperator : Square\n\n");
 
    printf("\n\tOperator : Cube\n\n");
 
-      printf("\n\tEnter value : ");
+      printf("\n\tEnter number : ");
       scanf("%f",&cube1);
 
       //float cube1;
@@ -4117,6 +4124,8 @@ printf("\n\tOperator : Square\n\n");
   printf("\n\n--------------------------------------------------------------------");
   printf("\n\n\tOUTPUT = %.2f",cube);
   printf("\n\n--------------------------------------------------------------------");
+
+
 
 /*
       if (cube1 != 1 && cube1 != 2 && cube1 != 3 && cube1 != 4 && cube1 != 5 && cube1 != 6 && cube1 != 7 && cube1 != 8 && cube1 != 9 && cube1 != 10 && cube1 != 11 && cube1 != 12 && cube1 != 13 && cube1 != 14 && cube1 != 15) {
@@ -4174,7 +4183,7 @@ printf("\n\tOperator : Square\n\n");
  
             break;
       case 'e':
-            printf("\n\tExiting the game...\n");
+            printf("\n\tExited Successfully...\n");
             break;
 
 
