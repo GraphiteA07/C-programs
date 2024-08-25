@@ -1,8 +1,5 @@
 //Working Accordingly!
-<<<<<<< HEAD:Calc-2.c
-=======
 
->>>>>>> 35de02ad5c737923269cea59b5eddd99c270d274:DMAS_Calc2.c
 #include <stdio.h>
 #include <unistd.h>
 

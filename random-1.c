@@ -1,5 +1,5 @@
-//Some errors or should I say BUGS!
-//gcc Random_Things.c -o Random_Things.o
+//Working Accordingly
+
 #include <stdio.h>
 
 int main() {
