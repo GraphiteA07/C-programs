@@ -1,4 +1,4 @@
-//Some errors or should I say BUGS!
+//Working Acoordingly!
 //gcc Random_Things.c -o Random_Things.o
 #include <stdio.h>
 
