@@ -1,5 +1,6 @@
-//Working Acoordingly!
-//gcc Random_Things.c -o Random_Things.o
+//Working Accordingly
+
+
 #include <stdio.h>
 
 int main() {
