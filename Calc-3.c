@@ -21,29 +21,29 @@ int main() {
   printf("\n Enter numbers : ");
   scanf("%f",&mark[i]);
 
-  if (mark[1] == 0) {
+  if (mark[0] == 0 || mark[1] == 0) {
 
     sleep(delay);
     printf("\n Minimum 2 numbers required \n");
-    break;
+    return 0;
   }
 
-  /* while ( j < 8 && mark[j] == 0 ) { */
+  else if ( mark[i] == 0 ) {
 
-  /*   printf("\n OUPUT : %.3f \n",add); */  
-  /*   j++; */
-   
+      printf("\n OUPUT : %.3f \n",add);  
+      break;
+    }
 
-  /* } */
-
- 
     add += mark[i];
+
 
   /* l++; */
   i++;
 
   }
-    printf("\n OUPUT : %.3f \n",add);  
+   
+  printf("\n OK");
+     
 
   return 0;
 }
