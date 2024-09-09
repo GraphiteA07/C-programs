@@ -1736,7 +1736,7 @@ else {
   
     //char after_calc;
 
-    // Enhanced menu presentation
+
  printf("\n\n\n\n\t WHERE TO PROCEED \n ");
  printf("  ==========================\n\n\n");
 
@@ -1756,12 +1756,15 @@ else {
     switch (after_calc) {
         case 'c':
             // Implement save functionality here
-	  printf("\n\tDirecting.");
-	 sleep(delay); 
-
+	  printf("\n\tDirecting ");
+	 usleep(300000); 
 	 printf(".");
-	 printf(".\n\n");
- 
+	 usleep(400000); 
+	 printf(".");
+	 usleep(500000); 
+	 printf(".");
+	 usleep(99999); 
+
 	 goto start;
 
         //Run();
