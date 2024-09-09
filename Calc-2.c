@@ -1,8 +1,5 @@
 //Working Accordingly!
 
-
-
-
 #include <stdio.h>
 #include <unistd.h>
 
@@ -1716,15 +1713,14 @@ else {
       break;
 
     default:
-      
-      printf("\n\t.");
-      sleep (delay);
 
-      printf(".");
-      sleep (delay);
 
-      printf(".\n");
-      sleep (delay);
+	 printf("\n\t.");
+	 usleep(400000); 
+	 printf(".");
+	 usleep(500000); 
+	 printf(".\n");
+	 usleep(99999); 
 
       printf("\n\tOperator : Unknown \n");
       return 0;
@@ -1757,11 +1753,11 @@ else {
         case 'c':
             // Implement save functionality here
 	  printf("\n\tDirecting ");
-	 usleep(300000); 
+	 usleep(95000); 
 	 printf(".");
-	 usleep(400000); 
+	 usleep(95000); 
 	 printf(".");
-	 usleep(500000); 
+	 usleep(95000); 
 	 printf(".");
 	 usleep(99999); 
 
