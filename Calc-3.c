@@ -86,7 +86,10 @@ int main() {
 
     case 'a':
 
+  printf("\n\tOperator : Addition\n\n");
+
   while ( i < 10 ) {
+
 
   printf("\n\tEnter numbers : ");
   scanf("%f",&markA[i]);
@@ -101,7 +104,7 @@ int main() {
    if ( markA[i] == 0 ) {
 
   printf("\n--------------------------------------------------------------------");
-      printf("\n\n  OUPUT : %.3f \n",add);  
+      printf("\n\n\tOUPUT : %.3f \n",add);  
   printf("\n--------------------------------------------------------------------\n");
   i = 0;
 
@@ -119,7 +122,10 @@ int main() {
 
     case 'm':
 
+  printf("\n\tOperator : Multiplication\n\n");
+
   while ( j < 10 ) {
+
 
   printf("\n\tEnter numbers : ");
   scanf("%f",&markM[j]);
@@ -134,7 +140,7 @@ int main() {
    if ( markM[j] == 0 ) {
 
   printf("\n--------------------------------------------------------------------");
-      printf("\n\n  OUPUT : %.3f \n",mult);  
+      printf("\n\n\tOUPUT : %.3f \n",mult);  
   printf("\n--------------------------------------------------------------------\n");
   j = 0;
 
@@ -154,7 +160,10 @@ int main() {
 
     case 's':
 
+  printf("\n\tOperator : Subtraction\n\n");
+
   while ( l < 10 ) {
+
 
 
   printf("\n\tEnter numbers : ");
@@ -182,7 +191,7 @@ int main() {
    if ( markS[l] == 0 ) {
 
   printf("\n--------------------------------------------------------------------");
-      printf("\n\n  OUPUT : %.3f \n",sub);  
+      printf("\n\n\tOUPUT : %.3f \n",sub);  
   printf("\n--------------------------------------------------------------------\n");
   l = 0;
   p = 0;
@@ -200,7 +209,7 @@ int main() {
   break;
 
     case 'e':
-	printf("\n Exited Successfully!\n");
+	printf("\n\tExited Successfully!\n");
 	return 0;
 
 
@@ -218,18 +227,18 @@ int main() {
 
 
    
- printf("\n\n\n   WHERE TO PROCEED \n");
- printf("==========================\n\n\n");
+ printf("\n\n\n\t   WHERE TO PROCEED \n");
+ printf("      ==========================\n\n");
 
-    printf("\n Continue           ( c )\n");
-    printf("\n Exit               ( e )\n");
+    printf("\n\tContinue           ( c )\n");
+    printf("\n\tExit               ( e )\n");
 
-    printf("\n Input : ");
+    printf("\n\n\tInput : ");
     scanf("%s",&AfterOutput);
 
     while ( AfterOutput != 'c' && AfterOutput != 'e') {
 
-      printf("\n Enter 'c' or 'e' : ");
+      printf("\n\tEnter 'c' or 'e' : ");
       scanf("%1s",&AfterOutput);
       scanf("%*[^\n]");
 
@@ -239,7 +248,7 @@ int main() {
 
       case 'c':
 
-    printf(" \nDirecting");
+    printf("\n\tDirecting");
     printf(".");
     usleep(90000);
     printf(".");
@@ -254,7 +263,7 @@ int main() {
     break;
 
       case 'e':
-	printf("\n Exited Successfully!\n");
+	printf("\n\tExited Successfully!\n");
 	break;
 
       default:
