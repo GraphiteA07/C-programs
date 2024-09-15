@@ -1,5 +1,5 @@
 //Find solution to reduce code from multiplying
-
+//Password and name authentication are not completed
 
 #include <stdio.h>
 #include <string.h>

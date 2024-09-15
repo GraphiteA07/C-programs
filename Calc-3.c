@@ -1,8 +1,6 @@
 //Has some interesting cases
-//Looping the OUTPUT on 'c'  --DONE--
-//Multiply function not multiplying ( WOW ) --DONE--
-//Subtract function not subtracting ( WOW ) 
-
+//Looping the OUTPUT on 'c'  --DONE-- //Multiply function not multiplying ( WOW ) --DONE--
+//Subtract function not subtracting ( WOW ) --WORKS BUT ....DOESN'T WORK TOO--
 
 
 #include <stdio.h>
@@ -59,9 +57,9 @@ int main() {
 
   //for subtraction 
   int l = 0;
+  int p = -1;
   float markS[10];
   float sub = 0;
-  float SubOutput;
  
  //for statement 
   char AfterOutput;
@@ -144,7 +142,8 @@ int main() {
       break;
     }
 
-    mult *= markM[j];
+  
+   mult *= markM[j];
 
 
   j++;
@@ -157,8 +156,21 @@ int main() {
 
   while ( l < 10 ) {
 
+
   printf("\n\tEnter numbers : ");
   scanf("%f",&markS[l]);
+
+
+  while ( p < 10 ) {
+
+    /* p += 1; */
+    markS[p] = markS[p] * (-1);
+    p++;
+
+  }
+
+    
+
 
   if (markS[0] == 0 || markS[1] == 0) {
 
@@ -170,16 +182,16 @@ int main() {
    if ( markS[l] == 0 ) {
 
   printf("\n--------------------------------------------------------------------");
-      printf("\n\n  OUPUT : %.3f \n",SubOutput);  
+      printf("\n\n  OUPUT : %.3f \n",sub);  
   printf("\n--------------------------------------------------------------------\n");
   l = 0;
-
+  p = 0;
+  /* markS[p] = 0; */
   sub = 0;
       break;
     }
 
-    sub += markS[l]; //sub was storing values with (-) when it was sub -= mark[i] Ex: -200 -100 = 300!
-    SubOutput = sub - markS[l-1]; //Having some errors
+    sub -= markS[l]; //sub was storing values with (-) when it was sub -= mark[i] Ex: -200 -100 = 300!
 
 
   l++;

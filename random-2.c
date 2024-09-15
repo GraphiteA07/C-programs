@@ -6,6 +6,8 @@
 
 int main() {
 
+  system("cls");
+
   char userinput;
   char name[20];
   char c[4]= "yes";
