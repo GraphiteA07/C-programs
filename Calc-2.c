@@ -1733,15 +1733,13 @@ else {
     //char after_calc;
 
 
- printf("\n\n\n\n\t WHERE TO PROCEED \n ");
- printf("  ==========================\n\n\n");
+ printf("\n\n\n\t   WHERE TO PROCEED \n");
+ printf("      ==========================\n\n");
 
-    printf("\n\t  Continue           ( c )\n");
-   // printf("\n\t  Save and Continue  ( w )\n");
-    printf("\n\t  Exit               ( e )\n");
+    printf("\n\tContinue           ( c )\n");
+    printf("\n\tExit               ( e )\n");
 
-    // Get user input with error handling
-    printf("\n\t  Input : ");
+    printf("\n\n\tInput : ");
     
     while (scanf(" %c", &after_calc) != 1 || (after_calc != 'c' && after_calc != 'e')) {
         printf("\nInvalid input. Please enter 'c' or 'e': ");
