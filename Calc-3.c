@@ -208,6 +208,52 @@ int main() {
   }
   break;
 
+
+
+    case 'd':
+
+  printf("\n\tOperator : Division\n\n");
+
+  while ( k < 10 ) {
+
+  printf("\n\tEnter numbers : ");
+  scanf("%f",&markD[l]);
+
+
+  /* while ( p < 10 ) { */
+
+  /*   /1* p += 1; *1/ */
+  /*   /1* markD[p] = markD[p] * (-1); *1/ */
+  /*   p++; */
+
+  /* } */
+
+  if (markD[0] == 0 || markD[1] == 0) {
+
+    sleep(delay);
+    printf("\n\tMinimum 2 numbers required \n");
+    return 0;
+  }
+
+   if ( markD[k] == 0 ) {
+
+  printf("\n--------------------------------------------------------------------");
+      printf("\n\n\tOUPUT : %.3f \n",div);  
+  printf("\n--------------------------------------------------------------------\n");
+  k = 0;
+  /* p = 0; */
+  div = 0;
+      break;
+    }
+
+    div /= markD[k]; //sub was storing values with (-) when it was sub -= mark[i] Ex: -200 -100 = 300!
+
+
+  k++;
+
+  }
+  break;
+
     case 'e':
 	printf("\n\tExited Successfully!\n");
 	return 0;
