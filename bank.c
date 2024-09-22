@@ -1,7 +1,5 @@
-//Find solution to reduce code from multiplying
 //Password and name authentication are not completed
-//By Holding Ctrl+V and then pressing J will work well on the UserList
-//This program is not working as well  --USERLIST--
+//Add names fawad,talha,Muaz
 
 #include <stdio.h>
 #include <string.h>
@@ -17,7 +15,11 @@ int main() {
   int RyanLoop = 0;
   int ShayanLoop = 8;
   int AhmedLoop = 16;
-  int ZainLoop = 24;
+  int KhuzemaLoop = 24;
+  int FawadLoop = 32;
+  int TalhaLoop = 40;
+  int MuazLoop = 48;
+  /* int ZainLoop = 0; */
   
 
  //If username is found in UserList
@@ -25,6 +27,10 @@ int main() {
   int ShayanFound = 0;
   int AhmedFound = 0;
   int ZainFound = 0;
+  int KhuzemaFound = 0;
+  int FawadFound = 0;
+  int TalhaFound = 0;
+  int MuazFound = 0;
  
 
 
@@ -34,7 +40,7 @@ int main() {
   /* char password[10]; */
 
 
-  char UserList[30][60] = {  "Ryan", "ryan", "RYAN", "Ryan Asif", "Ryan asif", "ryan Asif", "ryan asif", "RYAN ASIF",                                                 "Shayan","shayan","SHAYAN","Shayan Siddiqui","Shayan siddiqui","shayan Siddiqui","shayan siddiqui","SHAYAN SIDDIQUI",                    "Ahmed","ahmed","AHMED","Ahmed Dayan","Ahmed dayan","ahmed Dayan","ahmed dayan","AHMED DAYAN",                                           "Zain","zain","ZAIN","dj",                                                                                                                                                                                    };                
+  char UserList[60][40] = {  "Ryan", "ryan", "RYAN", "Ryan Asif", "Ryan asif", "ryan Asif", "ryan asif", "RYAN ASIF",                                                 "Shayan","shayan","SHAYAN","Shayan Siddiqui","Shayan siddiqui","shayan Siddiqui","shayan siddiqui","SHAYAN SIDDIQUI",                    "Ahmed","ahmed","AHMED","Ahmed Dayan","Ahmed dayan","ahmed Dayan","ahmed dayan","AHMED DAYAN",                                          "Khuzema","khuzema","KHUZEMA","Khuzema Afridi","Khuzema afridi","khuzema Afridi","khuzema afridi","KHUZEMA AFRIDI",                      "Fawad","fawad","FAWAD","Fawad Ahmed","Fawad ahmed","fawad Ahmed","fawad ahmed","FAWAD AHMED",                                           "Talha","talha","TALHA","Talha Qadri","Talha qadri","talha Qadri","talha qadri","TALHA QADRI",                                            "Muaz","muaz","MUAZ","Muaz Khan","Muaz khan","muaz Khan","muaz khan","MUAZ KHAN",                                                                                                                                                                                                        };                
 			    
 
 
@@ -53,15 +59,9 @@ int main() {
 
        break;
      }
-
        RyanLoop++;
    }
 
-   if ( RyanFound ) {
-
-     printf("\n You are Ryan");
-     return 0;
-   }
 
 
    while (ShayanLoop <=15 ) {
@@ -72,15 +72,14 @@ int main() {
 
        break;
      }
-
        ShayanLoop++;
    }
 
-   if ( ShayanFound ) {
+   /* if ( ShayanFound ) { */
 
-     printf("\n You are Shayan");
-     return 0;
-   }
+   /*   printf("\n You are Shayan"); */
+   /*   return 0; */
+   /* } */
 
 
    while (AhmedLoop <= 23 ) {
@@ -91,32 +90,81 @@ int main() {
 
        break;
      }
-
        AhmedLoop++;
    }
 
-   if ( AhmedFound ) {
+   /* if ( AhmedFound ) { */
 
-     printf("\n You are Ahmed");
-     return 0;
-   }
+   /*   printf("\n You are Ahmed"); */
+   /*   return 0; */
+   /* } */
 
 
-   while (ZainLoop <= 26  ) {
+   /* while (ZainLoop <= 26  ) { */
 
-     if ( strcmp(Username, UserList[ZainLoop]) == 0 ) {
+   /*   if ( strcmp(Username, UserList[ZainLoop]) == 0 ) { */
 
-       ZainFound = 1;
+   /*     ZainFound = 1; */
+
+   /*     break; */
+   /*   } */
+   /*     ZainLoop++; */
+   /* } */
+
+   while (KhuzemaLoop <= 31) {
+
+     if ( strcmp(Username, UserList[KhuzemaLoop]) == 0 ) {
+
+       KhuzemaFound  = 1;
 
        break;
      }
-
-       ZainLoop++;
+       KhuzemaLoop++;
    }
 
-   if ( ZainFound ) {
 
-     printf("\n You are Zain");
+   while (FawadLoop <=39 ) {
+
+     if ( strcmp(Username, UserList[FawadLoop]) == 0 ) {
+
+       FawadFound = 1;
+
+       break;
+     }
+       FawadLoop++;
+   }
+
+   while (TalhaLoop <=47 ) {
+
+     if ( strcmp(Username, UserList[TalhaLoop]) == 0 ) {
+
+       TalhaFound = 1;
+
+       break;
+     }
+       TalhaLoop++;
+   }
+   
+   while (MuazLoop <=55 ) {
+
+     if ( strcmp(Username, UserList[MuazLoop]) == 0 ) {
+
+       MuazFound = 1;
+
+       break;
+     }
+       MuazLoop++;
+   }
+
+   if ( RyanFound || ShayanFound || AhmedFound || KhuzemaFound || FawadFound || TalhaFound || MuazFound) {
+
+     printf("\n You are invited");
+     return 0;
+   }
+
+   else {
+
+     printf("\n Not invited");
      return 0;
    }
  
@@ -126,44 +174,9 @@ int main() {
 }
 
 
-  /* strcpy(UserList[0], "Ryan"); */
-  /* strcpy(UserList[1], "ryan"); */
-  /* strcpy(UserList[2], "RYAN"); */
-  /* strcpy(UserList[3], "Ryan Asif"); */
-  /* strcpy(UserList[4], "Ryan asif"); */
-  /* strcpy(UserList[5], "ryan Asif"); */
-  /* strcpy(UserList[6], "ryan asif"); */
-  /* strcpy(UserList[7], "RYAN ASIF"); */
-  /* strcpy(UserList[8], "Shayan"); */
-  /* strcpy(UserList[9], "shayan"); */
-  /* strcpy(UserList[10], "SHAYAN"); */
-  /* strcpy(UserList[11], "Shayan Siddiqui"); */
-  /* strcpy(UserList[12], "Shayan siddiqui"); */
-  /* strcpy(UserList[13], "shayan Siddiqui"); */
-  /* strcpy(UserList[14], "shayan siddiqui"); */
-  /* strcpy(UserList[15], "SHAYAN SIDDIQUI"); */
-  /* strcpy(UserList[16], "Ahmed"); */
-  /* strcpy(UserList[17], "ahmed"); */
-  /* strcpy(UserList[18], "AHMED"); */
-  /* strcpy(UserList[19], "Ahmed Dayan"); */
-  /* strcpy(UserList[20], "Ahmed dayan"); */
-  /* strcpy(UserList[21], "ahmed Dayan"); */
-  /* strcpy(UserList[22], "AHMED DAYAN"); */
-  /* strcpy(UserList[23], ""); */
-  /* strcpy(UserList[24], ""); */
-  /* strcpy(UserList[25], ""); */
-  /* strcpy(UserList[26], ""); */
-  /* strcpy(UserList[27], ""); */
-  /* strcpy(UserList[28], ""); */
-  /* strcpy(UserList[29], ""); */
-  /* strcpy(UserList[30], ""); */
-  /* strcpy(UserList[31], ""); */
-  /* strcpy(UserList[32], ""); */
-  /* strcpy(UserList[33], ""); */
 
 
 
-     /* printf("%s\n",&UserList[i]); */
 
   /* char Ryan[10] = "Ryan Asif"; */
   /* char Ryan2[10] = "Ryan asif"; */
