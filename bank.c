@@ -4,40 +4,79 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#define MAXLENGTH 10 
 
 int main() {
 
   system("cls");
 
 
-  //for Loops
+  char Username[70];
+
+
+
+  struct Users {
+
+    int Found = 0;
+    int Loop;
+    char Password[MAXLENGTH];
+    int AccountBalance;
+    
+  };
+
+  struct Users Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz;
+
+  Ryan.Found;
+  Ryan.Loop = 0;
+  strcpy(Ryan.Password, "nayr");
+  Ryan.AccountBalance = 549543;
+
+  Shayan.Found;
+  Shayan.Loop = 8;
+  strcpy(Shayan.Password, "nayahs");
+  Shayan.AccountBalance = 573262;
+
+  Ahmed.Found;
+  Ahmed.Loop = 16;
+  strcpy(Ahmed.Password, "demha");
+  Ahmed.AccountBalance = 652635;
+
   
-  int RyanLoop = 0;
-  int ShayanLoop = 8;
-  int AhmedLoop = 16;
-  int KhuzemaLoop = 24;
-  int FawadLoop = 32;
-  int TalhaLoop = 40;
-  int MuazLoop = 48;
-  /* int ZainLoop = 0; */
+  Khuzema.Found;
+  Khuzema.Loop = 24;
+  strcpy(Khuzema.Password, "amezuhk");
+  Khuzema.AccountBalance = 634162;
+
+
+  Fawad.Found;
+  Fawad.Loop = 32;
+  strcpy(Fawad.Password, "dawaf");
+  Fawad.AccountBalance = 682469;
+
+
+  Talha.Found;
+  Talha.Loop = 40;
+  strcpy(Talha.Password, "ahlat");
+  Talha.AccountBalance = 645697;
+
+
+  Muaz.Found;
+  Muaz.Loop = 48;
+  strcpy(Muaz.Password, "zaum");
+  Muaz.AccountBalance = 657395;
+
+
+
+
+
+
   
 
- //If username is found in UserList
-  int RyanFound = 0;
-  int ShayanFound = 0;
-  int AhmedFound = 0;
-  int ZainFound = 0;
-  int KhuzemaFound = 0;
-  int FawadFound = 0;
-  int TalhaFound = 0;
-  int MuazFound = 0;
+
  
 
 
 
-  char Username[70];
-  /* char Userpassword[10] = "password"; */
-  /* char password[10]; */
 
 
   char UserList[60][40] = {  "Ryan", "ryan", "RYAN", "Ryan Asif", "Ryan asif", "ryan Asif", "ryan asif", "RYAN ASIF",                                                 "Shayan","shayan","SHAYAN","Shayan Siddiqui","Shayan siddiqui","shayan Siddiqui","shayan siddiqui","SHAYAN SIDDIQUI",                    "Ahmed","ahmed","AHMED","Ahmed Dayan","Ahmed dayan","ahmed Dayan","ahmed dayan","AHMED DAYAN",                                          "Khuzema","khuzema","KHUZEMA","Khuzema Afridi","Khuzema afridi","khuzema Afridi","khuzema afridi","KHUZEMA AFRIDI",                      "Fawad","fawad","FAWAD","Fawad Ahmed","Fawad ahmed","fawad Ahmed","fawad ahmed","FAWAD AHMED",                                           "Talha","talha","TALHA","Talha Qadri","Talha qadri","talha Qadri","talha qadri","TALHA QADRI",                                            "Muaz","muaz","MUAZ","Muaz Khan","Muaz khan","muaz Khan","muaz khan","MUAZ KHAN",                                                                                                                                                                                                        };                
@@ -51,49 +90,49 @@ int main() {
      gets(Username);
   
 
-   while (RyanLoop < 8 ) {
+   while (Ryan.Loop < 8 ) {
 
-     if ( strcmp(Username, UserList[RyanLoop]) == 0 ) {
+     if ( strcmp(Username, UserList[Ryan.Loop]) == 0 ) {
 
-       RyanFound = 1;
+       Ryan.Found = 1;
 
        break;
      }
-       RyanLoop++;
+       Ryan.Loop++;
    }
 
 
 
-   while (ShayanLoop <=15 ) {
+   while (Shayan.Loop <=15 ) {
 
-     if ( strcmp(Username, UserList[ShayanLoop]) == 0 ) {
+     if ( strcmp(Username, UserList[Shayan.Loop]) == 0 ) {
 
-       ShayanFound = 1;
+       Shayan.Found = 1;
 
        break;
      }
-       ShayanLoop++;
+       Shayan.Loop++;
    }
 
-   /* if ( ShayanFound ) { */
+   /* if ( Shayan.Found ) { */
 
    /*   printf("\n You are Shayan"); */
    /*   return 0; */
    /* } */
 
 
-   while (AhmedLoop <= 23 ) {
+   while (Ahmed.Loop <= 23 ) {
 
-     if ( strcmp(Username, UserList[AhmedLoop]) == 0 ) {
+     if ( strcmp(Username, UserList[Ahmed.Loop]) == 0 ) {
 
-       AhmedFound = 1;
+       Ahmed.Found = 1;
 
        break;
      }
-       AhmedLoop++;
+       Ahmed.Loop++;
    }
 
-   /* if ( AhmedFound ) { */
+   /* if ( Ahmed.Found ) { */
 
    /*   printf("\n You are Ahmed"); */
    /*   return 0; */
@@ -111,52 +150,52 @@ int main() {
    /*     ZainLoop++; */
    /* } */
 
-   while (KhuzemaLoop <= 31) {
+   while (Khuzema.Loop <= 31) {
 
-     if ( strcmp(Username, UserList[KhuzemaLoop]) == 0 ) {
+     if ( strcmp(Username, UserList[Khuzema.Loop]) == 0 ) {
 
-       KhuzemaFound  = 1;
+       Khuzema.Found  = 1;
 
        break;
      }
-       KhuzemaLoop++;
+       Khuzema.Loop++;
    }
 
 
-   while (FawadLoop <=39 ) {
+   while (Fawad.Loop <=39 ) {
 
-     if ( strcmp(Username, UserList[FawadLoop]) == 0 ) {
+     if ( strcmp(Username, UserList[Fawad.Loop]) == 0 ) {
 
-       FawadFound = 1;
+       Fawad.Found = 1;
 
        break;
      }
-       FawadLoop++;
+       Fawad.Loop++;
    }
 
-   while (TalhaLoop <=47 ) {
+   while (Talha.Loop <=47 ) {
 
-     if ( strcmp(Username, UserList[TalhaLoop]) == 0 ) {
+     if ( strcmp(Username, UserList[Talha.Loop]) == 0 ) {
 
-       TalhaFound = 1;
+       Talha.Found = 1;
 
        break;
      }
-       TalhaLoop++;
+       Talha.Loop++;
    }
    
-   while (MuazLoop <=55 ) {
+   while (Muaz.Loop <=55 ) {
 
-     if ( strcmp(Username, UserList[MuazLoop]) == 0 ) {
+     if ( strcmp(Username, UserList[Muaz.Loop]) == 0 ) {
 
-       MuazFound = 1;
+       Muaz.Found = 1;
 
        break;
      }
-       MuazLoop++;
+       Muaz.Loop++;
    }
 
-   if ( RyanFound || ShayanFound || AhmedFound || KhuzemaFound || FawadFound || TalhaFound || MuazFound) {
+   if ( Ryan.Found || Shayan.Found || Ahmed.Found || Khuzema.Found || Fawad.Found || Talha.Found || Muaz.Found) {
 
      printf("\n You are invited");
      return 0;
