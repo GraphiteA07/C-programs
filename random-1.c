@@ -1,5 +1,6 @@
 //Working Accordingly
 
+
 #include <stdio.h>
 
 int main() {
@@ -8,6 +9,7 @@ int Cyear;
 int Byear;
 
 
+ 
 
 
 
