@@ -1,3 +1,4 @@
+
 //Working Accordingly!
 
 #include <stdio.h>
@@ -1713,15 +1714,14 @@ else {
       break;
 
     default:
-      
-      printf("\n\t.");
-      sleep (delay);
 
-      printf(".");
-      sleep (delay);
 
-      printf(".\n");
-      sleep (delay);
+	 printf("\n\t.");
+	 usleep(400000); 
+	 printf(".");
+	 usleep(500000); 
+	 printf(".\n");
+	 usleep(99999); 
 
       printf("\n\tOperator : Unknown \n");
       return 0;
@@ -1733,16 +1733,14 @@ else {
   
     //char after_calc;
 
-    // Enhanced menu presentation
- printf("\n\n\n\n\t WHERE TO PROCEED \n ");
- printf("  ==========================\n\n\n");
 
-    printf("\n\t  Continue           ( c )\n");
-   // printf("\n\t  Save and Continue  ( w )\n");
-    printf("\n\t  Exit               ( e )\n");
+ printf("\n\n\n\t   WHERE TO PROCEED \n");
+ printf("      ==========================\n\n");
 
-    // Get user input with error handling
-    printf("\n\t  Input : ");
+    printf("\n\tContinue           ( c )\n");
+    printf("\n\tExit               ( e )\n");
+
+    printf("\n\n\tInput : ");
     
     while (scanf(" %c", &after_calc) != 1 || (after_calc != 'c' && after_calc != 'e')) {
         printf("\nInvalid input. Please enter 'c' or 'e': ");
@@ -1753,12 +1751,15 @@ else {
     switch (after_calc) {
         case 'c':
             // Implement save functionality here
-	  printf("\n\tDirecting.");
-	 sleep(delay); 
-
+	  printf("\n\tDirecting ");
+	 usleep(95000); 
 	 printf(".");
-	 printf(".\n\n");
- 
+	 usleep(95000); 
+	 printf(".");
+	 usleep(95000); 
+	 printf(".");
+	 usleep(99999); 
+
 	 goto start;
 
         //Run();
