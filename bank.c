@@ -82,7 +82,7 @@ int main() {
 
   /* do { */
 
-     printf("\n --Enter name-- \n\n > ");
+     printf("\n Enter name \n\n > ");
      gets(Username);
 
 
@@ -192,7 +192,7 @@ int main() {
    }
 
 
-     printf("\n --Enter password-- \n\n > ");
+     printf("\n Enter password \n\n > ");
      scanf("%12s",&GivenPassword);
 
   //Checks for both Username and password
@@ -215,6 +215,18 @@ int main() {
 
      }
 
+       if ( !Ryan.Found && strcmp(User.Password,GivenPassword)==0  ||  !Shayan.Found && strcmp(User.Password,GivenPassword)==0  ||  !Ahmed.Found && strcmp(User.Password,GivenPassword)==0  ||  !Khuzema.Found && strcmp(User.Password,GivenPassword)==0  ||  !Fawad.Found && strcmp(User.Password,GivenPassword)==0  ||  !Talha.Found && strcmp(User.Password,GivenPassword)==0  ||  !Muaz.Found && strcmp(User.Password,GivenPassword)==0 ) {
+
+	 printf("\n You are also invited");
+	 return 0;        // return 0 due to Enter 'y' or 'n' :  
+       }
+
+       if ( !Ryan.Found && strcmp(User.Password,GivenPassword)!=0  ||  !Shayan.Found && strcmp(User.Password,GivenPassword)!=0  ||  !Ahmed.Found && strcmp(User.Password,GivenPassword)!=0  ||  !Khuzema.Found && strcmp(User.Password,GivenPassword)!=0  ||  !Fawad.Found && strcmp(User.Password,GivenPassword)!=0  ||  !Talha.Found && strcmp(User.Password,GivenPassword)!=0  ||  !Muaz.Found && strcmp(User.Password,GivenPassword)!=0 ) {
+
+	 return 0;        // return 0 due to Enter 'y' or 'n' :  
+       }
+
+
        while ( UserPermission_AddSpecialCharacters != 'y' && UserPermission_AddSpecialCharacters != 'n') {
 
 	 printf("\n Enter 'y' or 'n' : ");
@@ -226,7 +238,7 @@ int main() {
        if (UserPermission_AddSpecialCharacters=='y') {
 
 
-	  printf("\n --Enter name-- \n\n > ");
+	  printf("\n Enter name \n\n > ");
 	  scanf("%s",&NewUsername);
 
 	  printf("\n New name : %s ",NewUsername);
