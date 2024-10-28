@@ -13,7 +13,6 @@ int main() {
 
 
   char Username[70];
-  char NewUsername[70];
   char GivenPassword[10];
   char UserPermission_AddSpecialCharacters; 
 
@@ -239,9 +238,9 @@ int main() {
 
 
 	  printf("\n Enter name \n\n > ");
-	  scanf("%s",&NewUsername);
+	  scanf("%s",&Username);
 
-	  printf("\n New name : %s ",NewUsername);
+	  printf("\n New name : %s ",Username);
        }
 
        if ( UserPermission_AddSpecialCharacters =='n') {
