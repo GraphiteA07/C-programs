@@ -7,6 +7,21 @@
 #include <unistd.h>
 #define MAXLENGTH 10 
 
+void Verifying() {
+
+  printf("\n  Verifying");
+
+  usleep(95000); 
+  printf(".");
+  usleep(95000); 
+  printf(".");
+  usleep(95000); 
+  printf(".");
+  usleep(99999); 
+
+  printf("\n");
+} 
+
 int main() {
 
   system("cls");
@@ -198,6 +213,8 @@ int main() {
   
      if ( Ryan.Found && strcmp(Ryan.Password,GivenPassword)==0  ||  Shayan.Found && strcmp(Shayan.Password,GivenPassword)==0  ||  Ahmed.Found && strcmp(Ahmed.Password,GivenPassword)==0  ||  Khuzema.Found && strcmp(Khuzema.Password,GivenPassword)==0  ||  Fawad.Found && strcmp(Fawad.Password,GivenPassword)==0  ||  Talha.Found && strcmp(Talha.Password,GivenPassword)==0  ||  Muaz.Found && strcmp(Muaz.Password,GivenPassword)==0 /* ||  strcmp(User.Password,GivenPassword)==0*/) {
 
+       Verifying();
+
        printf("\n Wow invited");
        return 0;
      }
@@ -208,13 +225,24 @@ int main() {
      if ( Ryan.Found && strcmp(User.Password,GivenPassword)==0  ||  Shayan.Found && strcmp(User.Password,GivenPassword)==0  ||  Ahmed.Found && strcmp(User.Password,GivenPassword)==0  ||  Khuzema.Found && strcmp(User.Password,GivenPassword)==0  ||  Fawad.Found && strcmp(User.Password,GivenPassword)==0  ||  Talha.Found && strcmp(User.Password,GivenPassword)==0  ||  Muaz.Found && strcmp(User.Password,GivenPassword)==0 ) {
 
        printf("\n There is a similar name in the Members List.Consider adding \n some special characters between full name or after full name.");
-       printf("\n\n [y] yes \n\n [n] no \n\n  > ");
+       printf("\n\n\t  [y] yes    [n] no \n\n  > ");
        scanf("%s",&UserPermission_AddSpecialCharacters);
 
 
      }
 
+       if (UserPermission_AddSpecialCharacters=='y') {
+
+
+	  printf("\n Re-enter name \n\n > ");
+	  scanf("%s",&Username);
+
+	  printf("\n New name : %s ",Username);
+       }
+
        if ( !Ryan.Found && strcmp(User.Password,GivenPassword)==0  ||  !Shayan.Found && strcmp(User.Password,GivenPassword)==0  ||  !Ahmed.Found && strcmp(User.Password,GivenPassword)==0  ||  !Khuzema.Found && strcmp(User.Password,GivenPassword)==0  ||  !Fawad.Found && strcmp(User.Password,GivenPassword)==0  ||  !Talha.Found && strcmp(User.Password,GivenPassword)==0  ||  !Muaz.Found && strcmp(User.Password,GivenPassword)==0 ) {
+
+	 Verifying();
 
 	 printf("\n You are also invited");
 	 return 0;        // return 0 due to Enter 'y' or 'n' :  
@@ -234,14 +262,6 @@ int main() {
        }
 
 
-       if (UserPermission_AddSpecialCharacters=='y') {
-
-
-	  printf("\n Enter name \n\n > ");
-	  scanf("%s",&Username);
-
-	  printf("\n New name : %s ",Username);
-       }
 
        if ( UserPermission_AddSpecialCharacters =='n') {
 	 return 0;
