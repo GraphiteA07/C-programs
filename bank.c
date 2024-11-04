@@ -1,11 +1,33 @@
 //Password and name authentication are not completed
 //Line 199 for user and password verification
 //New Name doesn't accept whitespaces in names
+//Main_Display added.Not completed for Re-enter users
 
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
 #define MAXLENGTH 10 
+
+
+int delay2 = 60000;   /*41900*/
+
+void WELCOME() {
+
+  //gap from ( " ) 6 ( Only ASCII )
+
+  printf("\n\n    e   e  e eeee e     eeee eeeee eeeeeee eeee \n");
+  usleep(delay2);
+  printf("    8   8  8 8    8     8  8 8  88 8  8  8 8    \n");
+  usleep(delay2);
+  printf("    8e  8  8 8eee 8e    8e   8   8 8e 8  8 8eee \n");
+  usleep(delay2);
+  printf("    88  8  8 88   88    88   8   8 88 8  8 88   \n");
+  usleep(delay2);
+  printf("    88ee8ee8 88ee 88eee 88e8 8eee8 88 8  8 88ee \n");
+
+  printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n\n");
+} 
+
 
 void Verifying() {
 
@@ -214,9 +236,8 @@ int main() {
      if ( Ryan.Found && strcmp(Ryan.Password,GivenPassword)==0  ||  Shayan.Found && strcmp(Shayan.Password,GivenPassword)==0  ||  Ahmed.Found && strcmp(Ahmed.Password,GivenPassword)==0  ||  Khuzema.Found && strcmp(Khuzema.Password,GivenPassword)==0  ||  Fawad.Found && strcmp(Fawad.Password,GivenPassword)==0  ||  Talha.Found && strcmp(Talha.Password,GivenPassword)==0  ||  Muaz.Found && strcmp(Muaz.Password,GivenPassword)==0 /* ||  strcmp(User.Password,GivenPassword)==0*/) {
 
        Verifying();
-
-       printf("\n Wow invited");
-       return 0;
+       goto Main_Display; 
+          
      }
 
 
@@ -243,9 +264,8 @@ int main() {
        if ( !Ryan.Found && strcmp(User.Password,GivenPassword)==0  ||  !Shayan.Found && strcmp(User.Password,GivenPassword)==0  ||  !Ahmed.Found && strcmp(User.Password,GivenPassword)==0  ||  !Khuzema.Found && strcmp(User.Password,GivenPassword)==0  ||  !Fawad.Found && strcmp(User.Password,GivenPassword)==0  ||  !Talha.Found && strcmp(User.Password,GivenPassword)==0  ||  !Muaz.Found && strcmp(User.Password,GivenPassword)==0 ) {
 
 	 Verifying();
+	 goto Main_Display;
 
-	 printf("\n You are also invited");
-	 return 0;        // return 0 due to Enter 'y' or 'n' :  
        }
 
        if ( !Ryan.Found && strcmp(User.Password,GivenPassword)!=0  ||  !Shayan.Found && strcmp(User.Password,GivenPassword)!=0  ||  !Ahmed.Found && strcmp(User.Password,GivenPassword)!=0  ||  !Khuzema.Found && strcmp(User.Password,GivenPassword)!=0  ||  !Fawad.Found && strcmp(User.Password,GivenPassword)!=0  ||  !Talha.Found && strcmp(User.Password,GivenPassword)!=0  ||  !Muaz.Found && strcmp(User.Password,GivenPassword)!=0 ) {
@@ -268,6 +288,18 @@ int main() {
        }
 
 
+ Main_Display:
+
+   system("cls");
+	   
+  WELCOME();
+
+
+
+
+  printf("\n   [1] Deposite Money \t  [4] Account Details \n");
+  printf("\n   [2] Withdraw Money \t  [5] Transaction Details \n");
+  printf("\n   [3] Transfer Money \t  [6] Exit \n");
 
 
   /* } */
