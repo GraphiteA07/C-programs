@@ -1,5 +1,4 @@
 
-
 #include <stdio.h>
 #include <unistd.h>
 
@@ -3386,7 +3385,7 @@ int main() {
  
   start:  
 
- // system("cls");
+  system("cls");
   
   printf("\n\n\n\t\t\tDMAS CALCULATOR\n");
   printf("\t\t============================\n\n\n");
