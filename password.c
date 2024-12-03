@@ -64,6 +64,8 @@ int main() {
   char GivenPassword[20];
   int max_length = 18;
   int input_length = strlen(GivenPassword);
+  int User_length = strlen(Username);
+  int maxUser_length = 40;
 
 
 
@@ -89,42 +91,42 @@ int main() {
   Ryan.AccountBalance = 549543;
 
   Shayan.Found;
-  Shayan.Loop = 8;
+  Shayan.Loop = 2;
   strcpy(Shayan.Password, "shayan");
   Shayan.AccountBalance = 573262;
 
   Ahmed.Found;
-  Ahmed.Loop = 16;
+  Ahmed.Loop = 4;
   strcpy(Ahmed.Password, "ahmed");
   Ahmed.AccountBalance = 652635;
 
   
   Khuzema.Found;
-  Khuzema.Loop = 24;
+  Khuzema.Loop = 6;
   strcpy(Khuzema.Password, "khuzema");
   Khuzema.AccountBalance = 634162;
 
 
   Fawad.Found;
-  Fawad.Loop = 32;
+  Fawad.Loop = 8;
   strcpy(Fawad.Password, "fawad");
   Fawad.AccountBalance = 682469;
 
 
   Talha.Found;
-  Talha.Loop = 40;
+  Talha.Loop = 10;
   strcpy(Talha.Password, "talha");
   Talha.AccountBalance = 645697;
 
 
   Muaz.Found;
-  Muaz.Loop = 48;
+  Muaz.Loop = 12;
   strcpy(Muaz.Password, "muaz");
   Muaz.AccountBalance = 657395;
 
 
   
-  char UserList[60][40] = {  "Ryan", "ryan", "RYAN", "Ryan Asif", "Ryan asif", "ryan Asif", "ryan asif", "RYAN ASIF",                                                 "Shayan","shayan","SHAYAN","Shayan Siddiqui","Shayan siddiqui","shayan Siddiqui","shayan siddiqui","SHAYAN SIDDIQUI",                    "Ahmed","ahmed","AHMED","Ahmed Dayan","Ahmed dayan","ahmed Dayan","ahmed dayan","AHMED DAYAN",                                          "Khuzema","khuzema","KHUZEMA","Khuzema Afridi","Khuzema afridi","khuzema Afridi","khuzema afridi","KHUZEMA AFRIDI",                      "Fawad","fawad","FAWAD","Fawad Ahmed","Fawad ahmed","fawad Ahmed","fawad ahmed","FAWAD AHMED",                                           "Talha","talha","TALHA","Talha Qadri","Talha qadri","talha Qadri","talha qadri","TALHA QADRI",                                            "Muaz","muaz","MUAZ","Muaz Khan","Muaz khan","muaz Khan","muaz khan","MUAZ KHAN",                                                                                                                                                                                                        };                
+  char UserList[60][40] = {"ryan","ryan asif",  "shayan","shayan siddiqui",  "ahmed","ahmed dayan",  "khuzema","khuzema afridi", "fawad","fawad ahmed",  "talha","talha qadri",  "muaz","muaz khan",                                                                                                                                                                                                        };                
 			    
 
 
@@ -132,10 +134,16 @@ int main() {
 
      printf("\n Enter name \n\n > ");
      gets(Username);
-     /* fgets(Username,40,stdin); */
+     strlwr(Username);
+
+     /* fgets(Username,MAXLENGTH,stdin); */
 
 
-   while (Ryan.Loop < 8 ) {
+
+
+
+
+   while (Ryan.Loop < 2 ) {
 
      if ( strcmp(Username, UserList[Ryan.Loop]) == 0 ) {
 
@@ -148,7 +156,7 @@ int main() {
 
 
 
-   while (Shayan.Loop <=15 ) {
+   while (Shayan.Loop <= 3) {
 
      if ( strcmp(Username, UserList[Shayan.Loop]) == 0 ) {
 
@@ -166,7 +174,7 @@ int main() {
    /* } */
 
 
-   while (Ahmed.Loop <= 23 ) {
+   while (Ahmed.Loop <= 5 ) {
 
      if ( strcmp(Username, UserList[Ahmed.Loop]) == 0 ) {
 
@@ -195,7 +203,7 @@ int main() {
    /*     ZainLoop++; */
    /* } */
 
-   while (Khuzema.Loop <= 31) {
+   while (Khuzema.Loop <= 7) {
 
      if ( strcmp(Username, UserList[Khuzema.Loop]) == 0 ) {
 
@@ -207,7 +215,7 @@ int main() {
    }
 
 
-   while (Fawad.Loop <=39 ) {
+   while (Fawad.Loop <= 9 ) {
 
      if ( strcmp(Username, UserList[Fawad.Loop]) == 0 ) {
 
@@ -218,7 +226,7 @@ int main() {
        Fawad.Loop++;
    }
 
-   while (Talha.Loop <=47 ) {
+   while (Talha.Loop <= 11 ) {
 
      if ( strcmp(Username, UserList[Talha.Loop]) == 0 ) {
 
@@ -229,7 +237,7 @@ int main() {
        Talha.Loop++;
    }
    
-   while (Muaz.Loop <=55 ) {
+   while (Muaz.Loop <= 13 ) {
 
      if ( strcmp(Username, UserList[Muaz.Loop]) == 0 ) {
 
