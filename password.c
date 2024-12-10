@@ -1,36 +1,50 @@
 //Password and name authentication are not completed     ( Done )
-//New Name doesn't accept whitespaces in names 
+//New Name doesn't accept whitespaces in names           ( Facts )
 //Main_Display added.Not completed for Re-enter users    ( Done )
 // return 0 due to Enter 'y' or 'n' : LINE : 343         ( No need )
 // Username Lowercase                                    ( Done )
 // Password Lowercase                                    ( Done )
+// User depositing is not done
 
 
 #include <stdio.h>
 #include <conio.h>
 #include <unistd.h>
 #include <string.h>
+#include "Beep.c"
 #define MAXLENGTH 10 
 
-int delay2 = 60000;   /*41900*/
+int delay3 = 60000;   /*41900*/
+
+void WELCOME_S() {
+
+  //gap from ( " ) 6 ( Only ASCII )
+
+  printf("\n\n    e   e  e eeee e     eeee eeeee eeeeeee eeee \n");
+  usleep(delay3);
+  printf("    8   8  8 8    8     8  8 8  88 8  8  8 8    \n");
+  usleep(delay3);
+  printf("    8e  8  8 8eee 8e    8e   8   8 8e 8  8 8eee \n");
+  usleep(delay3);
+  printf("    88  8  8 88   88    88   8   8 88 8  8 88   \n");
+  usleep(delay3);
+  printf("    88ee8ee8 88ee 88eee 88e8 8eee8 88 8  8 88ee \n");
+
+  printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n\n");
+} 
 
 void WELCOME() {
 
   //gap from ( " ) 6 ( Only ASCII )
 
   printf("\n\n    e   e  e eeee e     eeee eeeee eeeeeee eeee \n");
-  usleep(delay2);
   printf("    8   8  8 8    8     8  8 8  88 8  8  8 8    \n");
-  usleep(delay2);
   printf("    8e  8  8 8eee 8e    8e   8   8 8e 8  8 8eee \n");
-  usleep(delay2);
   printf("    88  8  8 88   88    88   8   8 88 8  8 88   \n");
-  usleep(delay2);
   printf("    88ee8ee8 88ee 88eee 88e8 8eee8 88 8  8 88ee \n");
 
   printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n\n");
 } 
-
 
 void Verifying() {
 
@@ -49,20 +63,28 @@ void Verifying() {
 } 
 
 
+
+
 int main() {
 
   system("cls");
 
 
+  char GivenPassword[20];
   char Username[40];
   char Permission_SpecialChars; 
+  int choice;
   int delay = 1;
+  int delay2 = 2;
   int s = 0;
-  char GivenPassword[20];
   int max_length = 18;
   int input_length = strlen(GivenPassword);
   int User_length = strlen(Username);
   int maxUser_length = 40;
+  int deposit;
+  int withdraw;
+  int transaction = 0;
+  int after_transaction = 0;
 
 
 
@@ -77,49 +99,50 @@ int main() {
 
   struct Users User,Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz;
 
+  User.Found = 0;
   strcpy(User.Password, "password");
-  User.AccountBalance = 673573;
+  User.AccountBalance = 100000;
 
 
 
   Ryan.Found;
   Ryan.Loop = 0;
   strcpy(Ryan.Password, "ryan");
-  Ryan.AccountBalance = 549543;
+  Ryan.AccountBalance = 100000;
 
   Shayan.Found;
   Shayan.Loop = 2;
   strcpy(Shayan.Password, "shayan");
-  Shayan.AccountBalance = 573262;
+  Shayan.AccountBalance = 100000;
 
   Ahmed.Found;
   Ahmed.Loop = 4;
   strcpy(Ahmed.Password, "ahmed");
-  Ahmed.AccountBalance = 652635;
+  Ahmed.AccountBalance = 100000;
 
 
   Khuzema.Found;
   Khuzema.Loop = 6;
   strcpy(Khuzema.Password, "khuzema");
-  Khuzema.AccountBalance = 634162;
+  Khuzema.AccountBalance = 100000;
 
 
   Fawad.Found;
   Fawad.Loop = 8;
   strcpy(Fawad.Password, "fawad");
-  Fawad.AccountBalance = 682469;
+  Fawad.AccountBalance = 100000;
 
 
   Talha.Found;
   Talha.Loop = 10;
   strcpy(Talha.Password, "talha");
-  Talha.AccountBalance = 645697;
+  Talha.AccountBalance = 100000;
 
 
   Muaz.Found;
   Muaz.Loop = 12;
   strcpy(Muaz.Password, "muaz");
-  Muaz.AccountBalance = 657395;
+  Muaz.AccountBalance = 100000;
 
 
 
@@ -354,6 +377,7 @@ int main() {
 
   if ( !Ryan.Found && strcmp(User.Password,GivenPassword)==0  ||  !Shayan.Found && strcmp(User.Password,GivenPassword)==0  ||  !Ahmed.Found && strcmp(User.Password,GivenPassword)==0  ||  !Khuzema.Found && strcmp(User.Password,GivenPassword)==0  ||  !Fawad.Found && strcmp(User.Password,GivenPassword)==0  ||  !Talha.Found && strcmp(User.Password,GivenPassword)==0  ||  !Muaz.Found && strcmp(User.Password,GivenPassword)==0 ) {
 
+    User.Found +=1;
     Verifying();
     goto Main_Display;
 
@@ -366,15 +390,11 @@ int main() {
     return 0;          
   }
 
-
-
-
-
   Main_Display:
 
   system("cls");
 
-  WELCOME();
+  WELCOME_S();
 
 
 
@@ -384,6 +404,205 @@ int main() {
   printf("\n   [3] Transfer Money \t  [6] Exit \n");
 
   /* printf("\n (R : %d)  (F : %d)  (K : %d)  (T : %d)  (Ahme : %d)  (M : %d)  (S : %d) ",Ryan.Found,Fawad.Found,Khuzema.Found,Talha.Found,Ahmed.Found,Muaz.Found,Shayan.Found); */
+
+  do {
+
+
+  printf("\n\n   Input : ");
+  choice = _getche();
+  Beep();
+
+  if ( choice == 49 ) {  // Means 1;
+
+    system("cls");
+    printf("\n\n --DEPOSITE MONEY--");
+    printf("\n\n  Enter amount : ");
+    scanf("%15d",&deposit);
+
+    if (Ryan.Found) {
+
+      Ryan.AccountBalance += deposit; 
+      printf("\n --Money Deposited--\n\n");
+      printf("  Now Balance : %d\n\n",Ryan.AccountBalance);
+      transaction += 1;
+    }
+    
+    if (Shayan.Found) {
+
+      Shayan.AccountBalance += deposit; 
+      printf("\n --Money Deposited--\n\n");
+      printf("  Now Balance : %d\n\n",Shayan.AccountBalance);
+      transaction += 1;
+    }
+    
+    if (Ahmed.Found) {
+
+      Ahmed.AccountBalance += deposit; 
+      printf("\n --Money Deposited--\n\n");
+      printf("  Now Balance : %d\n\n",Ahmed.AccountBalance);
+      transaction += 1;
+    }
+    
+    if (Fawad.Found) {
+
+      Fawad.AccountBalance += deposit; 
+      printf("\n --Money Deposited--\n\n");
+      printf("  Now Balance : %d\n\n",Fawad.AccountBalance);
+      transaction += 1;
+    }
+    
+    if (Talha.Found) {
+
+      Talha.AccountBalance += deposit; 
+      printf("\n --Money Deposited--\n\n");
+      printf("  Now Balance : %d\n\n",Talha.AccountBalance);
+      transaction += 1;
+    }
+    
+    if (Khuzema.Found) {
+
+      Khuzema.AccountBalance += deposit; 
+      printf("\n --Money Deposited--\n\n");
+      printf("  Now Balance : %d\n\n",Khuzema.AccountBalance);
+      transaction += 1;
+    }
+    
+    if (Muaz.Found) {
+
+      Muaz.AccountBalance += deposit; 
+      printf("\n --Money Deposited--\n\n");
+      printf("  Now Balance : %d\n\n",Muaz.AccountBalance);
+      transaction += 1;
+    }
+    
+
+  } //End of DEPOSITE MONEY
+
+  if ( choice == 50 ) {  // Means 2;
+			 
+    system("cls");
+    printf("\n\n --WITHDRAW MONEY--");
+    printf("\n\n  Enter amount : ");
+    scanf("%15d",&withdraw);
+
+    if ( withdraw > Ryan.AccountBalance || withdraw > Shayan.AccountBalance || withdraw > Ahmed.AccountBalance || withdraw > Fawad.AccountBalance || withdraw > Talha.AccountBalance || withdraw > Khuzema.AccountBalance || withdraw > Muaz.AccountBalance ) {
+
+      printf("\n \"Insufficient funds for this transaction\".");
+      transaction -= 1;
+      sleep(delay2);
+      goto Main_Display;
+    }
+
+
+
+    if (Ryan.Found) {
+
+      Ryan.AccountBalance -= withdraw; 
+      printf("\n\n --Money Withdrawn--\n\n");
+      printf("  Now Balance : %d\n\n",Ryan.AccountBalance);
+      transaction += 1;
+    }
+
+    if (Shayan.Found) {
+
+      Shayan.AccountBalance -= withdraw; 
+      printf("\n --Money Withdrawn--\n\n");
+      printf("  Now Balance : %d\n\n",Shayan.AccountBalance);
+      transaction += 1;
+    }
+
+    if (Ahmed.Found) {
+
+      Ahmed.AccountBalance -= withdraw; 
+      printf("\n --Money Withdrawn--\n\n");
+      printf("  Now Balance : %d\n\n",Ahmed.AccountBalance);
+      transaction += 1;
+    }
+
+    if (Fawad.Found) {
+
+      Fawad.AccountBalance -= withdraw; 
+      printf("\n --Money Withdrawn--\n\n");
+      printf("  Now Balance : %d\n\n",Fawad.AccountBalance);
+      transaction += 1;
+    }
+
+    if (Talha.Found) {
+
+      Talha.AccountBalance -= withdraw; 
+      printf("\n --Money Withdrawn--\n\n");
+      printf("  Now Balance : %d\n\n",Talha.AccountBalance);
+      transaction += 1;
+    }
+
+    if (Khuzema.Found) {
+
+      Khuzema.AccountBalance -= withdraw; 
+      printf("\n --Money Withdrawn--\n\n");
+      printf("  Now Balance : %d\n\n",Khuzema.AccountBalance);
+      transaction += 1;
+    }
+
+    if (Muaz.Found) {
+
+      Muaz.AccountBalance -= withdraw; 
+      printf("\n --Money Withdrawn--\n\n");
+      printf("  Now Balance : %d\n\n",Muaz.AccountBalance);
+      transaction += 1;
+    }
+
+
+
+
+  } //End of WITHDRAW MONEY;
+
+  if ( choice == 51 ) { //Means 3;
+
+    system("cls");
+    printf("\n\n   --TRANSFER MONEY--");
+  }
+
+  if ( choice == 52 ) { //Means 4;
+
+    system("cls");
+    printf("\n\n   --ACCOUNT DETAILS--");
+  }
+
+  if ( choice == 53 ) { //Means 5;
+
+    system("cls");
+    printf("\n\n   --TRANSACTION DETAILS--");
+  }
+
+  if ( choice == 54 ) { //Means e;
+
+    return 0;
+  }
+
+  /* while ( choice != 49 || choice != 50 || choice != 51 || choice != 52 || choice != 53 || choice != 54) { */
+  /*   goto Main_Display; */
+  /* } */
+
+
+  printf("  Press any key : ");
+  after_transaction = _getche();
+
+
+  if ( after_transaction != 0 ) {
+    goto Main_Display;
+  }
+
+  /* if ( transaction >= 1 ) { */
+  /*   /1* sleep(delay2); *1/ */
+  /*   /1* goto Main_Display; *1/ */
+  /* } */
+
+  if ( choice == 49 || choice == 50 || choice == 51 || choice == 52 || choice == 53 || choice == 54 ) {
+    break;
+  }
+
+
+  } while ( choice != 49 || choice != 50 || choice != 51 || choice != 52 || choice != 53 || choice != 54);
 
 
   /* /1* } *1/ */
@@ -416,7 +635,7 @@ int main() {
 
   /*  /1* if ( Ryan.Found && strcmp(Password,Ryan.Password) == 0 || Shayan.Found && strcmp(Password,Shayan.Password) == 0 || Ahmed.Found && strcmp(Password,Ahmed.Password) == 0 || Khuzema.Found && strcmp(Password,Khuzema.Password) == 0 || Fawad.Found && strcmp(Password,Fawad.Password) == 0 || Talha.Found && strcmp(Password,Talha.Password) == 0 || Muaz.Found && strcmp(Password,Muaz.Password) == 0 ) { *1/ */
 
-  /*  /1*   printf("\n WELCOME --%s--",Username); *1/ */
+  /*  /1*   printf("\n WELCOME_S --%s--",Username); *1/ */
   /*  /1*   return 0; *1/ */
   /*  /1* } *1/ */
 
@@ -429,7 +648,7 @@ int main() {
 
   /* /1*    if ( strcmp(Username,UserList[User.Loop])==0 && strcmp(Password,User.Password) == 0 ) { *1/ */
 
-  /* /1*      printf("\n WELCOME --%s--",Username); *1/ */
+  /* /1*      printf("\n WELCOME_S --%s--",Username); *1/ */
   /* /1*    } *1/ */
 
   /* /1*    } *1/ */ 
@@ -501,5 +720,6 @@ int main() {
 /* } */
 
 /* printf("\n Entered Successfully! \n"); */
+
 
 
