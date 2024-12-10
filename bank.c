@@ -211,8 +211,23 @@ int main() {
        printf("\n\n [y] yes \n\n [n] no \n\n  > ");
        scanf("%s",&UserPermission_AddSpecialCharacters);
 
+       goto option;
+
 
      }
+
+       if ( !Ryan.Found && strcmp(User.Password,GivenPassword)==0  ||  !Shayan.Found && strcmp(User.Password,GivenPassword)==0  ||  !Ahmed.Found && strcmp(User.Password,GivenPassword)==0  ||  !Khuzema.Found && strcmp(User.Password,GivenPassword)==0  ||  !Fawad.Found && strcmp(User.Password,GivenPassword)==0  ||  !Talha.Found && strcmp(User.Password,GivenPassword)==0  ||  !Muaz.Found && strcmp(User.Password,GivenPassword)==0 ) {
+
+	 printf("\n You are also invited");
+	 return 0;        // return 0 due to Enter 'y' or 'n' :  
+       }
+
+       if ( !Ryan.Found && strcmp(User.Password,GivenPassword)!=0  ||  !Shayan.Found && strcmp(User.Password,GivenPassword)!=0  ||  !Ahmed.Found && strcmp(User.Password,GivenPassword)!=0  ||  !Khuzema.Found && strcmp(User.Password,GivenPassword)!=0  ||  !Fawad.Found && strcmp(User.Password,GivenPassword)!=0  ||  !Talha.Found && strcmp(User.Password,GivenPassword)!=0  ||  !Muaz.Found && strcmp(User.Password,GivenPassword)!=0 ) {
+
+	 return 0;        // return 0 due to Enter 'y' or 'n' :  
+       }
+
+option:
 
        while ( UserPermission_AddSpecialCharacters != 'y' && UserPermission_AddSpecialCharacters != 'n') {
 
@@ -353,4 +368,3 @@ int main() {
   /* } */
 
   /* printf("\n Entered Successfully! \n"); */
-
