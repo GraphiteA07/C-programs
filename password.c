@@ -30,6 +30,8 @@ int main() {
   int input_length = strlen(GivenPassword);
   int User_length = strlen(Username);
   int maxUser_length = 40;
+  int deposit;
+  int transaction = 0;
 
 
 
@@ -45,48 +47,48 @@ int main() {
   struct Users User,Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz;
 
   strcpy(User.Password, "password");
-  User.AccountBalance = 673573;
+  User.AccountBalance = 100000;
 
 
 
   Ryan.Found;
   Ryan.Loop = 0;
   strcpy(Ryan.Password, "ryan");
-  Ryan.AccountBalance = 549543;
+  Ryan.AccountBalance = 100000;
 
   Shayan.Found;
   Shayan.Loop = 2;
   strcpy(Shayan.Password, "shayan");
-  Shayan.AccountBalance = 573262;
+  Shayan.AccountBalance = 100000;
 
   Ahmed.Found;
   Ahmed.Loop = 4;
   strcpy(Ahmed.Password, "ahmed");
-  Ahmed.AccountBalance = 652635;
+  Ahmed.AccountBalance = 100000;
 
 
   Khuzema.Found;
   Khuzema.Loop = 6;
   strcpy(Khuzema.Password, "khuzema");
-  Khuzema.AccountBalance = 634162;
+  Khuzema.AccountBalance = 100000;
 
 
   Fawad.Found;
   Fawad.Loop = 8;
   strcpy(Fawad.Password, "fawad");
-  Fawad.AccountBalance = 682469;
+  Fawad.AccountBalance = 100000;
 
 
   Talha.Found;
   Talha.Loop = 10;
   strcpy(Talha.Password, "talha");
-  Talha.AccountBalance = 645697;
+  Talha.AccountBalance = 100000;
 
 
   Muaz.Found;
   Muaz.Loop = 12;
   strcpy(Muaz.Password, "muaz");
-  Muaz.AccountBalance = 657395;
+  Muaz.AccountBalance = 100000;
 
 
 
@@ -359,32 +361,97 @@ int main() {
   choice = _getche();
   Beep();
 
-  if ( choice == 49 ) {
+  if ( choice == 49 ) {  // Means 1;
 
+    system("cls");
     printf("\n\n --DEPOSITE MONEY--");
+    printf("\n\n  Enter amount : ");
+    scanf("%d",&deposit);
+
+    if (Ryan.Found) {
+
+      Ryan.AccountBalance += deposit; 
+      printf("\n --Money Deposited--\n\n");
+      printf("  Now Balance : %d\n\n",Ryan.AccountBalance);
+      transaction += 1;
+    }
+    
+    if (Shayan.Found) {
+
+      Shayan.AccountBalance += deposit; 
+      printf("\n --Money Deposited--\n\n");
+      printf("  Now Balance : %d\n\n",Shayan.AccountBalance);
+      transaction += 1;
+    }
+    
+    if (Ahmed.Found) {
+
+      Ahmed.AccountBalance += deposit; 
+      printf("\n --Money Deposited--\n\n");
+      printf("  Now Balance : %d\n\n",Ahmed.AccountBalance);
+      transaction += 1;
+    }
+    
+    if (Fawad.Found) {
+
+      Fawad.AccountBalance += deposit; 
+      printf("\n --Money Deposited--\n\n");
+      printf("  Now Balance : %d\n\n",Fawad.AccountBalance);
+      transaction += 1;
+    }
+    
+    if (Talha.Found) {
+
+      Talha.AccountBalance += deposit; 
+      printf("\n --Money Deposited--\n\n");
+      printf("  Now Balance : %d\n\n",Talha.AccountBalance);
+      transaction += 1;
+    }
+    
+    if (Khuzema.Found) {
+
+      Khuzema.AccountBalance += deposit; 
+      printf("\n --Money Deposited--\n\n");
+      printf("  Now Balance : %d\n\n",Khuzema.AccountBalance);
+      transaction += 1;
+    }
+    
+    if (Muaz.Found) {
+
+      Muaz.AccountBalance += deposit; 
+      printf("\n --Money Deposited--\n\n");
+      printf("  Now Balance : %d\n\n",Muaz.AccountBalance);
+      transaction += 1;
+    }
+    
+
+  } //End of DEPOSITE MONEY
+
+  if ( choice == 50 ) {  // Means 2;
+
+    system("cls");
+    printf("\n\n   --WITHDRAW MONEY--");
   }
 
-  if ( choice == 50 ) {
+  if ( choice == 51 ) { //Means 3;
 
-    printf("\n\n --WITHDRAW MONEY--");
+    system("cls");
+    printf("\n\n   --TRANSFER MONEY--");
   }
 
-  if ( choice == 51 ) {
+  if ( choice == 52 ) { //Means 4;
 
-    printf("\n\n --TRANSFER MONEY--");
+    system("cls");
+    printf("\n\n   --ACCOUNT DETAILS--");
   }
 
-  if ( choice == 52 ) {
+  if ( choice == 53 ) { //Means 5;
 
-    printf("\n\n --ACCOUNT DETAILS--");
+    system("cls");
+    printf("\n\n   --TRANSACTION DETAILS--");
   }
 
-  if ( choice == 53 ) {
-
-    printf("\n\n --TRANSACTION DETAILS--");
-  }
-
-  if ( choice == 101 ) {
+  if ( choice == 101 ) { //Means e;
 
     return 0;
   }
