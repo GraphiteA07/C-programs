@@ -16,7 +16,7 @@
 
 int delay3 = 60000;   /*41900*/
 
-void WELCOME() {
+void WELCOME_S() {
 
   //gap from ( " ) 6 ( Only ASCII )
 
@@ -33,6 +33,18 @@ void WELCOME() {
   printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n\n");
 } 
 
+void WELCOME() {
+
+  //gap from ( " ) 6 ( Only ASCII )
+
+  printf("\n\n    e   e  e eeee e     eeee eeeee eeeeeee eeee \n");
+  printf("    8   8  8 8    8     8  8 8  88 8  8  8 8    \n");
+  printf("    8e  8  8 8eee 8e    8e   8   8 8e 8  8 8eee \n");
+  printf("    88  8  8 88   88    88   8   8 88 8  8 88   \n");
+  printf("    88ee8ee8 88ee 88eee 88e8 8eee8 88 8  8 88ee \n");
+
+  printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n\n");
+} 
 
 void Verifying() {
 
@@ -382,7 +394,7 @@ int main() {
 
   system("cls");
 
-  WELCOME();
+  WELCOME_S();
 
 
 
@@ -623,7 +635,7 @@ int main() {
 
   /*  /1* if ( Ryan.Found && strcmp(Password,Ryan.Password) == 0 || Shayan.Found && strcmp(Password,Shayan.Password) == 0 || Ahmed.Found && strcmp(Password,Ahmed.Password) == 0 || Khuzema.Found && strcmp(Password,Khuzema.Password) == 0 || Fawad.Found && strcmp(Password,Fawad.Password) == 0 || Talha.Found && strcmp(Password,Talha.Password) == 0 || Muaz.Found && strcmp(Password,Muaz.Password) == 0 ) { *1/ */
 
-  /*  /1*   printf("\n WELCOME --%s--",Username); *1/ */
+  /*  /1*   printf("\n WELCOME_S --%s--",Username); *1/ */
   /*  /1*   return 0; *1/ */
   /*  /1* } *1/ */
 
@@ -636,7 +648,7 @@ int main() {
 
   /* /1*    if ( strcmp(Username,UserList[User.Loop])==0 && strcmp(Password,User.Password) == 0 ) { *1/ */
 
-  /* /1*      printf("\n WELCOME --%s--",Username); *1/ */
+  /* /1*      printf("\n WELCOME_S --%s--",Username); *1/ */
   /* /1*    } *1/ */
 
   /* /1*    } *1/ */ 
@@ -708,6 +720,3 @@ int main() {
 /* } */
 
 /* printf("\n Entered Successfully! \n"); */
-
-
-
