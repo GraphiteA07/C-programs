@@ -1,17 +1,55 @@
 //Password and name authentication are not completed     ( Done )
-//New Name doesn't accept whitespaces in names 
+//New Name doesn't accept whitespaces in names           ( Facts )
 //Main_Display added.Not completed for Re-enter users    ( Done )
 // return 0 due to Enter 'y' or 'n' : LINE : 343         ( No need )
 // Username Lowercase                                    ( Done )
 // Password Lowercase                                    ( Done )
+// User depositing is not done
 
 
 #include <stdio.h>
 #include <conio.h>
 #include <unistd.h>
 #include <string.h>
-#include "functions.c"
+#include "Beep.c"
 #define MAXLENGTH 10 
+
+int delay3 = 60000;   /*41900*/
+
+void WELCOME() {
+
+  //gap from ( " ) 6 ( Only ASCII )
+
+  printf("\n\n    e   e  e eeee e     eeee eeeee eeeeeee eeee \n");
+  usleep(delay3);
+  printf("    8   8  8 8    8     8  8 8  88 8  8  8 8    \n");
+  usleep(delay3);
+  printf("    8e  8  8 8eee 8e    8e   8   8 8e 8  8 8eee \n");
+  usleep(delay3);
+  printf("    88  8  8 88   88    88   8   8 88 8  8 88   \n");
+  usleep(delay3);
+  printf("    88ee8ee8 88ee 88eee 88e8 8eee8 88 8  8 88ee \n");
+
+  printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n\n");
+} 
+
+
+void Verifying() {
+
+  printf("\n\n  Verifying");
+
+  usleep(95000); 
+  printf(".");
+  usleep(95000); 
+  printf(".");
+  usleep(95000); 
+  printf(".");
+  usleep(99999); 
+
+
+  printf("\n");
+} 
+
 
 
 
@@ -25,13 +63,16 @@ int main() {
   char Permission_SpecialChars; 
   int choice;
   int delay = 1;
+  int delay2 = 2;
   int s = 0;
   int max_length = 18;
   int input_length = strlen(GivenPassword);
   int User_length = strlen(Username);
   int maxUser_length = 40;
   int deposit;
+  int withdraw;
   int transaction = 0;
+  int after_transaction = 0;
 
 
 
@@ -46,6 +87,7 @@ int main() {
 
   struct Users User,Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz;
 
+  User.Found = 0;
   strcpy(User.Password, "password");
   User.AccountBalance = 100000;
 
@@ -323,6 +365,7 @@ int main() {
 
   if ( !Ryan.Found && strcmp(User.Password,GivenPassword)==0  ||  !Shayan.Found && strcmp(User.Password,GivenPassword)==0  ||  !Ahmed.Found && strcmp(User.Password,GivenPassword)==0  ||  !Khuzema.Found && strcmp(User.Password,GivenPassword)==0  ||  !Fawad.Found && strcmp(User.Password,GivenPassword)==0  ||  !Talha.Found && strcmp(User.Password,GivenPassword)==0  ||  !Muaz.Found && strcmp(User.Password,GivenPassword)==0 ) {
 
+    User.Found +=1;
     Verifying();
     goto Main_Display;
 
@@ -334,10 +377,6 @@ int main() {
 
     return 0;          
   }
-
-
-
-
 
   Main_Display:
 
@@ -366,7 +405,7 @@ int main() {
     system("cls");
     printf("\n\n --DEPOSITE MONEY--");
     printf("\n\n  Enter amount : ");
-    scanf("%d",&deposit);
+    scanf("%15d",&deposit);
 
     if (Ryan.Found) {
 
@@ -428,10 +467,82 @@ int main() {
   } //End of DEPOSITE MONEY
 
   if ( choice == 50 ) {  // Means 2;
-
+			 
     system("cls");
-    printf("\n\n   --WITHDRAW MONEY--");
-  }
+    printf("\n\n --WITHDRAW MONEY--");
+    printf("\n\n  Enter amount : ");
+    scanf("%15d",&withdraw);
+
+    if ( withdraw > Ryan.AccountBalance || withdraw > Shayan.AccountBalance || withdraw > Ahmed.AccountBalance || withdraw > Fawad.AccountBalance || withdraw > Talha.AccountBalance || withdraw > Khuzema.AccountBalance || withdraw > Muaz.AccountBalance ) {
+
+      printf("\n \"Insufficient funds for this transaction\".");
+      transaction -= 1;
+      sleep(delay2);
+      goto Main_Display;
+    }
+
+
+
+    if (Ryan.Found) {
+
+      Ryan.AccountBalance -= withdraw; 
+      printf("\n\n --Money Withdrawn--\n\n");
+      printf("  Now Balance : %d\n\n",Ryan.AccountBalance);
+      transaction += 1;
+    }
+
+    if (Shayan.Found) {
+
+      Shayan.AccountBalance -= withdraw; 
+      printf("\n --Money Withdrawn--\n\n");
+      printf("  Now Balance : %d\n\n",Shayan.AccountBalance);
+      transaction += 1;
+    }
+
+    if (Ahmed.Found) {
+
+      Ahmed.AccountBalance -= withdraw; 
+      printf("\n --Money Withdrawn--\n\n");
+      printf("  Now Balance : %d\n\n",Ahmed.AccountBalance);
+      transaction += 1;
+    }
+
+    if (Fawad.Found) {
+
+      Fawad.AccountBalance -= withdraw; 
+      printf("\n --Money Withdrawn--\n\n");
+      printf("  Now Balance : %d\n\n",Fawad.AccountBalance);
+      transaction += 1;
+    }
+
+    if (Talha.Found) {
+
+      Talha.AccountBalance -= withdraw; 
+      printf("\n --Money Withdrawn--\n\n");
+      printf("  Now Balance : %d\n\n",Talha.AccountBalance);
+      transaction += 1;
+    }
+
+    if (Khuzema.Found) {
+
+      Khuzema.AccountBalance -= withdraw; 
+      printf("\n --Money Withdrawn--\n\n");
+      printf("  Now Balance : %d\n\n",Khuzema.AccountBalance);
+      transaction += 1;
+    }
+
+    if (Muaz.Found) {
+
+      Muaz.AccountBalance -= withdraw; 
+      printf("\n --Money Withdrawn--\n\n");
+      printf("  Now Balance : %d\n\n",Muaz.AccountBalance);
+      transaction += 1;
+    }
+
+
+
+
+  } //End of WITHDRAW MONEY;
 
   if ( choice == 51 ) { //Means 3;
 
@@ -451,17 +562,35 @@ int main() {
     printf("\n\n   --TRANSACTION DETAILS--");
   }
 
-  if ( choice == 101 ) { //Means e;
+  if ( choice == 54 ) { //Means e;
 
     return 0;
   }
 
-  if ( choice == 49 || choice == 50 || choice == 51 || choice == 52 || choice == 53 || choice == 101 ) {
+  /* while ( choice != 49 || choice != 50 || choice != 51 || choice != 52 || choice != 53 || choice != 54) { */
+  /*   goto Main_Display; */
+  /* } */
+
+
+  printf("  Press any key : ");
+  after_transaction = _getche();
+
+
+  if ( after_transaction != 0 ) {
+    goto Main_Display;
+  }
+
+  /* if ( transaction >= 1 ) { */
+  /*   /1* sleep(delay2); *1/ */
+  /*   /1* goto Main_Display; *1/ */
+  /* } */
+
+  if ( choice == 49 || choice == 50 || choice == 51 || choice == 52 || choice == 53 || choice == 54 ) {
     break;
   }
 
 
-  } while ( choice != 49 || choice != 50 || choice != 51 || choice != 52 || choice != 53 || choice != 101);
+  } while ( choice != 49 || choice != 50 || choice != 51 || choice != 52 || choice != 53 || choice != 54);
 
 
   /* /1* } *1/ */
