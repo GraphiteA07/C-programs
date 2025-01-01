@@ -412,6 +412,16 @@ int main() {
   choice = _getche();
   Beep();
 
+
+  if ( choice == 49 || choice == 50 || choice == 51 || choice == 52 || choice == 53 || choice == 54 ) {
+    break;
+  }
+
+
+  } while ( choice != 49 || choice != 50 || choice != 51 || choice != 52 || choice != 53 || choice != 54);
+
+
+
   if ( choice == 49 ) {  // Means 1;
 
     system("cls");
@@ -584,8 +594,8 @@ int main() {
   /* } */
 
 
-  printf("  Press any key : ");
-  after_transaction = _getche();
+  printf("\n  Press any key :\n  ");
+  after_transaction = _getch();
 
 
   if ( after_transaction != 0 ) {
@@ -597,12 +607,6 @@ int main() {
   /*   /1* goto Main_Display; *1/ */
   /* } */
 
-  if ( choice == 49 || choice == 50 || choice == 51 || choice == 52 || choice == 53 || choice == 54 ) {
-    break;
-  }
-
-
-  } while ( choice != 49 || choice != 50 || choice != 51 || choice != 52 || choice != 53 || choice != 54);
 
 
   /* /1* } *1/ */
