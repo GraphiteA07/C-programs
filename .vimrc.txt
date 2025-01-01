@@ -1,0 +1,101 @@
+syntax on 
+
+"colorscheme nord
+"colo lunaperche 
+"colorscheme tokyonight
+
+
+set laststatus=2
+
+set incsearch
+
+set guifont=Lucida\ Sans\ Typewriter:h10.5
+
+
+
+" Map <Space>l to open the Lex file explorer
+nnoremap <Space>l :Lex<CR>
+
+
+set statusline=%f<>%l/%c   " Display line number (%l) and column number (%c)
+
+"inoremap <C-BS> <C-v><C-BS>
+
+" Install transparent.vim (refer to plugin manager documentation for installation)
+
+
+"autocmd VimEnter * simalt ~x   "For the full size window by default 
+
+setlocal autoindent
+
+
+" Display current mode (%y) and line number (%l) within brackets
+set number
+
+
+set termguicolors
+
+"let g:tokyonight_style = 'night' " available: night, storm
+"let g:tokyonight_enable_italic = 1
+
+
+
+
+colo ayu
+
+set cino+=L0
+
+set splitright "TO Split on the right side"
+
+set cindent
+
+"set expandtab
+
+set smarttab
+
+set shiftwidth=2
+
+if has("autocmd")
+ autocmd InsertEnter * set guicursor=a:block
+  autocmd InsertLeave * set guicursor= 
+endif
+
+"For The Vim-Plug to work you need to make a folder named 'plugged' without
+"commas and then give the plug#begin the path like
+"C;\Users\username\vimfiles\plugged 
+
+ call plug#begin('C:\Users\User_Computer\vimfiles\plugged')
+" List your desired plugins here (replace with actual plugin names):
+ Plug 'itchyny/lightline.vim'
+ Plug 'tpope/vim-commentary'
+ "auto-pairs 
+
+
+ call plug#end()
+
+
+filetype plugin indent on
+
+
+
+
+ let g:lightline = {
+       \ 'colorscheme': 'ayu_dark',
+       \ }
+
+   " colorscheme ayu_dark --STATUSBAR--
+
+set noshowmode "For not showing the default --INSERT--  --VISUAl-- modes"
+
+" set completeopt=menu,menuone,noinsert,noselect
+" nnoremap <C-l> <C-p>
+
+
+
+ 
+
+
+
+
+
+
