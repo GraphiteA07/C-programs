@@ -389,7 +389,9 @@ down:
  }
 
 Main_Display:
+ do {
 
+  do {
  system("cls");
 
  WELCOME_S();
@@ -403,12 +405,22 @@ Main_Display:
 
  /* printf("\n (R : %d)  (F : %d)  (K : %d)  (T : %d)  (Ahme : %d)  (M : %d)  (S : %d) ",Ryan.Found,Fawad.Found,Khuzema.Found,Talha.Found,Ahmed.Found,Muaz.Found,Shayan.Found); */
 
- do {
 
 
   printf("\n\n   Input : ");
   choice = _getche();
   Beep();
+
+  if ( choice == 49 || choice == 50 || choice == 51 || choice == 52 || choice == 53 || choice == 54 ) {
+   break;
+  }
+
+  }
+
+  while ( choice != 49 || choice != 50 || choice != 51 || choice != 52 || choice != 53 || choice != 54);
+
+
+
 
 
 
@@ -623,14 +635,14 @@ Main_Display:
    return 0;
   }
 
-  /* while ( choice != 49 || choice != 50 || choice != 51 || choice != 52 || choice != 53 || choice != 54) { */
-  /*   goto Main_Display; */
-  /* } */
 
 
   printf("\n  Press any key ...\n  ");
   after_transaction = _getch();
 
+  /* while ( choice != 49 || choice != 50 || choice != 51 || choice != 52 || choice != 53 || choice != 54) { */
+  /*   goto Main_Display; */
+  /* } */
 
   if ( after_transaction != 0 ) {
    goto Main_Display;
