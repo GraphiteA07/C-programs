@@ -6,6 +6,8 @@
 // Password Lowercase                                    ( Done )
 // User depositing is not done                           ( Done )
 // Now, Transfer
+// User depositing is not done
+// Withdraw is taking default AccountBalance values
 
 
 #include <stdio.h>
@@ -389,8 +391,8 @@ down:
  }
 
 Main_Display:
- do {
 
+ do {
   do {
  system("cls");
 
@@ -415,12 +417,8 @@ Main_Display:
    break;
   }
 
-  }
-
+  }  
   while ( choice != 49 || choice != 50 || choice != 51 || choice != 52 || choice != 53 || choice != 54);
-
-
-
 
 
 
@@ -649,11 +647,6 @@ Main_Display:
   }
 
 
-  if ( choice == 49 || choice == 50 || choice == 51 || choice == 52 || choice == 53 || choice == 54 ) {
-   break;
-  }
-
-
  } while ( choice != 49 || choice != 50 || choice != 51 || choice != 52 || choice != 53 || choice != 54);
 
 
@@ -781,6 +774,7 @@ Main_Display:
 /* } */
 
 /* printf("\n Entered Successfully! \n"); */
+
 
 
 
