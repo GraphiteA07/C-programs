@@ -3,7 +3,6 @@
 #include <unistd.h>
 
 
-
     int delay= 1;       
     
     int input_division;                   

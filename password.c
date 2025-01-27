@@ -5,10 +5,9 @@
 // Username Lowercase                                    ( Done )
 // Password Lowercase                                    ( Done )
 // User depositing is not done                           ( Done )
+// User depositing is not done                           ( Done )
+// Withdraw is taking default AccountBalance values      ( Done )
 // Now, Transfer
-// User depositing is not done
-// Withdraw is taking default AccountBalance values
-
 
 #include <stdio.h>
 #include <conio.h>
