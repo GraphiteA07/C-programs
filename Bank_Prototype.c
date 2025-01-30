@@ -1,5 +1,5 @@
 //Can do the Odd thing;
-// STATUS : +Blind Guesses ; +Password ; +case 49 ;
+// STATUS : +Withdraw ( logic not complete ) ;
 
 #include <stdio.h>
 #include <string.h>
@@ -75,6 +75,7 @@ int main() {
   int input_length = strlen(Password);
   int max_length = 23;
   int deposit;
+  int withdraw;
   int transaction;
   int after_transaction = 0;
 
@@ -218,12 +219,15 @@ int main() {
 
    while ( k < COUNTER ) {
 
-    if (strcmp(user_data[i].name,Username)==0 || strcmp(user_data[i].fullname,Username)==0 && strcmp(user_data[j].password,Password)==0)
+    if ( i == k && k == k ) {
       user_data[k].found = 1;
       break;
+    }
 
       k++;
    }
+
+
 
    Verifying();
 
@@ -255,10 +259,33 @@ int main() {
       printf("  Now Balance : %d\n\n",user_data[k].AccountBalance);
       transaction += 1;
 
-      printf("\n  Press any key ...\n  ");
-      after_transaction = _getch();
 
+	 break;
 
+     case 50: //Means 2;
+
+	 system("cls");
+	 printf("\n\n --WITHDRAW MONEY--");
+	 printf("\n\n  Enter amount : ");
+	 scanf("%15d",&withdraw);
+
+	 if ( user_data[k].AccountBalance <= 0 ) {
+
+	  printf("\n \"Insufficient funds for this transaction\".");
+
+	  if ( transaction == 0 ) {
+	   transaction = 0;
+	  }
+
+	  else {
+	   transaction = -1;
+	  }
+
+	 }
+
+	 printf("\n\n --Money Withdrawn--\n\n");
+	 printf("  Now Balance : %d\n\n",Ryan.AccountBalance);
+	 transaction += 1;
 	 break;
 
      case 54: //Means 6;
@@ -267,8 +294,15 @@ int main() {
 
     }
 
+      printf("\n  Press any key ...\n  ");
+      after_transaction = _getch();
+      transaction += 1;
+
+
 
    } while ( choice != 49 || choice != 50 || choice != 51 || choice != 52 || choice != 53 || choice != 54) ;
+
+
 
    
 
