@@ -1,5 +1,5 @@
 //Can do the Odd thing;
-// STATUS : +Withdraw ( logic not complete ) ;
+// STATUS : (+)case 50;
 
 #include <stdio.h>
 #include <string.h>
@@ -76,7 +76,7 @@ int main() {
   int max_length = 23;
   int deposit;
   int withdraw;
-  int transaction;
+  int transaction = 0;
   int after_transaction = 0;
 
 
@@ -233,31 +233,56 @@ int main() {
 
    do {
 
-    system("cls");
 
+    do {
+
+    system("cls");
     WELCOME_S();
 
     printf("\n   [1] Deposite Money \t  [4] Account Details \n");
     printf("\n   [2] Withdraw Money \t  [5] Transaction Details \n");
     printf("\n   [3] Transfer Money \t  [6] Exit \n");
 
+    printf("\n Transaction : %d",transaction);
+
     printf("\n\n   Input : ");
     choice = _getche();
     Beep();
+
+    if ( choice == 49 || choice == 50 || choice == 51 || choice == 52 || choice == 53 || choice == 54 ) {
+     break;
+    }
+
+    } while ( choice != 49 || choice != 50 || choice != 51 || choice != 52 || choice != 53 || choice != 54);
+
 
     switch (choice) {
 
      case 49: //Means 1;
 
       system("cls");
-      printf("\n\n --DEPOSITE MONEY--");
+
+      transaction += 1;
+
+      printf("\n\n  DEPOSITE MONEY\n");
+      printf("----------------------------------");
+      /* printf("__________________________________"); */
       printf("\n\n  Enter amount : ");
       scanf("%15d",&deposit);
 
+      if ( deposit <= 0 ) {
+       printf("\n\n \"Invalid amount\".\n\n");
+       transaction -= 1;
+      }
+
+      if ( deposit > 0 ) {
       user_data[k].AccountBalance += deposit;
-      printf("\n --Money Deposited--\n\n");
+      printf("\n\n-- Money Deposited --\n\n");
+      /* printf("----------------------\n\n"); */
       printf("  Now Balance : %d\n\n",user_data[k].AccountBalance);
-      transaction += 1;
+
+      }
+
 
 
 	 break;
@@ -265,28 +290,35 @@ int main() {
      case 50: //Means 2;
 
 	 system("cls");
-	 printf("\n\n --WITHDRAW MONEY--");
+
+	 transaction += 1;
+
+	 printf("\n\n  WITHDRAW MONEY\n");
+	 printf("----------------------------------");
 	 printf("\n\n  Enter amount : ");
 	 scanf("%15d",&withdraw);
 
-	 if ( user_data[k].AccountBalance <= 0 ) {
 
-	  printf("\n \"Insufficient funds for this transaction\".");
-
-	  if ( transaction == 0 ) {
-	   transaction = 0;
-	  }
-
-	  else {
-	   transaction = -1;
-	  }
-
+	 if ( withdraw > user_data[k].AccountBalance) {
+	  printf("\n\n \"Insufficient funds for this transaction\".\n\n");
+	  transaction -= 1;
 	 }
 
-	 printf("\n\n --Money Withdrawn--\n\n");
-	 printf("  Now Balance : %d\n\n",Ryan.AccountBalance);
-	 transaction += 1;
+	 if ( withdraw <= 0 ) {
+          printf("\n\n \"Invalid amount\".\n\n");
+	  transaction -= 1;
+	 }
+
+	 if ( withdraw <= user_data[k].AccountBalance && withdraw > 0) {
+	 user_data[k].AccountBalance -= withdraw;
+	 printf("\n\n-- Money Withdrawn --\n\n");
+	 printf("  Now Balance : %d\n\n",user_data[k].AccountBalance);
+	 }
+
 	 break;
+
+
+
 
      case 54: //Means 6;
       return 0;
@@ -296,15 +328,10 @@ int main() {
 
       printf("\n  Press any key ...\n  ");
       after_transaction = _getch();
-      transaction += 1;
 
 
 
-   } while ( choice != 49 || choice != 50 || choice != 51 || choice != 52 || choice != 53 || choice != 54) ;
-
-
-
-   
+   } while (choice != 54) ;
 
 
 
