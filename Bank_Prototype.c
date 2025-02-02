@@ -1,5 +1,4 @@
-//Can do the Odd thing;
-// STATUS : (+)case 50;
+// STATUS : (+)register bug;
 
 #include <stdio.h>
 #include <string.h>
@@ -212,6 +211,7 @@ int main() {
   }
 
 
+
    if ( strcmp(user_data[j].password,Password)!=0 ) {
       printf("\n\n Password not found\n");
       return 0;
@@ -219,7 +219,7 @@ int main() {
 
    while ( k < COUNTER ) {
 
-    if ( i == k && k == k ) {
+    if ( i == k && j == k ) {
       user_data[k].found = 1;
       break;
     }
