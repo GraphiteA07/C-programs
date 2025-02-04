@@ -1,4 +1,4 @@
-// STATUS : (+)register bug;
+// STATUS : (+)Account Balance Bug; (+)case 52; 
 
 #include <stdio.h>
 #include <string.h>
@@ -42,9 +42,9 @@ void WELCOME() {
  printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n\n");
 } 
 
-void Verifying() {
+void Directing() {
 
- printf("\n\n  Verifying");
+ printf("\n\n  Directing");
 
  usleep(95000); 
  printf(".");
@@ -67,15 +67,16 @@ int main() {
   char Username[40];
   char choice;
 
-  register int i = 0;
-  register int j = 0;
-  register int k = 0;
+  int i = 0;
+  int j = 0;
+  int k = 0;
   int s = 0;
   int input_length = strlen(Password);
   int max_length = 23;
   int deposit;
   int withdraw;
   int transaction = 0;
+  /* int balance = 0; */
   int after_transaction = 0;
 
 
@@ -172,7 +173,7 @@ int main() {
 
    char ch = getch();
 
-   if (input_length > sizeof(Password)) {
+   if (input_length > 20) {
 
     printf("\n\n \"Password wasn't that long\" \n");
     return 0;
@@ -201,35 +202,21 @@ int main() {
 
   }
 
-  while (j < COUNTER) {
-
-
-    if ( strcmp(user_data[j].password,Password)==0 ) {
-      break;
+   if ( strcmp(user_data[i].password,Password)==0 ) {  
+      user_data[i].found = 1;
     }
-    j++;
-  }
 
+   
 
-
-   if ( strcmp(user_data[j].password,Password)!=0 ) {
+   else {
       printf("\n\n Password not found\n");
       return 0;
-    }
-
-   while ( k < COUNTER ) {
-
-    if ( i == k && j == k ) {
-      user_data[k].found = 1;
-      break;
-    }
-
-      k++;
    }
 
 
 
-   Verifying();
+
+   Directing();
 
    do {
 
@@ -243,7 +230,6 @@ int main() {
     printf("\n   [2] Withdraw Money \t  [5] Transaction Details \n");
     printf("\n   [3] Transfer Money \t  [6] Exit \n");
 
-    printf("\n Transaction : %d",transaction);
 
     printf("\n\n   Input : ");
     choice = _getche();
@@ -276,10 +262,10 @@ int main() {
       }
 
       if ( deposit > 0 ) {
-      user_data[k].AccountBalance += deposit;
+      user_data[i].AccountBalance += deposit;
       printf("\n\n-- Money Deposited --\n\n");
       /* printf("----------------------\n\n"); */
-      printf("  Now Balance : %d\n\n",user_data[k].AccountBalance);
+      printf("  Now Balance : %d\n\n",user_data[i].AccountBalance);
 
       }
 
@@ -299,7 +285,7 @@ int main() {
 	 scanf("%15d",&withdraw);
 
 
-	 if ( withdraw > user_data[k].AccountBalance) {
+	 if ( withdraw > user_data[i].AccountBalance) {
 	  printf("\n\n \"Insufficient funds for this transaction\".\n\n");
 	  transaction -= 1;
 	 }
@@ -309,13 +295,29 @@ int main() {
 	  transaction -= 1;
 	 }
 
-	 if ( withdraw <= user_data[k].AccountBalance && withdraw > 0) {
-	 user_data[k].AccountBalance -= withdraw;
+	 if ( withdraw <= user_data[i].AccountBalance && withdraw > 0) {
+	 user_data[i].AccountBalance -= withdraw;
 	 printf("\n\n-- Money Withdrawn --\n\n");
-	 printf("  Now Balance : %d\n\n",user_data[k].AccountBalance);
+	 printf("  Now Balance : %d\n\n",user_data[i].AccountBalance);
 	 }
 
 	 break;
+
+     case 52: //Means 4;
+
+	 system("cls");
+	 printf("\n\n  ACCOUNT DETAILS\n");
+	 printf("----------------------------------\n\n");
+
+	 printf("  Name            : %s\n",user_data[i].fullname);
+	 printf("  Password        : %s\n",user_data[i].password);
+	 /* printf("Account no.   : not completed"); */
+	 printf("  Total Balance   : %d\n",user_data[i].AccountBalance);
+	 printf("\n  %d transactions have been made from your account\n\n",transaction);
+
+
+	 break;
+	      
 
 
 
