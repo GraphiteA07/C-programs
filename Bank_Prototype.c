@@ -1,4 +1,4 @@
-// STATUS : (+)Account Balance Bug; (+)case 52; 
+// STATUS : (+)Current Fix works; 
 
 #include <stdio.h>
 #include <string.h>
@@ -76,7 +76,7 @@ int main() {
   int deposit;
   int withdraw;
   int transaction = 0;
-  /* int balance = 0; */
+  int balance = 0;
   int after_transaction = 0;
 
 
@@ -266,7 +266,7 @@ int main() {
       printf("\n\n-- Money Deposited --\n\n");
       /* printf("----------------------\n\n"); */
       printf("  Now Balance : %d\n\n",user_data[i].AccountBalance);
-
+	balance = user_data[i].AccountBalance;
       }
 
 
@@ -299,6 +299,7 @@ int main() {
 	 user_data[i].AccountBalance -= withdraw;
 	 printf("\n\n-- Money Withdrawn --\n\n");
 	 printf("  Now Balance : %d\n\n",user_data[i].AccountBalance);
+	 balance = user_data[i].AccountBalance;
 	 }
 
 	 break;
@@ -306,14 +307,15 @@ int main() {
      case 52: //Means 4;
 
 	 system("cls");
+	 balance = user_data[i].AccountBalance;
 	 printf("\n\n  ACCOUNT DETAILS\n");
 	 printf("----------------------------------\n\n");
 
 	 printf("  Name            : %s\n",user_data[i].fullname);
 	 printf("  Password        : %s\n",user_data[i].password);
 	 /* printf("Account no.   : not completed"); */
-	 printf("  Total Balance   : %d\n",user_data[i].AccountBalance);
-	 printf("\n  %d transactions have been made from your account\n\n",transaction);
+	 printf("  Total Balance   : %d\n",balance);
+	 printf("\n  %d transaction(s) have been made from your account\n\n",transaction);
 
 
 	 break;
