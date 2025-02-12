@@ -1,4 +1,4 @@
-// STATUS : (+)Current Fix works; 
+// STATUS : (+)Added Account no.; 
 
 #include <stdio.h>
 #include <string.h>
@@ -85,6 +85,7 @@ int main() {
     int found = 0;
     char password[MAXLENGTH];
     int AccountBalance;
+    int Account_no;
     char name[MAXLENGTH];
     char fullname[25];
 
@@ -95,6 +96,7 @@ int main() {
   Ryan.found;
   strcpy(Ryan.password, "ryan");
   Ryan.AccountBalance = 100000;
+  Ryan.Account_no = 2012;
   strcpy(Ryan.name, "ryan");
   strcpy(Ryan.fullname, "ryan asif");
   
@@ -102,12 +104,14 @@ int main() {
   Shayan.found;
   strcpy(Shayan.password, "shayan");
   Shayan.AccountBalance = 100000;
+  Shayan.Account_no = 2013;
   strcpy(Shayan.name, "shayan");
   strcpy(Shayan.fullname, "shayan siddiqui");
 
   Ahmed.found;
   strcpy(Ahmed.password, "ahmed");
   Ahmed.AccountBalance = 100000;
+  Ahmed.Account_no = 2014;
   strcpy(Ahmed.name, "ahmed");
   strcpy(Ahmed.fullname, "ahmed dayan");
 
@@ -115,6 +119,7 @@ int main() {
   Khuzema.found;
   strcpy(Khuzema.password, "khuzema");
   Khuzema.AccountBalance = 100000;
+  Khuzema.Account_no = 2015;
   strcpy(Khuzema.name, "khuzema");
   strcpy(Khuzema.fullname, "khuzema afridi");
 
@@ -122,6 +127,7 @@ int main() {
   Fawad.found;
   strcpy(Fawad.password, "fawad");
   Fawad.AccountBalance = 100000;
+  Fawad.Account_no = 2016;
   strcpy(Fawad.name, "fawad");
   strcpy(Fawad.fullname, "fawad ahmed");
 
@@ -129,6 +135,7 @@ int main() {
   Talha.found;
   strcpy(Talha.password, "talha");
   Talha.AccountBalance = 100000;
+  Talha.Account_no = 2017;
   strcpy(Talha.name, "talha");
   strcpy(Talha.fullname, "talha qadri");
 
@@ -136,6 +143,7 @@ int main() {
   Muaz.found;
   strcpy(Muaz.password, "muaz");
   Muaz.AccountBalance = 100000;
+  Muaz.Account_no = 2018;
   strcpy(Muaz.name, "muaz");
   strcpy(Muaz.fullname, "muaz khan");
 
@@ -317,7 +325,6 @@ int main() {
 	 printf("  Total Balance   : %d\n",balance);
 	 printf("\n  %d transaction(s) have been made from your account\n\n",transaction);
 
-
 	 break;
 	      
 
@@ -336,9 +343,6 @@ int main() {
 
 
    } while (choice != 54) ;
-
-
-
 
   return 0;
 
