@@ -1,4 +1,9 @@
-// STATUS : (+)Added Account no.; 
+// STATUS : (+)case 51 bugs; 
+
+						/* For adding new Users :
+						 
+						 1) Increase COUNTER
+						 2) increase user_data[+]; */
 
 #include <stdio.h>
 #include <string.h>
@@ -66,11 +71,13 @@ int main() {
   char Password[MAXLENGTH];
   char Username[40];
   char choice;
+  char search;
+  char display_all;
 
   int i = 0;
-  int j = 0;
-  int k = 0;
-  int s = 0;
+  int j = 0;  //displays all users and account no.
+  int k = 0;  //finds user to transfer money
+  int s = 0;  //password loop
   int input_length = strlen(Password);
   int max_length = 23;
   int deposit;
@@ -274,7 +281,7 @@ int main() {
       printf("\n\n-- Money Deposited --\n\n");
       /* printf("----------------------\n\n"); */
       printf("  Now Balance : %d\n\n",user_data[i].AccountBalance);
-	balance = user_data[i].AccountBalance;
+	/* balance = user_data[i].AccountBalance; */
       }
 
 
@@ -307,10 +314,95 @@ int main() {
 	 user_data[i].AccountBalance -= withdraw;
 	 printf("\n\n-- Money Withdrawn --\n\n");
 	 printf("  Now Balance : %d\n\n",user_data[i].AccountBalance);
-	 balance = user_data[i].AccountBalance;
+	 /* balance = user_data[i].AccountBalance; */
 	 }
 
 	 break;
+
+
+     case 51: //Means 3;
+	      
+	 system("cls");
+	 printf("\n\n  TRANSFER MONEY\n");
+	 printf("----------------------------------\n\n");
+
+	 printf("  Display all users account no. (y/n) : ");
+	 scanf("%1s",display_all);
+
+	 if ( display_all == 'y') {
+
+	 while ( j < COUNTER ) {
+	  printf("  %15s",user_data[j].fullname,user_data[j].Account_no);
+	  printf("   : [ %d ]\n",user_data[j].Account_no);
+	  j++;
+	 }
+
+	 }
+
+	 if ( display_all == 'n' ) {
+	  goto transfer;
+	 }
+
+	 else {
+	  return 0;
+	  break;
+	 }
+
+
+
+	 while ( strcmp(user_data[k].name,Username)!=0 || strcmp(user_data[k].fullname,Username)!=0) {
+
+	 printf("\n  Search User (y/n) : ");
+	 scanf("%1s",search);
+
+	 if ( search == 'y' ) {
+
+	  printf("\n  Enter name : ");
+	  fgets(Username,sizeof(Username),stdin);
+	  strlwr(Username);
+
+	  //This removes the \n from fgets;
+	  size_t len = strlen(Username);
+	  if (len > 0 && Username[len - 1] == '\n') {
+	   Username[len - 1] = '\0'; 
+	  }
+
+	  while (k < COUNTER) {
+
+	   if ( strcmp(user_data[k].name,Username)==0 || strcmp(user_data[k].fullname,Username)==0) {
+	    break;
+	   }
+	   k++;
+	  }
+
+	  if ( strcmp(user_data[k].name,Username)==0 || strcmp(user_data[k].fullname,Username)==0 ) {
+	  printf("\n  %15s",user_data[j].fullname,user_data[j].Account_no);
+	  printf("   : [ %d ]\n",user_data[j].Account_no);
+	  break;
+	   
+	  }
+
+	 }
+
+	 };
+
+	 if ( search == 'n' ) {
+	  goto transfer;
+	 }
+
+	 else {
+	  return 0;
+	  break;
+	 }
+
+transfer:
+	 printf("  HI!\n\n");
+
+	  
+
+
+	 break;
+
 
      case 52: //Means 4;
 
@@ -321,15 +413,12 @@ int main() {
 
 	 printf("  Name            : %s\n",user_data[i].fullname);
 	 printf("  Password        : %s\n",user_data[i].password);
-	 /* printf("Account no.   : not completed"); */
+	 printf("  Account no.     : %d\n",user_data[i].Account_no);
 	 printf("  Total Balance   : %d\n",balance);
 	 printf("\n  %d transaction(s) have been made from your account\n\n",transaction);
 
 	 break;
 	      
-
-
-
 
      case 54: //Means 6;
       return 0;
