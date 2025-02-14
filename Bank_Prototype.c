@@ -1,4 +1,4 @@
-// STATUS : (+)case 51 bugs; 
+// STATUS : (+)case 51 fixes (not completed); 
 
 						/* For adding new Users :
 						 
@@ -70,6 +70,7 @@ int main() {
 
   char Password[MAXLENGTH];
   char Username[40];
+  char Search_user[40];
   char choice;
   char search;
   char display_all;
@@ -327,7 +328,10 @@ int main() {
 	 printf("----------------------------------\n\n");
 
 	 printf("  Display all users account no. (y/n) : ");
-	 scanf("%1s",display_all);
+	 display_all = getche();
+	 /* scanf("%1s",&display_all); */
+
+	 printf("\n\n");
 
 	 if ( display_all == 'y') {
 
@@ -340,66 +344,60 @@ int main() {
 	 }
 
 	 if ( display_all == 'n' ) {
-	  goto transfer;
+	  printf(" ");
 	 }
 
 	 else {
-	  return 0;
 	  break;
 	 }
 
 
 
-	 while ( strcmp(user_data[k].name,Username)!=0 || strcmp(user_data[k].fullname,Username)!=0) {
+	 while ( strcmp(user_data[k].name,Search_user)!=0 || strcmp(user_data[k].fullname,Search_user)!=0) {
 
 	 printf("\n  Search User (y/n) : ");
-	 scanf("%1s",search);
+	 search = getche();
+	 /* scanf("%1s",&search); */
 
 	 if ( search == 'y' ) {
 
-	  printf("\n  Enter name : ");
-	  fgets(Username,sizeof(Username),stdin);
-	  strlwr(Username);
+	  k = 0;
+	  printf("\n\n  Enter name : ");
+	  fgets(Search_user,sizeof(Search_user),stdin);
+	  strlwr(Search_user);
 
 	  //This removes the \n from fgets;
-	  size_t len = strlen(Username);
-	  if (len > 0 && Username[len - 1] == '\n') {
-	   Username[len - 1] = '\0'; 
+	  size_t len = strlen(Search_user);
+	  if (len > 0 && Search_user[len - 1] == '\n') {
+	   Search_user[len - 1] = '\0'; 
 	  }
 
 	  while (k < COUNTER) {
 
-	   if ( strcmp(user_data[k].name,Username)==0 || strcmp(user_data[k].fullname,Username)==0) {
+	   if ( strcmp(user_data[k].name,Search_user)==0 || strcmp(user_data[k].fullname,Search_user)==0) {
 	    break;
 	   }
 	   k++;
 	  }
 
-	  if ( strcmp(user_data[k].name,Username)==0 || strcmp(user_data[k].fullname,Username)==0 ) {
-	  printf("\n  %15s",user_data[j].fullname,user_data[j].Account_no);
-	  printf("   : [ %d ]\n",user_data[j].Account_no);
+	  if ( strcmp(user_data[k].name,Search_user)==0 || strcmp(user_data[k].fullname,Search_user)==0 ) {
+	  printf("\n  %15s",user_data[k].fullname);
+	  printf("   : [ %d ]\n",user_data[k].Account_no);
 	  break;
 	   
 	  }
 
 	 }
 
-	 };
-
 	 if ( search == 'n' ) {
-	  goto transfer;
-	 }
-
-	 else {
-	  return 0;
 	  break;
 	 }
 
-transfer:
-	 printf("  HI!\n\n");
+	 };
 
-	  
 
+
+	
 
 	 break;
 
