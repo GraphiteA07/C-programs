@@ -1,4 +1,4 @@
-// STATUS : (+)case 51 fixes (not completed); 
+// STATUS : (+)case 51 more fixes; 
 
 						/* For adding new Users :
 						 
@@ -335,11 +335,15 @@ int main() {
 
 	 if ( display_all == 'y') {
 
+	  j = 0;
+
 	 while ( j < COUNTER ) {
 	  printf("  %15s",user_data[j].fullname,user_data[j].Account_no);
 	  printf("   : [ %d ]\n",user_data[j].Account_no);
 	  j++;
 	 }
+
+	 goto search;
 
 	 }
 
@@ -352,6 +356,7 @@ int main() {
 	 }
 
 
+	 search:
 
 	 while ( strcmp(user_data[k].name,Search_user)!=0 || strcmp(user_data[k].fullname,Search_user)!=0) {
 
@@ -383,6 +388,7 @@ int main() {
 	  if ( strcmp(user_data[k].name,Search_user)==0 || strcmp(user_data[k].fullname,Search_user)==0 ) {
 	  printf("\n  %15s",user_data[k].fullname);
 	  printf("   : [ %d ]\n",user_data[k].Account_no);
+	  printf("\n");
 	  break;
 	   
 	  }
@@ -392,6 +398,12 @@ int main() {
 	 if ( search == 'n' ) {
 	  break;
 	 }
+
+	 if ( strcmp(user_data[k].name,Search_user)!=0 || strcmp(user_data[k].fullname,Search_user)!=0 ) {
+	  printf("\n  User not found\n");
+	  break;
+	 }
+
 
 	 };
 
