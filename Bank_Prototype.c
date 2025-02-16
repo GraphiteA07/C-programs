@@ -1,4 +1,4 @@
-// STATUS : (+)case 51 more fixes; 
+// STATUS : (+)case 51 bug fixes; <- transaction (not complete);  
 
 						/* For adding new Users :
 						 
@@ -70,19 +70,23 @@ int main() {
 
   char Password[MAXLENGTH];
   char Username[40];
-  char Search_user[40];
+  char Search_user[30];
   char choice;
   char search;
   char display_all;
 
-  int i = 0;
+  int i = 0;  //tracks current user
   int j = 0;  //displays all users and account no.
   int k = 0;  //finds user to transfer money
   int s = 0;  //password loop
+  int l = 0;  //checks acc no. is correct ,lol
+  int m = 0;  //
   int input_length = strlen(Password);
   int max_length = 23;
   int deposit;
   int withdraw;
+  int transfer;
+  int acc_no;
   int transaction = 0;
   int balance = 0;
   int after_transaction = 0;
@@ -324,7 +328,7 @@ int main() {
      case 51: //Means 3;
 	      
 	 system("cls");
-	 printf("\n\n  TRANSFER MONEY\n");
+	 printf("\n\n  FINDER\n");
 	 printf("----------------------------------\n\n");
 
 	 printf("  Display all users account no. (y/n) : ");
@@ -358,7 +362,7 @@ int main() {
 
 	 search:
 
-	 while ( strcmp(user_data[k].name,Search_user)!=0 || strcmp(user_data[k].fullname,Search_user)!=0) {
+	 while ( strcmp(user_data[k].name,Search_user)!=0 || strcmp(user_data[k].fullname,Search_user)!=0 ) {
 
 	 printf("\n  Search User (y/n) : ");
 	 search = getche();
@@ -388,8 +392,8 @@ int main() {
 	  if ( strcmp(user_data[k].name,Search_user)==0 || strcmp(user_data[k].fullname,Search_user)==0 ) {
 	  printf("\n  %15s",user_data[k].fullname);
 	  printf("   : [ %d ]\n",user_data[k].Account_no);
-	  printf("\n");
-	  break;
+	  /* printf("\n"); */
+	  break; //temporary
 	   
 	  }
 
@@ -401,13 +405,40 @@ int main() {
 
 	 if ( strcmp(user_data[k].name,Search_user)!=0 || strcmp(user_data[k].fullname,Search_user)!=0 ) {
 	  printf("\n  User not found\n");
-	  break;
 	 }
+	 
+	 /* bytes = 0; */
 
 
 	 };
 
 
+	 printf("\n\n  TRANSFER MONEY\n");
+	 printf("----------------------------------\n\n");
+	 printf("\n  Enter amount : ");
+	 scanf("%15d",&transfer);
+	 printf("\n");
+
+
+	 printf("  Enter account no. : ");
+	 scanf("%4d",&acc_no);
+
+	 getchar();
+
+	 l = 0;
+
+	 while ( l < COUNTER ) {
+
+	  if ( user_data[l].Account_no == acc_no) {
+	   printf("\n OK");
+	   break;
+	  }
+	  l++;
+	 }
+
+	 if ( user_data[l].Account_no != acc_no ) {
+	  printf("\n  Account not found\n");
+	 }
 
 	
 
