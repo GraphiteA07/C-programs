@@ -80,7 +80,6 @@ int main() {
   int k = 0;  //finds user to transfer money
   int s = 0;  //password loop
   int l = 0;  //checks acc no. is correct ,lol
-  int m = 0;  //
   int input_length = strlen(Password);
   int max_length = 23;
   int deposit;
