@@ -1,4 +1,4 @@
-// STATUS : (+)case 51 logic; (+)Ghost Access ; arrange user ac no.; 
+// STATUS : (+)case 51 bug fixes; (+)Ghost Access; arrange user ac no.;  
 
 						/* For adding new Users :
 						 
@@ -348,6 +348,11 @@ int main() {
 
 	 printf("\n\n");
 
+
+	 if ( display_all == 'n' ) {
+	  printf(" ");
+	 }
+
 	 if ( display_all == 'y') {
 
 	  j = 0;
@@ -358,20 +363,17 @@ int main() {
 	  j++;
 	 }
 
-	 goto search;
+	 /* goto search; */
 
 	 }
 
-	 if ( display_all == 'n' ) {
-	  printf(" ");
-	 }
-
-	 else {
+	 if ( display_all != 'y' && display_all != 'n') {
+	  transaction -= 1;
 	  break;
 	 }
 
 
-	 search:
+	 /* search: */
 
 	 while ( strcmp(user_data[k].name,Search_user)!=0 || strcmp(user_data[k].fullname,Search_user)!=0 ) {
 
@@ -430,13 +432,17 @@ int main() {
 	 scanf("%15d",&transfer);
 	 printf("\n");
 
+	 if ( transfer > user_data[i].AccountBalance) {
+	  printf("\n \"Insufficient funds for this transaction\".\n\n");
+	  transaction -= 1;
+	  break;
+	 }
+
 	 if ( transfer <= 0 ) {
 	  printf("\n \"Invalid amount\".\n\n");
 	  transaction -= 1;
 	  break;
-
 	 }
-
 
 	 printf("  Enter account no. : ");
 	 scanf("%4d",&acc_no);
@@ -448,19 +454,30 @@ int main() {
 	 while ( l < COUNTER ) {
 
 	  if ( user_data[l].Account_no == acc_no) {
-	   user_data[l].AccountBalance += transfer;
-	   printf("\n\n-- Money Transferred --\n\n");
+	   /* user_data[l].AccountBalance += transfer; */
+	   /* printf("\n\n-- Money Transferred --\n\n"); */
 	   break;
 	  }
 	  l++;
 	 }
 
-	 if ( user_data[l].Account_no != acc_no ) {
+	 if ( user_data[l].Account_no == acc_no) {
+
+	 if ( transfer <= user_data[i].AccountBalance && transfer > 0 ) {
+	 user_data[i].AccountBalance -= transfer;
+	   user_data[l].AccountBalance += transfer;
+	   printf("\n\n-- Money Transferred --\n\n");
+	 }
+
+	 }
+
+
+	 else {
 	  printf("\n  Account not found\n");
+	  transaction -= 1;
 	 }
 
 	
-
 	 break;
 
 
