@@ -1,9 +1,9 @@
-// STATUS : (+)case 51 bug fixes; <- transaction (not complete);  
+// STATUS : (+)case 51 logic; (+)Ghost Access ; arrange user ac no.; 
 
 						/* For adding new Users :
 						 
 						 1) Increase COUNTER
-						 2) increase user_data[+]; */
+						 2) increase user_data[+]; (if needed) */
 
 #include <stdio.h>
 #include <string.h>
@@ -13,7 +13,7 @@
 #include "Beep.c"
 
 #define MAXLENGTH 12
-#define COUNTER 7
+#define COUNTER 8
 
 int delay3 = 60000;   /*41900*/
 
@@ -102,7 +102,7 @@ int main() {
 
   };
 
-  struct Users Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz;
+  struct Users Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali;
 
   Ryan.found;
   strcpy(Ryan.password, "ryan");
@@ -159,7 +159,15 @@ int main() {
   strcpy(Muaz.fullname, "muaz khan");
 
 
-  struct Users user_data[8]= {Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz};
+  Ali.found;
+  strcpy(Ali.password, "ali");
+  Ali.AccountBalance = 100000;
+  Ali.Account_no = 2019;
+  strcpy(Ali.name, "ali");
+  strcpy(Ali.fullname, "muhammad ali raza");
+
+
+  struct Users user_data[100]= {Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali};
 
   printf("\n Enter name \n\n > ");
   fgets(Username,sizeof(Username),stdin);
@@ -170,6 +178,7 @@ int main() {
     if (len > 0 && Username[len - 1] == '\n') {
         Username[len - 1] = '\0'; 
     }
+
 
   while (i < COUNTER) {
 
@@ -184,6 +193,7 @@ int main() {
       printf("\n Username not found\n");
       return 0;
     }
+
 
 
   printf("\n Enter password \n\n > ");
@@ -327,6 +337,8 @@ int main() {
      case 51: //Means 3;
 	      
 	 system("cls");
+
+	 transaction += 1;
 	 printf("\n\n  FINDER\n");
 	 printf("----------------------------------\n\n");
 
@@ -389,10 +401,10 @@ int main() {
 	  }
 
 	  if ( strcmp(user_data[k].name,Search_user)==0 || strcmp(user_data[k].fullname,Search_user)==0 ) {
-	  printf("\n  %15s",user_data[k].fullname);
-	  printf("   : [ %d ]\n",user_data[k].Account_no);
+	  printf("\n  %16s",user_data[k].fullname);
+	  printf(": [ %d ]\n",user_data[k].Account_no);
 	  /* printf("\n"); */
-	  break; //temporary
+	  break; 
 	   
 	  }
 
@@ -418,6 +430,13 @@ int main() {
 	 scanf("%15d",&transfer);
 	 printf("\n");
 
+	 if ( transfer <= 0 ) {
+	  printf("\n \"Invalid amount\".\n\n");
+	  transaction -= 1;
+	  break;
+
+	 }
+
 
 	 printf("  Enter account no. : ");
 	 scanf("%4d",&acc_no);
@@ -429,7 +448,8 @@ int main() {
 	 while ( l < COUNTER ) {
 
 	  if ( user_data[l].Account_no == acc_no) {
-	   printf("\n OK");
+	   user_data[l].AccountBalance += transfer;
+	   printf("\n\n-- Money Transferred --\n\n");
 	   break;
 	  }
 	  l++;
