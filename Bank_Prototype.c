@@ -1,4 +1,4 @@
-// STATUS : (+)case 51 bug fixes; (+)Ghost Access; arrange user ac no.;  
+// STATUS : (+)case 51 adds; (+)Ghost Access; arrange user ac no.;  
 
 						/* For adding new Users :
 						 
@@ -13,7 +13,7 @@
 #include "Beep.c"
 
 #define MAXLENGTH 12
-#define COUNTER 8
+#define COUNTER 7 
 
 int delay3 = 60000;   /*41900*/
 
@@ -75,11 +75,11 @@ int main() {
   char search;
   char display_all;
 
-  int i = 0;  //tracks current user
-  int j = 0;  //displays all users and account no.
-  int k = 0;  //finds user to transfer money
-  int s = 0;  //password loop
-  int l = 0;  //checks acc no. is correct ,lol
+  int CurrentUser = 0;     //tracks current user
+  int DisplayUsers = 0;    //displays all users and account no.
+  int f_TransferUser = 0;  //finds user to transfer money
+  int PasswordLoop = 0;    //password loop
+  int AccCheck = 0;        //checks acc no. is correct
   int input_length = strlen(Password);
   int max_length = 23;
   int deposit;
@@ -180,16 +180,16 @@ int main() {
     }
 
 
-  while (i < COUNTER) {
+  while (CurrentUser <= COUNTER) {
 
-    if ( strcmp(user_data[i].name,Username)==0 || strcmp(user_data[i].fullname,Username)==0) {
+    if ( strcmp(user_data[CurrentUser].name,Username)==0 || strcmp(user_data[CurrentUser].fullname,Username)==0) {
       break;
     }
-    i++;
+    CurrentUser++;
   }
 
 
-   if ( strcmp(user_data[i].name,Username)!=0 && strcmp(user_data[i].fullname,Username)!=0) {
+   if ( strcmp(user_data[CurrentUser].name,Username)!=0 && strcmp(user_data[CurrentUser].fullname,Username)!=0) {
       printf("\n Username not found\n");
       return 0;
     }
@@ -209,30 +209,30 @@ int main() {
    }
 
    if ( ch == '\r' ) {
-    Password[s] = '\0';
+    Password[PasswordLoop] = '\0';
     break;
    }
 
    if ( ch == '\b' ) {
 
-    if (s > 0) {
-     s--;
+    if (PasswordLoop > 0) {
+     PasswordLoop--;
      printf("\b \b");
 
     }
    }
 
    else {
-    Password[s] = ch;
+    Password[PasswordLoop] = ch;
     printf("*");
     strlwr(Password);
-    s++;
+    PasswordLoop++;
    }
 
   }
 
-   if ( strcmp(user_data[i].password,Password)==0 ) {  
-      user_data[i].found = 1;
+   if ( strcmp(user_data[CurrentUser].password,Password)==0 ) {  
+      user_data[CurrentUser].found = 1;
     }
 
    
@@ -291,11 +291,11 @@ int main() {
       }
 
       if ( deposit > 0 ) {
-      user_data[i].AccountBalance += deposit;
+      user_data[CurrentUser].AccountBalance += deposit;
       printf("\n\n-- Money Deposited --\n\n");
       /* printf("----------------------\n\n"); */
-      printf("  Now Balance : %d\n\n",user_data[i].AccountBalance);
-	/* balance = user_data[i].AccountBalance; */
+      printf("  Now Balance : %d\n\n",user_data[CurrentUser].AccountBalance);
+	/* balance = user_data[CurrentUser].AccountBalance; */
       }
 
 
@@ -314,7 +314,7 @@ int main() {
 	 scanf("%15d",&withdraw);
 
 
-	 if ( withdraw > user_data[i].AccountBalance) {
+	 if ( withdraw > user_data[CurrentUser].AccountBalance) {
 	  printf("\n\n \"Insufficient funds for this transaction\".\n\n");
 	  transaction -= 1;
 	 }
@@ -324,11 +324,11 @@ int main() {
 	  transaction -= 1;
 	 }
 
-	 if ( withdraw <= user_data[i].AccountBalance && withdraw > 0) {
-	 user_data[i].AccountBalance -= withdraw;
+	 if ( withdraw <= user_data[CurrentUser].AccountBalance && withdraw > 0) {
+	 user_data[CurrentUser].AccountBalance -= withdraw;
 	 printf("\n\n-- Money Withdrawn --\n\n");
-	 printf("  Now Balance : %d\n\n",user_data[i].AccountBalance);
-	 /* balance = user_data[i].AccountBalance; */
+	 printf("  Now Balance : %d\n\n",user_data[CurrentUser].AccountBalance);
+	 /* balance = user_data[CurrentUser].AccountBalance; */
 	 }
 
 	 break;
@@ -355,12 +355,12 @@ int main() {
 
 	 if ( display_all == 'y') {
 
-	  j = 0;
+	  DisplayUsers = 0;
 
-	 while ( j < COUNTER ) {
-	  printf("  %15s",user_data[j].fullname,user_data[j].Account_no);
-	  printf("   : [ %d ]\n",user_data[j].Account_no);
-	  j++;
+	 while ( DisplayUsers <= COUNTER ) {
+	  printf("  %15s",user_data[DisplayUsers].fullname,user_data[DisplayUsers].Account_no);
+	  printf("   : [ %d ]\n",user_data[DisplayUsers].Account_no);
+	  DisplayUsers++;
 	 }
 
 	 /* goto search; */
@@ -375,15 +375,15 @@ int main() {
 
 	 /* search: */
 
-	 while ( strcmp(user_data[k].name,Search_user)!=0 || strcmp(user_data[k].fullname,Search_user)!=0 ) {
+	 while ( strcmp(user_data[f_TransferUser].name,Search_user)!=0 || strcmp(user_data[f_TransferUser].fullname,Search_user)!=0 ) {
 
+	 f_TransferUser = 0;
 	 printf("\n  Search User (y/n) : ");
 	 search = getche();
 	 /* scanf("%1s",&search); */
 
 	 if ( search == 'y' ) {
 
-	  k = 0;
 	  printf("\n\n  Enter name : ");
 	  fgets(Search_user,sizeof(Search_user),stdin);
 	  strlwr(Search_user);
@@ -394,17 +394,17 @@ int main() {
 	   Search_user[len - 1] = '\0'; 
 	  }
 
-	  while (k < COUNTER) {
+	  while (f_TransferUser <= COUNTER) {
 
-	   if ( strcmp(user_data[k].name,Search_user)==0 || strcmp(user_data[k].fullname,Search_user)==0) {
+	   if ( strcmp(user_data[f_TransferUser].name,Search_user)==0 || strcmp(user_data[f_TransferUser].fullname,Search_user)==0) {
 	    break;
 	   }
-	   k++;
+	   f_TransferUser++;
 	  }
 
-	  if ( strcmp(user_data[k].name,Search_user)==0 || strcmp(user_data[k].fullname,Search_user)==0 ) {
-	  printf("\n  %16s",user_data[k].fullname);
-	  printf(": [ %d ]\n",user_data[k].Account_no);
+	  if ( strcmp(user_data[f_TransferUser].name,Search_user)==0 || strcmp(user_data[f_TransferUser].fullname,Search_user)==0 ) {
+	  printf("\n  %16s",user_data[f_TransferUser].fullname);
+	  printf(": [ %d ]\n",user_data[f_TransferUser].Account_no);
 	  /* printf("\n"); */
 	  break; 
 	   
@@ -416,13 +416,13 @@ int main() {
 	  break;
 	 }
 
-	 if ( strcmp(user_data[k].name,Search_user)!=0 || strcmp(user_data[k].fullname,Search_user)!=0 ) {
+	 if ( strcmp(user_data[f_TransferUser].name,Search_user)!=0 || strcmp(user_data[f_TransferUser].fullname,Search_user)!=0 ) {
 	  printf("\n  User not found\n");
 	 }
 	 
 	 /* bytes = 0; */
 
-
+	 
 	 };
 
 
@@ -432,7 +432,7 @@ int main() {
 	 scanf("%15d",&transfer);
 	 printf("\n");
 
-	 if ( transfer > user_data[i].AccountBalance) {
+	 if ( transfer > user_data[CurrentUser].AccountBalance) {
 	  printf("\n \"Insufficient funds for this transaction\".\n\n");
 	  transaction -= 1;
 	  break;
@@ -449,23 +449,23 @@ int main() {
 
 	 getchar();
 
-	 l = 0;
+	 AccCheck = 0;
 
-	 while ( l < COUNTER ) {
+	 while ( AccCheck <= COUNTER ) {
 
-	  if ( user_data[l].Account_no == acc_no) {
-	   /* user_data[l].AccountBalance += transfer; */
+	  if ( user_data[AccCheck].Account_no == acc_no) {
+	   /* user_data[AccCheck].AccountBalance += transfer; */
 	   /* printf("\n\n-- Money Transferred --\n\n"); */
 	   break;
 	  }
-	  l++;
+	  AccCheck++;
 	 }
 
-	 if ( user_data[l].Account_no == acc_no) {
+	 if ( user_data[AccCheck].Account_no == acc_no) {
 
-	 if ( transfer <= user_data[i].AccountBalance && transfer > 0 ) {
-	 user_data[i].AccountBalance -= transfer;
-	   user_data[l].AccountBalance += transfer;
+	 if ( transfer <= user_data[CurrentUser].AccountBalance && transfer > 0 ) {
+	 user_data[CurrentUser].AccountBalance -= transfer;
+	   user_data[AccCheck].AccountBalance += transfer;
 	   printf("\n\n-- Money Transferred --\n\n");
 	 }
 
@@ -484,15 +484,16 @@ int main() {
      case 52: //Means 4;
 
 	 system("cls");
-	 balance = user_data[i].AccountBalance;
+	 balance = user_data[CurrentUser].AccountBalance;
 	 printf("\n\n  ACCOUNT DETAILS\n");
 	 printf("----------------------------------\n\n");
 
-	 printf("  Name            : %s\n",user_data[i].fullname);
-	 printf("  Password        : %s\n",user_data[i].password);
-	 printf("  Account no.     : %d\n",user_data[i].Account_no);
-	 printf("  Total Balance   : %d\n",balance);
-	 printf("\n  %d transaction(s) have been made from your account\n\n",transaction);
+	 printf("  Name                 : %s\n",user_data[CurrentUser].fullname);
+	 printf("  Password             : %s\n",user_data[CurrentUser].password);
+	 printf("  Account no.          : %d\n",user_data[CurrentUser].Account_no);
+	 printf("  Total Balance        : %d\n",balance);
+	 printf("  No. of transactions  : %d\n\n",transaction);
+	 /* printf("\n  %d transaction(s) have been made from your account\n\n",transaction); */
 
 	 break;
 	      
