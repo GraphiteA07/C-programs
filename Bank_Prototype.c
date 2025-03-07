@@ -1,8 +1,8 @@
-// STATUS : (+)Added struct pointers; (+)Ghost Access; arrange user ac no.;  
+// STATUS : (+)snake case; (+)case 51 _getche in Search (Exp); (+)Ghost Access; arrange user ac no.;  
 
 						/* For adding new Users :
 						 
-						 1) Increase COUNTER
+ 						 1) Increase COUNTER
 						 2) increase user_data[+]; (if needed) */
 
 #include <stdio.h>
@@ -68,19 +68,19 @@ void Directing() {
 int main() {
   system("cls");
 
-  char Password[MAXLENGTH];
-  char Username[40];
-  char Search_user[30];
+  char user_password[MAXLENGTH]; 
+  char user_name[40];
+  char search_user[30];
   char choice;
   char search;
   char display_all;
 
-  int CurrentUser = 0;     //tracks current user
-  int DisplayUsers = 0;    //displays all users and account no.
-  int f_TransferUser = 0;  //finds user to transfer money
-  int PasswordLoop = 0;    //password loop
-  int AccCheck = 0;        //checks acc no. is correct
-  int input_length = strlen(Password);
+  int current_user = 0;     //tracks current user
+  int display_users = 0;    //displays all users and account no.
+  int ftransfer_user = 0;  //finds user to transfer money
+  int password_loop = 0;    //password loop
+  int acc_check = 0;        //checks acc no. is correct
+  int input_length = strlen(user_password);
   int max_length = 23;
   int deposit;
   int withdraw;
@@ -172,26 +172,26 @@ int main() {
   struct Users *ptr = user_data;
 
   printf("\n Enter name \n\n > ");
-  fgets(Username,sizeof(Username),stdin);
-  strlwr(Username);
+  fgets(user_name,sizeof(user_name),stdin);
+  strlwr(user_name);
 
   //This removes the \n from fgets;
-  size_t len = strlen(Username);
-    if (len > 0 && Username[len - 1] == '\n') {
-        Username[len - 1] = '\0'; 
+  size_t len = strlen(user_name);
+    if (len > 0 && user_name[len - 1] == '\n') {
+        user_name[len - 1] = '\0'; 
     }
 
 
-  while (CurrentUser <= COUNTER) {
+  while (current_user <= COUNTER) {
 
-    if ( strcmp((ptr + CurrentUser)->name,Username)==0 || strcmp((ptr + CurrentUser)->fullname,Username)==0) {
+    if ( strcmp((ptr + current_user)->name,user_name)==0 || strcmp((ptr + current_user)->fullname,user_name)==0) {
       break;
     }
-    CurrentUser++;
+    current_user++;
   }
 
 
-   if ( strcmp((ptr + CurrentUser)->name,Username)!=0 && strcmp((ptr + CurrentUser)->fullname,Username)!=0) {
+   if ( strcmp((ptr + current_user)->name,user_name)!=0 && strcmp((ptr + current_user)->fullname,user_name)!=0) {
       printf("\n Username not found\n");
       return 0;
     }
@@ -211,30 +211,30 @@ int main() {
    }
 
    if ( ch == '\r' ) {
-    Password[PasswordLoop] = '\0';
+    user_password[password_loop] = '\0';
     break;
    }
 
    if ( ch == '\b' ) {
 
-    if (PasswordLoop > 0) {
-     PasswordLoop--;
+    if (password_loop > 0) {
+     password_loop--;
      printf("\b \b");
 
     }
    }
 
    else {
-    Password[PasswordLoop] = ch;
+    user_password[password_loop] = ch;
     printf("*");
-    strlwr(Password);
-    PasswordLoop++;
+    strlwr(user_password);
+    password_loop++;
    }
 
   }
 
-   if ( strcmp((ptr + CurrentUser)->password,Password)==0 ) {  
-      (ptr + CurrentUser)->found = 1;
+   if ( strcmp((ptr + current_user)->password,user_password)==0 ) {  
+      (ptr + current_user)->found = 1;
     }
 
    
@@ -293,11 +293,11 @@ int main() {
       }
 
       if ( deposit > 0 ) {
-      (ptr + CurrentUser)->AccountBalance += deposit;
+      (ptr + current_user)->AccountBalance += deposit;
       printf("\n\n-- Money Deposited --\n\n");
       /* printf("----------------------\n\n"); */
-      printf("  Now Balance : %d\n\n",(ptr + CurrentUser)->AccountBalance);
-	/* balance = user_data[CurrentUser].AccountBalance; */
+      printf("  Now Balance : %d\n\n",(ptr + current_user)->AccountBalance);
+	/* balance = user_data[current_user].AccountBalance; */
       }
 
 
@@ -316,7 +316,7 @@ int main() {
 	 scanf("%15d",&withdraw);
 
 
-	 if ( withdraw > (ptr + CurrentUser)->AccountBalance) {
+	 if ( withdraw > (ptr + current_user)->AccountBalance) {
 	  printf("\n\n \"Insufficient funds for this transaction\".\n\n");
 	  transaction -= 1;
 	 }
@@ -326,11 +326,11 @@ int main() {
 	  transaction -= 1;
 	 }
 
-	 if ( withdraw <= (ptr + CurrentUser)->AccountBalance && withdraw > 0) {
-	 (ptr + CurrentUser)->AccountBalance -= withdraw;
+	 if ( withdraw <= (ptr + current_user)->AccountBalance && withdraw > 0) {
+	 (ptr + current_user)->AccountBalance -= withdraw;
 	 printf("\n\n-- Money Withdrawn --\n\n");
-	 printf("  Now Balance : %d\n\n",(ptr + CurrentUser)->AccountBalance);
-	 /* balance = user_data[CurrentUser].AccountBalance; */
+	 printf("  Now Balance : %d\n\n",(ptr + current_user)->AccountBalance);
+	 /* balance = user_data[current_user].AccountBalance; */
 	 }
 
 	 break;
@@ -357,12 +357,12 @@ int main() {
 
 	 if ( display_all == 'y') {
 
-	  DisplayUsers = 0;
+	  display_users = 0;
 
-	 while ( DisplayUsers <= COUNTER ) {
-	  printf("  %15s",(ptr + DisplayUsers)->fullname);
-	  printf("   : [ %d ]\n",(ptr + DisplayUsers)->Account_no);
-	  DisplayUsers++;
+	 while ( display_users <= COUNTER ) {
+	  printf("  %15s",(ptr + display_users)->fullname);
+	  printf("   : [ %d ]\n",(ptr + display_users)->Account_no);
+	  display_users++;
 	 }
 
 	 /* goto search; */
@@ -377,36 +377,36 @@ int main() {
 
 	 /* search: */
 
-	 while ( strcmp((ptr + f_TransferUser)->name,Search_user)!=0 || strcmp((ptr + f_TransferUser)->fullname,Search_user)!=0 ) {
+	 while ( strcmp((ptr + ftransfer_user)->name,search_user)!=0 || strcmp((ptr + ftransfer_user)->fullname,search_user)!=0 ) {
 
-	 f_TransferUser = 0;
+	 ftransfer_user = 0;
 	 printf("\n  Search User (y/n) : ");
-	 search = getche();
+	 search = _getche();
 	 /* scanf("%1s",&search); */
 
-	 if ( search == 'y' ) {
+	 if ( search == 121 || search == 89 ) {
 
 	  printf("\n\n  Enter name : ");
-	  fgets(Search_user,sizeof(Search_user),stdin);
-	  strlwr(Search_user);
+	  fgets(search_user,sizeof(search_user),stdin);
+	  strlwr(search_user);
 
 	  //This removes the \n from fgets;
-	  size_t len = strlen(Search_user);
-	  if (len > 0 && Search_user[len - 1] == '\n') {
-	   Search_user[len - 1] = '\0'; 
+	  size_t len = strlen(search_user);
+	  if (len > 0 && search_user[len - 1] == '\n') {
+	   search_user[len - 1] = '\0'; 
 	  }
 
-	  while (f_TransferUser <= COUNTER) {
+	  while (ftransfer_user <= COUNTER) {
 
-	   if ( strcmp((ptr + f_TransferUser)->name,Search_user)==0 || strcmp((ptr + f_TransferUser)->fullname,Search_user)==0) {
+	   if ( strcmp((ptr + ftransfer_user)->name,search_user)==0 || strcmp((ptr + ftransfer_user)->fullname,search_user)==0) {
 	    break;
 	   }
-	   f_TransferUser++;
+	   ftransfer_user++;
 	  }
 
-	  if ( strcmp((ptr + f_TransferUser)->name,Search_user)==0 || strcmp((ptr + f_TransferUser)->fullname,Search_user)==0 ) {
-	  printf("\n  %16s",(ptr + f_TransferUser)->fullname);
-	  printf(": [ %d ]\n",(ptr + f_TransferUser)->Account_no);
+	  if ( strcmp((ptr + ftransfer_user)->name,search_user)==0 || strcmp((ptr + ftransfer_user)->fullname,search_user)==0 ) {
+	  printf("\n  %16s",(ptr + ftransfer_user)->fullname);
+	  printf(": [ %d ]",(ptr + ftransfer_user)->Account_no);
 	  /* printf("\n"); */
 	  break; 
 	   
@@ -414,11 +414,11 @@ int main() {
 
 	 }
 
-	 if ( search == 'n' ) {
+	 if ( search == 110 || search == 78 ) {
 	  break;
 	 }
 
-	 if ( strcmp((ptr + f_TransferUser)->name,Search_user)!=0 || strcmp((ptr + f_TransferUser)->fullname,Search_user)!=0 ) {
+	 if ( strcmp((ptr + ftransfer_user)->name,search_user)!=0 || strcmp((ptr + ftransfer_user)->fullname,search_user)!=0 ) {
 	  printf("\n  User not found\n");
 	 }
 	 
@@ -427,6 +427,8 @@ int main() {
 	 
 	 };
 
+	 printf("\n");
+
 
 	 printf("\n\n  TRANSFER MONEY\n");
 	 printf("----------------------------------\n\n");
@@ -434,7 +436,7 @@ int main() {
 	 scanf("%15d",&transfer);
 	 printf("\n");
 
-	 if ( transfer > (ptr + CurrentUser)->AccountBalance) {
+	 if ( transfer > (ptr + current_user)->AccountBalance) {
 	  printf("\n \"Insufficient funds for this transaction\".\n\n");
 	  transaction -= 1;
 	  break;
@@ -451,23 +453,23 @@ int main() {
 
 	 getchar();
 
-	 AccCheck = 0;
+	 acc_check = 0;
 
-	 while ( AccCheck <= COUNTER ) {
+	 while ( acc_check <= COUNTER ) {
 
-	  if ( (ptr + AccCheck)->Account_no == acc_no) {
-	   /* user_data[AccCheck].AccountBalance += transfer; */
+	  if ( (ptr + acc_check)->Account_no == acc_no) {
+	   /* user_data[acc_check].AccountBalance += transfer; */
 	   /* printf("\n\n-- Money Transferred --\n\n"); */
 	   break;
 	  }
-	  AccCheck++;
+	  acc_check++;
 	 }
 
-	 if ( (ptr + AccCheck)->Account_no == acc_no) {
+	 if ( (ptr + acc_check)->Account_no == acc_no) {
 
-	 if ( transfer <= (ptr + CurrentUser)->AccountBalance && transfer > 0 ) {
-	 (ptr + CurrentUser)->AccountBalance -= transfer;
-	   (ptr + AccCheck)->AccountBalance += transfer;
+	 if ( transfer <= (ptr + current_user)->AccountBalance && transfer > 0 ) {
+	 (ptr + current_user)->AccountBalance -= transfer;
+	   (ptr + acc_check)->AccountBalance += transfer;
 	   printf("\n\n-- Money Transferred --\n\n");
 	 }
 
@@ -486,13 +488,13 @@ int main() {
      case 52: //Means 4;
 
 	 system("cls");
-	 balance = (ptr + CurrentUser)->AccountBalance;
+	 balance = (ptr + current_user)->AccountBalance;
 	 printf("\n\n  ACCOUNT DETAILS\n");
 	 printf("----------------------------------\n\n");
 
-	 printf("  Name                 : %s\n",(ptr + CurrentUser)->fullname);
-	 printf("  Password             : %s\n",(ptr + CurrentUser)->password);
-	 printf("  Account no.          : %d\n",(ptr + CurrentUser)->Account_no);
+	 printf("  Name                 : %s\n",(ptr + current_user)->fullname);
+	 printf("  Password             : %s\n",(ptr + current_user)->password);
+	 printf("  Account no.          : %d\n",(ptr + current_user)->Account_no);
 	 printf("  Total Balance        : %d\n",balance);
 	 printf("  No. of transactions  : %d\n\n",transaction);
 	 /* printf("\n  %d transaction(s) have been made from your account\n\n",transaction); */
@@ -501,9 +503,10 @@ int main() {
 	      
 
      case 54: //Means 6;
+	      
+     printf("\n\n  Exited Successfully..\n");
       return 0;
       break;
-
     }
 
       printf("\n  Press any key ...\n  ");
