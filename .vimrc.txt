@@ -9,7 +9,9 @@ set laststatus=2
 
 set incsearch
 
-set guifont=Lucida\ Sans\ Typewriter:h10.5
+
+set guifont=Fira\ Code\ Retina:h10  
+
 
 
 
