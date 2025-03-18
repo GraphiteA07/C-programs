@@ -1,4 +1,4 @@
-// STATUS : (+)case 51 search fixes; 
+// STATUS : (+)cases bug fixes; 
 
 						/* For adding new Users :
 						 
@@ -319,7 +319,7 @@ int main() {
       printf("  Now Balance : %d\n\n",(ptr + current_user)->AccountBalance);
 	/* balance = user_data[current_user].AccountBalance; */
       }
-
+          getchar();  //fixes search by consuming '\n'
 
 
 	 break;
@@ -353,6 +353,8 @@ int main() {
 	 /* balance = user_data[current_user].AccountBalance; */
 	 }
 
+          getchar();  //fixes search by consuming '\n'
+		      
 	 break;
 
 
@@ -371,7 +373,7 @@ int main() {
 
 
 	 if ( display_all == 'n' ) {
-	  printf(" ");
+	  printf("\n ");
 	 }
 
 	 if ( display_all == 'y') {
@@ -404,7 +406,7 @@ int main() {
 	 printf("\n  Search User (y/n) : ");
 	 search = getche();
 
-	 getchar();  //fixes search by getting \n
+	 
 	 /* scanf("%1s",&search); */
 
 	 if ( search == 'y' || search == 'Y' ) {
