@@ -1,4 +1,4 @@
-// STATUS : (+)snake case; (+)case 51 _getche in Search (Exp); (+)Ghost Access; arrange user ac no.;  
+// STATUS :  (+)arranged users ac no.; (+)Fixed Ghost Access; (+)MENU 
 
 						/* For adding new Users :
 						 
@@ -13,11 +13,11 @@
 #include "Beep.c"
 
 #define MAXLENGTH 12
-#define COUNTER 7 
+#define COUNTER 8 
 
 int delay3 = 60000;   /*41900*/
 
-void WELCOME_S() {
+void WELCOME() {
 
  //gap from ( " ) 6 ( Only ASCII )
 
@@ -34,17 +34,15 @@ void WELCOME_S() {
  printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n\n");
 } 
 
-void WELCOME() {
+void MENU() {
 
  //gap from ( " ) 6 ( Only ASCII )
 
- printf("\n\n    e   e  e eeee e     eeee eeeee eeeeeee eeee \n");
- printf("    8   8  8 8    8     8  8 8  88 8  8  8 8    \n");
- printf("    8e  8  8 8eee 8e    8e   8   8 8e 8  8 8eee \n");
- printf("    88  8  8 88   88    88   8   8 88 8  8 88   \n");
- printf("    88ee8ee8 88ee 88eee 88e8 8eee8 88 8  8 88ee \n");
-
- printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n\n");
+ printf("\n\n   8b    d8    db    88 88b 88     8b    d8 888888 88b 88 88   88\n");
+ printf("   88b  d88   dPYb   88 88Yb88     88b  d88 88__   88Yb88 88   88\n");
+ printf("   88YbdP88  dP__Yb  88 88 Y88     88YbdP88 88     88 Y88 Y8   8P\n");
+ printf("   88 YY 88 dP''''Yb 88 88  Y8     88 YY 88 888888 88  Y8 `YbodP'\n");
+ printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n");
 } 
 
 void Directing() {
@@ -89,6 +87,7 @@ int main() {
   int transaction = 0;
   int balance = 0;
   int after_transaction = 0;
+  int interaction = 0;
 
 
   struct Users {
@@ -102,12 +101,12 @@ int main() {
 
   };
 
-  struct Users Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali;
+  struct Users Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi;
 
   Ryan.found;
   strcpy(Ryan.password, "ryan");
   Ryan.AccountBalance = 100000;
-  Ryan.Account_no = 2012;
+  Ryan.Account_no = 1001;
   strcpy(Ryan.name, "ryan");
   strcpy(Ryan.fullname, "ryan asif");
   
@@ -115,14 +114,14 @@ int main() {
   Shayan.found;
   strcpy(Shayan.password, "shayan");
   Shayan.AccountBalance = 100000;
-  Shayan.Account_no = 2013;
+  Shayan.Account_no = 1002;
   strcpy(Shayan.name, "shayan");
   strcpy(Shayan.fullname, "shayan siddiqui");
 
   Ahmed.found;
   strcpy(Ahmed.password, "ahmed");
   Ahmed.AccountBalance = 100000;
-  Ahmed.Account_no = 2014;
+  Ahmed.Account_no = 1003;
   strcpy(Ahmed.name, "ahmed");
   strcpy(Ahmed.fullname, "ahmed dayan");
 
@@ -130,7 +129,7 @@ int main() {
   Khuzema.found;
   strcpy(Khuzema.password, "khuzema");
   Khuzema.AccountBalance = 100000;
-  Khuzema.Account_no = 2015;
+  Khuzema.Account_no = 1004;
   strcpy(Khuzema.name, "khuzema");
   strcpy(Khuzema.fullname, "khuzema afridi");
 
@@ -138,7 +137,7 @@ int main() {
   Fawad.found;
   strcpy(Fawad.password, "fawad");
   Fawad.AccountBalance = 100000;
-  Fawad.Account_no = 2016;
+  Fawad.Account_no = 1005;
   strcpy(Fawad.name, "fawad");
   strcpy(Fawad.fullname, "fawad ahmed");
 
@@ -146,7 +145,7 @@ int main() {
   Talha.found;
   strcpy(Talha.password, "talha");
   Talha.AccountBalance = 100000;
-  Talha.Account_no = 2017;
+  Talha.Account_no = 1006;
   strcpy(Talha.name, "talha");
   strcpy(Talha.fullname, "talha qadri");
 
@@ -154,7 +153,7 @@ int main() {
   Muaz.found;
   strcpy(Muaz.password, "muaz");
   Muaz.AccountBalance = 100000;
-  Muaz.Account_no = 2018;
+  Muaz.Account_no = 1007;
   strcpy(Muaz.name, "muaz");
   strcpy(Muaz.fullname, "muaz khan");
 
@@ -162,12 +161,19 @@ int main() {
   Ali.found;
   strcpy(Ali.password, "ali");
   Ali.AccountBalance = 100000;
-  Ali.Account_no = 2019;
+  Ali.Account_no = 1008;
   strcpy(Ali.name, "ali");
   strcpy(Ali.fullname, "muhammad ali raza");
 
 
-  struct Users user_data[100]= {Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali};
+  Saffi.found;
+  strcpy(Saffi.password, "saffi");
+  Saffi.AccountBalance = 100000;
+  Saffi.Account_no = 1009;
+  strcpy(Saffi.name, "saffi");
+  strcpy(Saffi.fullname, "muhammad saffi");
+
+  struct Users user_data[100]= {Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi};
 
   struct Users *ptr = user_data;
 
@@ -175,11 +181,17 @@ int main() {
   fgets(user_name,sizeof(user_name),stdin);
   strlwr(user_name);
 
+    if ( user_name[0] == '\n' ) {
+     printf("\n  User not found\n");
+     return 0;
+    }
+
   //This removes the \n from fgets;
   size_t len = strlen(user_name);
     if (len > 0 && user_name[len - 1] == '\n') {
         user_name[len - 1] = '\0'; 
     }
+
 
 
   while (current_user <= COUNTER) {
@@ -255,7 +267,14 @@ int main() {
     do {
 
     system("cls");
-    WELCOME_S();
+
+    if ( interaction == 1 ) {
+     MENU();
+    }
+
+    else {
+    WELCOME();
+    }
 
     printf("\n   [1] Deposite Money \t  [4] Account Details \n");
     printf("\n   [2] Withdraw Money \t  [5] Transaction Details \n");
@@ -361,7 +380,7 @@ int main() {
 
 	 while ( display_users <= COUNTER ) {
 	  printf("  %15s",(ptr + display_users)->fullname);
-	  printf("   : [ %d ]\n",(ptr + display_users)->Account_no);
+	  printf("\t: [ %d ]\n",(ptr + display_users)->Account_no);
 	  display_users++;
 	 }
 
@@ -379,12 +398,11 @@ int main() {
 
 	 while ( strcmp((ptr + ftransfer_user)->name,search_user)!=0 || strcmp((ptr + ftransfer_user)->fullname,search_user)!=0 ) {
 
-	 ftransfer_user = 0;
 	 printf("\n  Search User (y/n) : ");
 	 search = _getche();
 	 /* scanf("%1s",&search); */
 
-	 if ( search == 121 || search == 89 ) {
+	 if ( search == 'y' || search == 'Y' ) {
 
 	  printf("\n\n  Enter name : ");
 	  fgets(search_user,sizeof(search_user),stdin);
@@ -406,7 +424,7 @@ int main() {
 
 	  if ( strcmp((ptr + ftransfer_user)->name,search_user)==0 || strcmp((ptr + ftransfer_user)->fullname,search_user)==0 ) {
 	  printf("\n  %16s",(ptr + ftransfer_user)->fullname);
-	  printf(": [ %d ]",(ptr + ftransfer_user)->Account_no);
+	  printf("\t: [ %d ]",(ptr + ftransfer_user)->Account_no);
 	  /* printf("\n"); */
 	  break; 
 	   
@@ -414,7 +432,7 @@ int main() {
 
 	 }
 
-	 if ( search == 110 || search == 78 ) {
+	 if ( search == 'n' || search == 'N' ) {
 	  break;
 	 }
 
@@ -423,7 +441,7 @@ int main() {
 	 }
 	 
 	 /* bytes = 0; */
-
+	 ftransfer_user = 0;
 	 
 	 };
 
@@ -511,6 +529,7 @@ int main() {
 
       printf("\n  Press any key ...\n  ");
       after_transaction = _getch();
+      interaction = 1;
 
 
 
