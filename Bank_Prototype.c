@@ -1,4 +1,4 @@
-// STATUS :  (+)arranged users ac no.; (+)Fixed Ghost Access; (+)MENU 
+// STATUS :  (+)Changed ASCII of MENU; (+)case 51 search fixes; 
 
 						/* For adding new Users :
 						 
@@ -19,7 +19,7 @@ int delay3 = 60000;   /*41900*/
 
 void WELCOME() {
 
- //gap from ( " ) 6 ( Only ASCII )
+ //gap from ( " ) 4 ( Only ASCII )
 
  printf("\n\n    e   e  e eeee e     eeee eeeee eeeeeee eeee \n");
  usleep(delay3);
@@ -36,12 +36,13 @@ void WELCOME() {
 
 void MENU() {
 
- //gap from ( " ) 6 ( Only ASCII )
+ //gap from ( " ) 4 ( Only ASCII )
 
- printf("\n\n   8b    d8    db    88 88b 88     8b    d8 888888 88b 88 88   88\n");
- printf("   88b  d88   dPYb   88 88Yb88     88b  d88 88__   88Yb88 88   88\n");
- printf("   88YbdP88  dP__Yb  88 88 Y88     88YbdP88 88     88 Y88 Y8   8P\n");
- printf("   88 YY 88 dP''''Yb 88 88  Y8     88 YY 88 888888 88  Y8 `YbodP'\n");
+ printf("\n\n    eeeeeee eeeee e  eeeee    eeeeeee eeee eeeee e   e\n");
+ printf("    8  8  8 8   8 8  8   8    8  8  8 8    8   8 8   8\n");
+ printf("    8e 8  8 8eee8 8  8e  8    8e 8  8 8eee 8e  8 8e  8\n");
+ printf("    88 8  8 88  8 8  88  8    88 8  8 88   88  8 88  8\n");
+ printf("    88 8  8 88  8 8  88  8    88 8  8 88ee 88  8 88ee8\n");
  printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n");
 } 
 
@@ -367,7 +368,6 @@ int main() {
 	 display_all = getche();
 	 /* scanf("%1s",&display_all); */
 
-	 printf("\n\n");
 
 
 	 if ( display_all == 'n' ) {
@@ -375,6 +375,8 @@ int main() {
 	 }
 
 	 if ( display_all == 'y') {
+
+	 printf("\n\n");
 
 	  display_users = 0;
 
@@ -398,8 +400,9 @@ int main() {
 
 	 while ( strcmp((ptr + ftransfer_user)->name,search_user)!=0 || strcmp((ptr + ftransfer_user)->fullname,search_user)!=0 ) {
 
+	 ftransfer_user = 0;
 	 printf("\n  Search User (y/n) : ");
-	 search = _getche();
+	 search = getche();
 	 /* scanf("%1s",&search); */
 
 	 if ( search == 'y' || search == 'Y' ) {
@@ -441,7 +444,6 @@ int main() {
 	 }
 	 
 	 /* bytes = 0; */
-	 ftransfer_user = 0;
 	 
 	 };
 
