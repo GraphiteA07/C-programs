@@ -1,4 +1,4 @@
-// STATUS :  (+)Changed ASCII of MENU; (+)case 51 search fixes; 
+// STATUS : (+)case 51 search fixes; 
 
 						/* For adding new Users :
 						 
@@ -403,6 +403,8 @@ int main() {
 	 ftransfer_user = 0;
 	 printf("\n  Search User (y/n) : ");
 	 search = getche();
+
+	 getchar();  //fixes search by getting \n
 	 /* scanf("%1s",&search); */
 
 	 if ( search == 'y' || search == 'Y' ) {
