@@ -1,4 +1,4 @@
-// STATUS : (+)cases bug fixes; 
+// STATUS : (+)Removed (int)found = 0; 
 
 						/* For adding new Users :
 						 
@@ -93,7 +93,6 @@ int main() {
 
   struct Users {
 
-    int found = 0;
     char password[MAXLENGTH];
     int AccountBalance;
     int Account_no;
@@ -102,9 +101,8 @@ int main() {
 
   };
 
-  struct Users Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi;
+  struct Users Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil;
 
-  Ryan.found;
   strcpy(Ryan.password, "ryan");
   Ryan.AccountBalance = 100000;
   Ryan.Account_no = 1001;
@@ -112,14 +110,12 @@ int main() {
   strcpy(Ryan.fullname, "ryan asif");
   
 
-  Shayan.found;
   strcpy(Shayan.password, "shayan");
   Shayan.AccountBalance = 100000;
   Shayan.Account_no = 1002;
   strcpy(Shayan.name, "shayan");
   strcpy(Shayan.fullname, "shayan siddiqui");
 
-  Ahmed.found;
   strcpy(Ahmed.password, "ahmed");
   Ahmed.AccountBalance = 100000;
   Ahmed.Account_no = 1003;
@@ -127,7 +123,6 @@ int main() {
   strcpy(Ahmed.fullname, "ahmed dayan");
 
 
-  Khuzema.found;
   strcpy(Khuzema.password, "khuzema");
   Khuzema.AccountBalance = 100000;
   Khuzema.Account_no = 1004;
@@ -135,7 +130,6 @@ int main() {
   strcpy(Khuzema.fullname, "khuzema afridi");
 
 
-  Fawad.found;
   strcpy(Fawad.password, "fawad");
   Fawad.AccountBalance = 100000;
   Fawad.Account_no = 1005;
@@ -143,7 +137,6 @@ int main() {
   strcpy(Fawad.fullname, "fawad ahmed");
 
 
-  Talha.found;
   strcpy(Talha.password, "talha");
   Talha.AccountBalance = 100000;
   Talha.Account_no = 1006;
@@ -151,7 +144,6 @@ int main() {
   strcpy(Talha.fullname, "talha qadri");
 
 
-  Muaz.found;
   strcpy(Muaz.password, "muaz");
   Muaz.AccountBalance = 100000;
   Muaz.Account_no = 1007;
@@ -159,7 +151,6 @@ int main() {
   strcpy(Muaz.fullname, "muaz khan");
 
 
-  Ali.found;
   strcpy(Ali.password, "ali");
   Ali.AccountBalance = 100000;
   Ali.Account_no = 1008;
@@ -167,14 +158,19 @@ int main() {
   strcpy(Ali.fullname, "muhammad ali raza");
 
 
-  Saffi.found;
   strcpy(Saffi.password, "saffi");
   Saffi.AccountBalance = 100000;
   Saffi.Account_no = 1009;
   strcpy(Saffi.name, "saffi");
   strcpy(Saffi.fullname, "muhammad saffi");
 
-  struct Users user_data[100]= {Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi};
+  strcpy(Muzammil.password, "muzammil");
+  Muzammil.AccountBalance = 100000;
+  Muzammil.Account_no = 1009;
+  strcpy(Muzammil.name, "muzammil");
+  strcpy(Muzammil.fullname, "muzammil ahmed");
+
+  struct Users user_data[100]= {Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil};
 
   struct Users *ptr = user_data;
 
@@ -246,20 +242,12 @@ int main() {
 
   }
 
-   if ( strcmp((ptr + current_user)->password,user_password)==0 ) {  
-      (ptr + current_user)->found = 1;
+   if ( strcmp((ptr + current_user)->password,user_password)!=0 ) {  
+      printf("\n\n Password not found\n");
+      return 0;
     }
 
    
-
-   else {
-      printf("\n\n Password not found\n");
-      return 0;
-   }
-
-
-
-
    Directing();
 
    do {
