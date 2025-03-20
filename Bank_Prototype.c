@@ -13,7 +13,7 @@
 #include "Beep.c"
 
 #define MAXLENGTH 12
-#define COUNTER 8 
+#define COUNTER 9 
 
 int delay3 = 60000;   /*41900*/
 
