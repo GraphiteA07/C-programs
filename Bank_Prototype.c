@@ -1,9 +1,10 @@
-// STATUS : (+)Removed (int)found = 0; 
+// STATUS : (+)Added new users; 
 
 						/* For adding new Users :
 						 
- 						 1) Increase COUNTER
-						 2) increase user_data[+]; (if needed) */
+						 1) Increase COUNTER
+						 2) Increase Account_no ( of user )
+						 2) Increase user_data[+]; (if needed) */
 
 #include <stdio.h>
 #include <string.h>
@@ -13,7 +14,7 @@
 #include "Beep.c"
 
 #define MAXLENGTH 12
-#define COUNTER 9 
+#define COUNTER 13 
 
 int delay3 = 60000;   /*41900*/
 
@@ -101,7 +102,7 @@ int main() {
 
   };
 
-  struct Users Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil;
+  struct Users Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil,Burhan,Tanveer,Ar_ryan,Umair;
 
   strcpy(Ryan.password, "ryan");
   Ryan.AccountBalance = 100000;
@@ -164,13 +165,44 @@ int main() {
   strcpy(Saffi.name, "saffi");
   strcpy(Saffi.fullname, "muhammad saffi");
 
+
   strcpy(Muzammil.password, "muzammil");
   Muzammil.AccountBalance = 100000;
-  Muzammil.Account_no = 1009;
+  Muzammil.Account_no = 1010;
   strcpy(Muzammil.name, "muzammil");
   strcpy(Muzammil.fullname, "muzammil ahmed");
 
-  struct Users user_data[100]= {Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil};
+
+  strcpy(Burhan.password, "burhan");
+  Burhan.AccountBalance = 100000;
+  Burhan.Account_no = 1011;
+  strcpy(Burhan.name, "burhan");
+  strcpy(Burhan.fullname, "syed burhan jalali");
+
+
+  strcpy(Tanveer.password, "tanveer");
+  Tanveer.AccountBalance = 100000;
+  Tanveer.Account_no = 1012;
+  strcpy(Tanveer.name, "tanveer");
+  strcpy(Tanveer.fullname, "tanveer ahmed");
+
+
+  strcpy(Ar_ryan.password, "ar-ryan");
+  Ar_ryan.AccountBalance = 100000;
+  Ar_ryan.Account_no = 1013;
+  strcpy(Ar_ryan.name, "ar-ryan");
+  strcpy(Ar_ryan.fullname, "ar-ryan ali");
+
+
+  strcpy(Umair.password, "umair");
+  Umair.AccountBalance = 100000;
+  Umair.Account_no = 1014;
+  strcpy(Umair.name, "umair");
+  strcpy(Umair.fullname, "umair iftikhar");
+
+
+
+  struct Users user_data[100]= {Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil,Burhan,Tanveer,Ar_ryan,Umair};
 
   struct Users *ptr = user_data;
 
