@@ -1,4 +1,4 @@
-// STATUS : (+)Fixed deposit crash 
+// STATUS : (+)9 digit limit for deposit, withdraw, transfer 
 
 						/* For adding new Users :
 						 
@@ -360,7 +360,7 @@ int main() {
 	 printf("\n\n  WITHDRAW MONEY\n");
 	 printf("----------------------------------");
 	 printf("\n\n  Enter amount : ");
-	 scanf("%10d",&withdraw);
+	 scanf("%9d",&withdraw);
 
 
 	 if ( withdraw > (ptr + current_user)->AccountBalance) {
@@ -484,7 +484,7 @@ int main() {
 	 printf("\n\n  TRANSFER MONEY\n");
 	 printf("----------------------------------\n\n");
 	 printf("\n  Enter amount : ");
-	 scanf("%15d",&transfer);
+	 scanf("%9d",&transfer);
 	 printf("\n");
 
 	 if ( transfer > (ptr + current_user)->AccountBalance) {
