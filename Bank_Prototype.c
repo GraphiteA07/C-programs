@@ -1,4 +1,4 @@
-// STATUS : (+)Added new users; 
+// STATUS : (+)Fixed deposit crash 
 
 						/* For adding new Users :
 						 
@@ -325,21 +325,28 @@ int main() {
       printf("----------------------------------");
       /* printf("__________________________________"); */
       printf("\n\n  Enter amount : ");
-      scanf("%15d",&deposit);
+      scanf("%9d",&deposit);
 
       if ( deposit <= 0 ) {
        printf("\n\n \"Invalid amount\".\n\n");
        transaction -= 1;
       }
 
+      if ( (ptr + current_user)->AccountBalance >= 1000099999 ) { //Adding 999999999 (9) times gives this value
+
+       printf("\n\n \"Maximum account limit reached.\"\n\n");
+       transaction -= 1;
+       break; //it just shows "Now Balance" because of (deposit > 0)
+      }
+
+
       if ( deposit > 0 ) {
       (ptr + current_user)->AccountBalance += deposit;
       printf("\n\n-- Money Deposited --\n\n");
-      /* printf("----------------------\n\n"); */
       printf("  Now Balance : %d\n\n",(ptr + current_user)->AccountBalance);
-	/* balance = user_data[current_user].AccountBalance; */
       }
-          getchar();  //fixes search by consuming '\n'
+
+     getchar();  //fixes search by consuming '\n'
 
 
 	 break;
@@ -353,7 +360,7 @@ int main() {
 	 printf("\n\n  WITHDRAW MONEY\n");
 	 printf("----------------------------------");
 	 printf("\n\n  Enter amount : ");
-	 scanf("%15d",&withdraw);
+	 scanf("%10d",&withdraw);
 
 
 	 if ( withdraw > (ptr + current_user)->AccountBalance) {
