@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <windows.h> 
 
-void Beep() {
+void Sound() {
 
 Beep(516,110);
 

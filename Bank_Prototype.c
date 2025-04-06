@@ -1,4 +1,4 @@
-// STATUS : (+)Fixed deposit crash 
+// STATUS : (+)Added new user 
 
 						/* For adding new Users :
 						 
@@ -14,7 +14,7 @@
 #include "Beep.c"
 
 #define MAXLENGTH 12
-#define COUNTER 13 
+#define COUNTER 14 
 
 int delay3 = 60000;   /*41900*/
 
@@ -102,7 +102,7 @@ int main() {
 
   };
 
-  struct Users Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil,Burhan,Tanveer,Ar_ryan,Umair;
+  struct Users Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil,Burhan,Tanveer,Ar_ryan,Umair,Zuhair;
 
   strcpy(Ryan.password, "ryan");
   Ryan.AccountBalance = 100000;
@@ -201,8 +201,13 @@ int main() {
   strcpy(Umair.fullname, "umair iftikhar");
 
 
+  strcpy(Zuhair.password, "zuhair");
+  Zuhair.AccountBalance = 100000;
+  Zuhair.Account_no = 1015;
+  strcpy(Zuhair.name, "zuhair");
+  strcpy(Zuhair.fullname, "syed zuhair raza abbas");
 
-  struct Users user_data[100]= {Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil,Burhan,Tanveer,Ar_ryan,Umair};
+  struct Users user_data[100]= {Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil,Burhan,Tanveer,Ar_ryan,Umair,Zuhair};
 
   struct Users *ptr = user_data;
 
@@ -304,7 +309,7 @@ int main() {
 
     printf("\n\n   Input : ");
     choice = _getche();
-    Beep();
+    Sound();
 
     if ( choice == 49 || choice == 50 || choice == 51 || choice == 52 || choice == 53 || choice == 54 ) {
      break;
@@ -360,7 +365,7 @@ int main() {
 	 printf("\n\n  WITHDRAW MONEY\n");
 	 printf("----------------------------------");
 	 printf("\n\n  Enter amount : ");
-	 scanf("%10d",&withdraw);
+	 scanf("%9d",&withdraw);
 
 
 	 if ( withdraw > (ptr + current_user)->AccountBalance) {
@@ -410,8 +415,8 @@ int main() {
 	  display_users = 0;
 
 	 while ( display_users <= COUNTER ) {
-	  printf("  %15s",(ptr + display_users)->fullname);
-	  printf("\t: [ %d ]\n",(ptr + display_users)->Account_no);
+	  printf("  %20s  \t: [ %d ]\n",(ptr + display_users)->fullname,(ptr + display_users)->Account_no);
+	  /* printf(""); */
 	  display_users++;
 	 }
 
@@ -484,7 +489,7 @@ int main() {
 	 printf("\n\n  TRANSFER MONEY\n");
 	 printf("----------------------------------\n\n");
 	 printf("\n  Enter amount : ");
-	 scanf("%15d",&transfer);
+	 scanf("%9d",&transfer);
 	 printf("\n");
 
 	 if ( transfer > (ptr + current_user)->AccountBalance) {
