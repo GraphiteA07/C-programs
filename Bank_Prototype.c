@@ -1,4 +1,4 @@
-// STATUS : (+)Used typedef struct 
+// STATUS : (+)Used typedef enum 
 
 						/* For adding new Users :
 						 1) Increase COUNTER
@@ -90,6 +90,16 @@ int main() {
   int after_transaction = 0;
   int interaction = 0;
 
+  typedef enum {
+
+   DEPOSIT              = 49,
+   WITHDRAW             = 50,
+   TRANSFER             = 51,
+   ACCOUNT_DETAILS      = 52,
+   TRANSACTION_DETAILS  = 53,
+   EXIT                 = 54,
+
+  }Banking_options_t;
 
   typedef struct {
 
@@ -319,13 +329,13 @@ int main() {
 
     switch (choice) {
 
-     case 49: //Means 1 (deposite);
+     case DEPOSIT: //Means 1 (deposite);
 
       system("cls");
 
       transaction += 1;
 
-      printf("\n\n  DEPOSITE MONEY\n");
+      printf("\n\n  DEPOSIT MONEY\n");
       printf("----------------------------------");
       /* printf("__________________________________"); */
       printf("\n\n  Enter amount : ");
@@ -355,7 +365,7 @@ int main() {
 
 	 break;
 
-     case 50: //Means 2 (withdraw);
+     case WITHDRAW: //Means 2 (withdraw);
 
 	 system("cls");
 
@@ -389,7 +399,7 @@ int main() {
 	 break;
 
 
-     case 51: //Means 3 (transfer);
+     case TRANSFER: //Means 3 (transfer);
 	      
 	 system("cls");
 
@@ -540,7 +550,7 @@ int main() {
 	 break;
 
 
-     case 52: //Means 4 (account details);
+     case ACCOUNT_DETAILS: //Means 4 (account details);
 
 	 system("cls");
 	 balance = (ptr + current_user)->AccountBalance;
@@ -557,7 +567,7 @@ int main() {
 	 break;
 	      
 
-     case 54: //Means 6 (exit);
+     case EXIT: //Means 6 (exit);
 	      
      printf("\n\n  Exited Successfully..\n");
       return 0;
