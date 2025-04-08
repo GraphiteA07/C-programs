@@ -1,7 +1,6 @@
-// STATUS : (+)Added new user 
+// STATUS : (+)Used typedef struct 
 
 						/* For adding new Users :
-						 
 						 1) Increase COUNTER
 						 2) Increase Account_no ( of user )
 						 2) Increase user_data[+]; (if needed) */
@@ -92,7 +91,7 @@ int main() {
   int interaction = 0;
 
 
-  struct Users {
+  typedef struct {
 
     char password[MAXLENGTH];
     int AccountBalance;
@@ -100,9 +99,9 @@ int main() {
     char name[MAXLENGTH];
     char fullname[25];
 
-  };
+  }Users_t;
 
-  struct Users Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil,Burhan,Tanveer,Ar_ryan,Umair,Zuhair;
+  Users_t Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil,Burhan,Tanveer,Ar_ryan,Umair,Zuhair;
 
   strcpy(Ryan.password, "ryan");
   Ryan.AccountBalance = 100000;
@@ -207,9 +206,9 @@ int main() {
   strcpy(Zuhair.name, "zuhair");
   strcpy(Zuhair.fullname, "syed zuhair raza abbas");
 
-  struct Users user_data[100]= {Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil,Burhan,Tanveer,Ar_ryan,Umair,Zuhair};
+  Users_t user_data[100]= {Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil,Burhan,Tanveer,Ar_ryan,Umair,Zuhair};
 
-  struct Users *ptr = user_data;
+  Users_t *ptr = user_data;
 
   printf("\n Enter name \n\n > ");
   fgets(user_name,sizeof(user_name),stdin);
@@ -320,7 +319,7 @@ int main() {
 
     switch (choice) {
 
-     case 49: //Means 1;
+     case 49: //Means 1 (deposite);
 
       system("cls");
 
@@ -356,7 +355,7 @@ int main() {
 
 	 break;
 
-     case 50: //Means 2;
+     case 50: //Means 2 (withdraw);
 
 	 system("cls");
 
@@ -390,7 +389,7 @@ int main() {
 	 break;
 
 
-     case 51: //Means 3;
+     case 51: //Means 3 (transfer);
 	      
 	 system("cls");
 
@@ -541,7 +540,7 @@ int main() {
 	 break;
 
 
-     case 52: //Means 4;
+     case 52: //Means 4 (account details);
 
 	 system("cls");
 	 balance = (ptr + current_user)->AccountBalance;
@@ -558,7 +557,7 @@ int main() {
 	 break;
 	      
 
-     case 54: //Means 6;
+     case 54: //Means 6 (exit);
 	      
      printf("\n\n  Exited Successfully..\n");
       return 0;
