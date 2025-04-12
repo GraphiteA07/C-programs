@@ -1,4 +1,4 @@
-// STATUS : (+)Used typedef enum 
+// STATUS : (+)Minor changes 
 
 						/* For adding new Users :
 						 1) Increase COUNTER
@@ -12,7 +12,8 @@
 #include <windows.h>
 #include "Beep.c"
 
-#define MAXLENGTH 12
+#define MINLENGTH 12
+#define MAXLENGTH 30 
 #define COUNTER 14 
 
 int delay3 = 60000;   /*41900*/
@@ -67,9 +68,9 @@ void Directing() {
 int main() {
   system("cls");
 
-  char user_password[MAXLENGTH]; 
-  char user_name[40];
-  char search_user[30];
+  char user_password[MINLENGTH]; 
+  char user_name[MAXLENGTH];
+  char search_user[MAXLENGTH];
   char choice;
   char search;
   char display_all;
@@ -80,7 +81,6 @@ int main() {
   int password_loop = 0;    //password loop
   int acc_check = 0;        //checks acc no. is correct
   int input_length = strlen(user_password);
-  int max_length = 23;
   int deposit;
   int withdraw;
   int transfer;
@@ -103,11 +103,11 @@ int main() {
 
   typedef struct {
 
-    char password[MAXLENGTH];
+    char password[MINLENGTH];
     int AccountBalance;
     int Account_no;
-    char name[MAXLENGTH];
-    char fullname[25];
+    char name[MINLENGTH];
+    char fullname[MAXLENGTH];
 
   }Users_t;
 
@@ -329,7 +329,7 @@ int main() {
 
     switch (choice) {
 
-     case DEPOSIT: //Means 1 (deposite);
+     case DEPOSIT: 
 
       system("cls");
 
@@ -337,7 +337,6 @@ int main() {
 
       printf("\n\n  DEPOSIT MONEY\n");
       printf("----------------------------------");
-      /* printf("__________________________________"); */
       printf("\n\n  Enter amount : ");
       scanf("%9d",&deposit);
 
@@ -365,8 +364,7 @@ int main() {
 
 	 break;
 
-     case WITHDRAW: //Means 2 (withdraw);
-
+     case WITHDRAW: 
 	 system("cls");
 
 	 transaction += 1;
@@ -399,7 +397,7 @@ int main() {
 	 break;
 
 
-     case TRANSFER: //Means 3 (transfer);
+     case TRANSFER: 
 	      
 	 system("cls");
 
@@ -409,8 +407,6 @@ int main() {
 
 	 printf("  Display all users account no. (y/n) : ");
 	 display_all = getche();
-	 /* scanf("%1s",&display_all); */
-
 
 
 	 if ( display_all == 'n' ) {
@@ -425,11 +421,8 @@ int main() {
 
 	 while ( display_users <= COUNTER ) {
 	  printf("  %20s  \t: [ %d ]\n",(ptr + display_users)->fullname,(ptr + display_users)->Account_no);
-	  /* printf(""); */
 	  display_users++;
 	 }
-
-	 /* goto search; */
 
 	 }
 
@@ -437,9 +430,6 @@ int main() {
 	  transaction -= 1;
 	  break;
 	 }
-
-
-	 /* search: */
 
 	 while ( strcmp((ptr + ftransfer_user)->name,search_user)!=0 || strcmp((ptr + ftransfer_user)->fullname,search_user)!=0 ) {
 
@@ -523,8 +513,6 @@ int main() {
 	 while ( acc_check <= COUNTER ) {
 
 	  if ( (ptr + acc_check)->Account_no == acc_no) {
-	   /* user_data[acc_check].AccountBalance += transfer; */
-	   /* printf("\n\n-- Money Transferred --\n\n"); */
 	   break;
 	  }
 	  acc_check++;
@@ -540,7 +528,6 @@ int main() {
 
 	 }
 
-
 	 else {
 	  printf("\n  Account not found\n");
 	  transaction -= 1;
@@ -550,7 +537,7 @@ int main() {
 	 break;
 
 
-     case ACCOUNT_DETAILS: //Means 4 (account details);
+     case ACCOUNT_DETAILS: 
 
 	 system("cls");
 	 balance = (ptr + current_user)->AccountBalance;
@@ -567,7 +554,7 @@ int main() {
 	 break;
 	      
 
-     case EXIT: //Means 6 (exit);
+     case EXIT: 
 	      
      printf("\n\n  Exited Successfully..\n");
       return 0;
