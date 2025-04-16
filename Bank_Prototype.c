@@ -1,4 +1,4 @@
-// STATUS : (+)Minor changes 
+// STATUS : (+)Added users 
 
 						/* For adding new Users :
 						 1) Increase COUNTER
@@ -14,7 +14,7 @@
 
 #define MINLENGTH 12
 #define MAXLENGTH 30 
-#define COUNTER 14 
+#define COUNTER 15 
 
 int delay3 = 60000;   /*41900*/
 
@@ -111,7 +111,7 @@ int main() {
 
   }Users_t;
 
-  Users_t Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil,Burhan,Tanveer,Ar_ryan,Umair,Zuhair;
+  Users_t Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil,Burhan,Tanveer,Ar_ryan,Umair,Zuhair,Mahad;
 
   strcpy(Ryan.password, "ryan");
   Ryan.AccountBalance = 100000;
@@ -216,7 +216,14 @@ int main() {
   strcpy(Zuhair.name, "zuhair");
   strcpy(Zuhair.fullname, "syed zuhair raza abbas");
 
-  Users_t user_data[100]= {Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil,Burhan,Tanveer,Ar_ryan,Umair,Zuhair};
+
+  strcpy(Mahad.password, "mahad");
+  Mahad.AccountBalance = 100000;
+  Mahad.Account_no = 1016;
+  strcpy(Mahad.name, "mahad");
+  strcpy(Mahad.fullname, "muhammad mahad asif");
+
+  Users_t user_data[100]= {Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil,Burhan,Tanveer,Ar_ryan,Umair,Zuhair,Mahad};
 
   Users_t *ptr = user_data;
 
@@ -550,6 +557,11 @@ int main() {
 	 printf("  Total Balance        : %d\n",balance);
 	 printf("  No. of transactions  : %d\n\n",transaction);
 	 /* printf("\n  %d transaction(s) have been made from your account\n\n",transaction); */
+
+	 break;
+
+
+     case TRANSACTION_DETAILS:
 
 	 break;
 	      
