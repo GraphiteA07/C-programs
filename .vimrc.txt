@@ -17,7 +17,7 @@ set termguicolors
 
 set termguicolors     " enable true colors support
 let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+colorscheme ice       "is iceberg normally
 
 
 set cino+=L0
