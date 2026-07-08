@@ -27,7 +27,7 @@
 "enable true colors support
   set termguicolors      
 
-  colorscheme ayu 
+  colorscheme retrobox 
 
 "for dark version of theme
 set background=dark  
