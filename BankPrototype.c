@@ -1,4 +1,4 @@
-// STATUS : Transfer Bug fix (works)
+// STATUS : TRANSACTION_DETAILS is not active 	 
 
 						/* For adding new Users :
 						 1) Increase COUNTER
@@ -34,6 +34,7 @@ void WELCOME() {
 
  printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n\n");
 } 
+
 
 void MENU() {
 
@@ -96,8 +97,8 @@ int main() {
    WITHDRAW             = 50,
    TRANSFER             = 51,
    ACCOUNT_DETAILS      = 52,
-   TRANSACTION_DETAILS  = 53,
-   EXIT                 = 54,
+   EXIT                 = 53,
+   /* TRANSACTION_DETAILS  = 54, */
 
   }Banking_options_t;
 
@@ -318,20 +319,20 @@ int main() {
     WELCOME();
     }
 
-    printf("\n   [1] Deposite Money \t  [4] Account Details \n");
-    printf("\n   [2] Withdraw Money \t  [5] Transaction Details \n");
-    printf("\n   [3] Transfer Money \t  [6] Exit \n");
+    printf("\n   [1] Deposite Money \t  [3] Transfer Money \n");
+    printf("\n   [2] Withdraw Money \t  [4] Account Details \n");
+    printf("\n   [5] Exit\n");
 
 
     printf("\n\n   Input : ");
     choice = _getche();
     Sound();
 
-    if ( choice == 49 || choice == 50 || choice == 51 || choice == 52 || choice == 53 || choice == 54 ) {
+    if ( choice == 49 || choice == 50 || choice == 51 || choice == 52 || choice == 53) {
      break;
     }
 
-    } while ( choice != 49 || choice != 50 || choice != 51 || choice != 52 || choice != 53 || choice != 54);
+    } while ( choice != 49 || choice != 50 || choice != 51 || choice != 52 || choice != 53);
 
 
     switch (choice) {
@@ -567,9 +568,9 @@ int main() {
 	 break;
 
 
-     case TRANSACTION_DETAILS:
+     /* case TRANSACTION_DETAILS: */
 
-	 break;
+	 /* break; */
 	      
 
      case EXIT: 

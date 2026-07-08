@@ -217,7 +217,7 @@ int main() {
   while ( k < 10 ) {
 
   printf("\n\tEnter numbers : ");
-  scanf("%f",&markD[l]);
+  scanf("%f",&markD[k]);
 
 
   /* while ( p < 10 ) { */
