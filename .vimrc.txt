@@ -1,69 +1,87 @@
-syntax on 
+  syntax on 
 
-set laststatus=2
+  set laststatus=2
 
-set incsearch
+  set incsearch
 
-set guifont=Fira\ Code\ Retina\:h10 
+  nnoremap H :bprevious<CR>
+  nnoremap L :bnext<CR>
 
-" Map <Space>l to open the Lex file explorer
-nnoremap <Space>l :Lex<CR>
+  let g:lightline = {
+  \ 'colorscheme': 'ayu_dark',
+  \ }
 
-setlocal autoindent
-
-set number
-
-set termguicolors
-
-set termguicolors     " enable true colors support
-let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+  nnoremap <C-u> <C-u>zz
+  nnoremap <C-d> <C-d>zz
 
 
-set cino+=L0
+  set guifont=Fira\ Code\ Retina\:h10
 
-set splitright "TO Split on the right side"
+"Map <Space>l to open the Lex file explorer
+  nnoremap <Space>l :Lex<CR> 
 
-set cindent
+  setlocal autoindent
 
-set smarttab
+  set number
 
-set shiftwidth=2
+"enable true colors support
+  set termguicolors      
 
-if has("autocmd")
- autocmd InsertEnter * set guicursor=a:block
+  colorscheme retrobox 
+
+"for dark version of theme
+set background=dark  
+"TO Split on the right side
+  set splitright 
+
+  set cindent
+
+  set smarttab
+
+  set shiftwidth=2
+
+"For the block cursor
+  if has("autocmd")
+  autocmd InsertEnter * set guicursor=a:block
   autocmd InsertLeave * set guicursor= 
-endif
+  endif
+
+"For the line cursor
+"  set guicursor=n-v-c:ver25,i-ci:ver25,r-cr:hor20 
 
 "For The Vim-Plug to work you need to make a folder named 'plugged' without
-"commas and then give the plug#begin the path like
+"commas and then give the plug begin the path like
 "C;\Users\username\vimfiles\plugged 
 
- call plug#begin('C:\Users\Zain_Computer\vimfiles\plugged')
-" List your desired plugins here (replace with actual plugin names):
- Plug 'itchyny/lightline.vim'
- Plug 'tpope/vim-commentary'
- Plug 'ayu-theme/ayu-vim'
- Plug 'ayu-theme/ayu-vim' 
- Plug 'easymotion/vim-easymotion'
-
- call plug#end()
-
-
-filetype plugin indent on
-
- let g:lightline = {
-       \ 'colorscheme': 'ayu_dark',
-       \ }
-
- " --- Windows...EasyMotion Rendering Fixes ---
-set ttyfast
-set redrawtime=10000
-let g:EasyMotion_do_shade = 0
-let g:EasyMotion_force_csapprox = 0
-
-nmap ,w <Plug>(easymotion-bd-w)
-
-set noshowmode "For not showing the default --INSERT--  --VISUAl-- modes"
+call plug#begin('C:\Users\Zain_Computer\vimfiles\plugged')
+  Plug 'itchyny/lightline.vim'
+  Plug 'ayu-theme/ayu-vim'
+  Plug 'cocopon/iceberg.vim'
+  Plug 'tpope/vim-commentary'
+ "Plug 'ayu-theme/ayu-vim' 
+ "Plug 'easymotion/vim-easymotion'
+ "Plug 'girishji/vimcomplete'
+call plug#end()
 
 
+
+ " nmap ,w <Plug>(easymotion-bd-w)
+
+  filetype plugin indent on
+
+
+"   --- Windows...EasyMotion Rendering Fixes ---
+   "set ttyfast
+   "set redrawtime=10000
+   "let g:EasyMotion_do_shade = 0
+   "let g:EasyMotion_force_csapprox = 0
+
+
+" For not showing the default --INSERT--  --VISUAl-- modes
+  set noshowmode 
+
+" Strip away GUI window bars to mimic a clean terminal matrix
+" set guioptions-=m  " Removes the top Menu bar (File, Edit, Window, etc.)
+set guioptions-=T  " Removes the Tool icon shortcut bar
+" set guioptions-=r  " Removes the right-hand scrollbar
+set guioptions-=L  " Removes the left-hand scrollbar
