@@ -123,11 +123,11 @@ int main() {
 
   struct UserDetails {
 
-    char Password[MINLENGTH];
-    int AccountBalance;
-    int AccountNo;
-    char Name[MINLENGTH];
-    char FullName[MAXLENGTH];
+    char           Password[MINLENGTH];
+    long long int  AccountBalance;
+    int            AccountNo;
+    char           Name[MINLENGTH];
+    char           FullName[MAXLENGTH];
 
   };
 
@@ -375,7 +375,7 @@ int main() {
 	  transaction -= 1;
 	}
 
-	if ( (ptr + current_user)->AccountBalance >= 1000099999 ) { //Adding 999999999 (9) times gives this value
+	if ( (ptr + current_user)->AccountBalance >= 9223372036854775804 ) { 
 
 	  printf("\n\n  Error: Maximum account limit reached.\n\n");
 	  transaction -= 1;
@@ -386,7 +386,7 @@ int main() {
 	if ( deposit > 0 ) {
 	  (ptr + current_user)->AccountBalance += deposit;
 	  printf("\n\n-- Money Deposited --\n\n");
-	  printf("  Now Balance : %d\n\n",(ptr + current_user)->AccountBalance);
+	  printf("  Now Balance : %lld\n\n",(ptr + current_user)->AccountBalance);
 	}
 
 	getchar();  //fixes can_search_user by consuming '\n'
@@ -418,7 +418,7 @@ int main() {
 	if ( withdraw <= (ptr + current_user)->AccountBalance && withdraw > 0) {
 	  (ptr + current_user)->AccountBalance -= withdraw;
 	  printf("\n\n-- Money Withdrawn --\n\n");
-	  printf("  Now Balance : %d\n\n",(ptr + current_user)->AccountBalance);
+	  printf("  Now Balance : %lld\n\n",(ptr + current_user)->AccountBalance);
 	  /* balance = user_data[current_user].AccountBalance; */
 	}
 
