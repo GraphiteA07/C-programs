@@ -23,8 +23,8 @@
 #include "Beep.c"
 
 
-#define MINLENGTH 12
-#define MAXLENGTH 30 
+#define MINLENGTH 25
+#define MAXLENGTH 40 
 #define COUNTER   15 
 #define MEMORY    (COUNTER + 3)
 
@@ -96,7 +96,7 @@ int main() {
   int balance              = 0; 
   int after_transaction    = 0;
   int interaction          = 0; // for Menu()
-  int input_length = strlen(user_password);
+  /* int input_length = strlen(user_password); */
   int deposit;
   int withdraw;
   int transfer_amount;
@@ -255,7 +255,7 @@ int main() {
   strlwr(user_name);
 
   if ( user_name[0] == '\n' ) {
-    printf("\n  User not found\n");
+    printf("\n Error: User not found\n");
     return 0;
   }
 
@@ -277,7 +277,7 @@ int main() {
 
 
   if ( strcmp((ptr + current_user)->Name,user_name)!=0 && strcmp((ptr + current_user)->FullName,user_name)!=0) {
-    printf("\n Username not found\n");
+    printf("\n Error: Username not found\n");
     return 0;
   }
 
@@ -289,9 +289,9 @@ int main() {
 
     char ch = getch();
 
-    if (input_length > 20) {
+    if (masked_password >= 20) {
 
-      printf("\n\n \"Password wasn't that long\" \n");
+      printf("\n\n Error: Password wasn't that long \n");
       return 0;
     }
 
@@ -319,7 +319,7 @@ int main() {
   }
 
   if ( strcmp((ptr + current_user)->Password,user_password)!=0 ) {  
-    printf("\n\n Password not found\n");
+    printf("\n\n Error: Password not found\n");
     return 0;
   }
 
@@ -347,14 +347,14 @@ int main() {
 
 
       printf("\n\n   Input : ");
-      menu_option = _getche();
+      menu_option = getche();
       Sound();
 
-      if ( menu_option == 49 || menu_option == 50 || menu_option == 51 || menu_option == 52 || menu_option == 53) {
+      if ( menu_option == DEPOSIT || menu_option == WITHDRAW || menu_option == TRANSFER || menu_option == ACCOUNT_DETAILS || menu_option == EXIT) {
 	break;
       }
 
-    } while ( menu_option != 49 || menu_option != 50 || menu_option != 51 || menu_option != 52 || menu_option != 53);
+    } while ( menu_option == DEPOSIT || menu_option == WITHDRAW || menu_option == TRANSFER || menu_option == ACCOUNT_DETAILS || menu_option == EXIT);
 
 
     switch (menu_option) {
@@ -371,13 +371,13 @@ int main() {
 	scanf("%9d",&deposit);
 
 	if ( deposit <= 0 ) {
-	  printf("\n\n \"Invalid amount\".\n\n");
+	  printf("\n\n  Error: Invalid amount.\n\n");
 	  transaction -= 1;
 	}
 
 	if ( (ptr + current_user)->AccountBalance >= 1000099999 ) { //Adding 999999999 (9) times gives this value
 
-	  printf("\n\n \"Maximum account limit reached.\"\n\n");
+	  printf("\n\n  Error: Maximum account limit reached.\n\n");
 	  transaction -= 1;
 	  break; //it just shows "Now Balance" because of (deposit > 0)
 	}
@@ -406,12 +406,12 @@ int main() {
 
 
 	if ( withdraw > (ptr + current_user)->AccountBalance) {
-	  printf("\n\n \"Insufficient funds for this transaction\".\n\n");
+	  printf("\n\n  Error: Insufficient funds for this transaction.\n\n");
 	  transaction -= 1;
 	}
 
 	if ( withdraw <= 0 ) {
-	  printf("\n\n \"Invalid amount\".\n\n");
+	  printf("\n\n  Error: Invalid amount.\n\n");
 	  transaction -= 1;
 	}
 
@@ -496,7 +496,7 @@ int main() {
 	    }
 
 	    if ( strcmp((ptr + search_transfer_user)->Name,input_transfer_user)!=0 && strcmp((ptr + search_transfer_user)->FullName,input_transfer_user)!=0 ) {
-	      printf("\n  User not found\n");
+	      printf("\n  Error: User not found\n");
 	    }
 
 	  }
@@ -527,14 +527,14 @@ int main() {
 	printf("\n");
 
 	if ( transfer_amount > (ptr + current_user)->AccountBalance) {
-	  printf("\n \"Insufficient funds for this transaction\".\n\n");
+	  printf("\n  Error: Insufficient funds for this transaction\".\n\n");
 	  getchar();
 	  transaction -= 1;
 	  break;
 	}
 
 	if ( transfer_amount <= 0 ) {
-	  printf("\n \"Invalid amount\".\n\n");
+	  printf("\n  Error: Invalid amount.\n\n");
 	  transaction -= 1;
 	  break;
 	}
@@ -564,7 +564,7 @@ int main() {
 	}
 
 	else {
-	  printf("\n  Account not found\n");
+	  printf("\n  Error: Account not found\n");
 	  transaction -= 1;
 	}
 
@@ -607,7 +607,7 @@ int main() {
 
 
 
-  } while (menu_option != 54) ;
+  } while ( menu_option == DEPOSIT || menu_option == WITHDRAW || menu_option == TRANSFER || menu_option == ACCOUNT_DETAILS || menu_option == EXIT) ;
 
   return 0;
 
