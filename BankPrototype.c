@@ -483,7 +483,7 @@ int main() {
 	    }
 
 
-	    /* search_transfer_user = 0; */
+	    search_transfer_user = 0;
 	    for (search_transfer_user = 0;search_transfer_user <= COUNTER;search_transfer_user++) {
 
 
