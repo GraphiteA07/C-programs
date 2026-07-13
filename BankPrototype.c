@@ -25,7 +25,7 @@
 
 #define MINLENGTH 25
 #define MAXLENGTH 40 
-#define COUNTER   15 
+#define COUNTER   16 
 #define MEMORY    (COUNTER + 3)
 
 int delay3 = 60000;   /*41900*/
@@ -267,7 +267,7 @@ int main() {
 
 
 
-  while (current_user <= COUNTER) {
+  while (current_user < COUNTER) {
 
     if ( strcmp((ptr + current_user)->Name,user_name)==0 || strcmp((ptr + current_user)->FullName,user_name)==0) {
       break;
@@ -354,7 +354,7 @@ int main() {
 	break;
       }
 
-    } while ( menu_option == DEPOSIT || menu_option == WITHDRAW || menu_option == TRANSFER || menu_option == ACCOUNT_DETAILS || menu_option == EXIT);
+    } while ( menu_option != DEPOSIT || menu_option != WITHDRAW || menu_option != TRANSFER || menu_option != ACCOUNT_DETAILS || menu_option != EXIT);
 
 
     switch (menu_option) {
@@ -451,7 +451,7 @@ int main() {
 
 	  display_users = 0;
 
-	  while ( display_users <= COUNTER ) {
+	  while ( display_users < COUNTER ) {
 	    printf("  %20s  \t: [ %d ]\n",(ptr + display_users)->FullName,(ptr + display_users)->AccountNo);
 	    display_users++;
 	  }
@@ -522,6 +522,31 @@ int main() {
 
 	printf("\n\n  TRANSFER MONEY\n");
 	printf("----------------------------------\n\n");
+
+	printf("  Enter account no. : ");
+	scanf("%4d",&acc_no);
+
+	getchar();
+
+	verify_acc = 0;  
+
+	while ( verify_acc < COUNTER ) {
+
+	  if ( (ptr + verify_acc)->AccountNo == acc_no) {
+	    break;
+	  }
+	  verify_acc++;
+	}
+
+	 if ( (ptr + verify_acc)->AccountNo != acc_no) {
+	  printf("\n  Error: Account not found\n");
+	  transaction -= 1;
+	}
+
+	 
+	 if ( (ptr + verify_acc)->AccountNo == acc_no) {
+
+
 	printf("\n  Enter amount : ");
 	scanf("%9d",&transfer_amount);
 	printf("\n");
@@ -539,34 +564,24 @@ int main() {
 	  break;
 	}
 
-	printf("  Enter account no. : ");
-	scanf("%4d",&acc_no);
 
-	getchar();
-
-
-	while ( verify_acc <= COUNTER ) {
-
-	  if ( (ptr + verify_acc)->AccountNo == acc_no) {
-	    break;
-	  }
-	  verify_acc++;
-	}
 
 	if ( (ptr + verify_acc)->AccountNo == acc_no) {
 
 	  if ( transfer_amount <= (ptr + current_user)->AccountBalance && transfer_amount > 0 ) {
 	    (ptr + current_user)->AccountBalance -= transfer_amount;
 	    (ptr + verify_acc)->AccountBalance += transfer_amount;
-	    printf("\n\n-- Money Transferred --\n\n");
+	    printf("\n-- Money Transferred --\n\n");
 	  }
 
 	}
 
-	else {
-	  printf("\n  Error: Account not found\n");
-	  transaction -= 1;
-	}
+
+
+	 }
+
+
+
 
 
 	break;
@@ -607,7 +622,7 @@ int main() {
 
 
 
-  } while ( menu_option == DEPOSIT || menu_option == WITHDRAW || menu_option == TRANSFER || menu_option == ACCOUNT_DETAILS || menu_option == EXIT) ;
+  } while (menu_option != EXIT) ;
 
   return 0;
 
