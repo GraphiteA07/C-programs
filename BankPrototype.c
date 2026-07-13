@@ -26,7 +26,7 @@
 #define MINLENGTH 25
 #define MAXLENGTH 40 
 #define COUNTER   16 
-#define MEMORY    (COUNTER + 3)
+#define MEMORY    (COUNTER + 2)
 
 int delay3 = 60000;   /*41900*/
 
@@ -93,13 +93,12 @@ int main() {
 
   int masked_password      = 0;  
   int transaction          = 0;
-  int balance              = 0; 
+  long long int balance    = 0; 
   int after_transaction    = 0;
   int interaction          = 0; // for Menu()
-  /* int input_length = strlen(user_password); */
-  int deposit;
-  int withdraw;
-  int transfer_amount;
+  long long int deposit;
+  long long int withdraw;
+  long long int transfer_amount;
   int acc_no;
 
 
@@ -312,11 +311,13 @@ int main() {
     else {
       user_password[masked_password] = ch;
       printf("*");
-      strlwr(user_password);
       masked_password++;
     }
 
   }
+
+      strlwr(user_password);
+
 
   if ( strcmp((ptr + current_user)->Password,user_password)!=0 ) {  
     printf("\n\n Error: Password not found\n");
@@ -368,7 +369,7 @@ int main() {
 	printf("\n\n  DEPOSIT MONEY\n");
 	printf("----------------------------------");
 	printf("\n\n  Enter amount : ");
-	scanf("%9d",&deposit);
+	scanf("%9lld",&deposit);
 
 	if ( deposit <= 0 ) {
 	  printf("\n\n  Error: Invalid amount.\n\n");
@@ -402,7 +403,7 @@ int main() {
 	printf("\n\n  WITHDRAW MONEY\n");
 	printf("----------------------------------");
 	printf("\n\n  Enter amount : ");
-	scanf("%9d",&withdraw);
+	scanf("%9lld",&withdraw);
 
 
 	if ( withdraw > (ptr + current_user)->AccountBalance) {
@@ -463,7 +464,7 @@ int main() {
 	  break;
 	}
 
-	while ( strcmp((ptr + search_transfer_user)->Name,input_transfer_user)!=0 || strcmp((ptr + search_transfer_user)->FullName,input_transfer_user)!=0 ) {
+	while (1) {
 
 	  printf("\n  Search User (y/n) : ");
 	  /* can_search_user = getche(); */
@@ -484,7 +485,7 @@ int main() {
 
 
 	    search_transfer_user = 0;
-	    for (search_transfer_user = 0;search_transfer_user <= COUNTER;search_transfer_user++) {
+	    for (search_transfer_user = 0; search_transfer_user < COUNTER; search_transfer_user++) {
 
 
 	      if ( strcmp((ptr + search_transfer_user)->Name,input_transfer_user)==0 || strcmp((ptr + search_transfer_user)->FullName,input_transfer_user)==0) {
@@ -515,7 +516,7 @@ int main() {
 
 
 	  /* bytes = 0; */
-	};
+	}
 
 	printf("\n");
 
@@ -541,14 +542,24 @@ int main() {
 	 if ( (ptr + verify_acc)->AccountNo != acc_no) {
 	  printf("\n  Error: Account not found\n");
 	  transaction -= 1;
+	  break;
 	}
+
+
+	 if (verify_acc == current_user) {
+	   printf("\n  Error: You cannot transfer money to your own account.\n");
+	   transaction -= 1;
+	   break;
+	 }
+
+
 
 	 
 	 if ( (ptr + verify_acc)->AccountNo == acc_no) {
 
 
 	printf("\n  Enter amount : ");
-	scanf("%9d",&transfer_amount);
+	scanf("%9lld",&transfer_amount);
 	printf("\n");
 
 	if ( transfer_amount > (ptr + current_user)->AccountBalance) {
@@ -597,7 +608,7 @@ int main() {
 	printf("  Name                 : %s\n",(ptr + current_user)->FullName);
 	printf("  Password             : %s\n",(ptr + current_user)->Password);
 	printf("  Account no.          : %d\n",(ptr + current_user)->AccountNo);
-	printf("  Total Balance        : %d\n",balance);
+	printf("  Total Balance        : %lld\n",balance);
 	printf("  No. of transactions  : %d\n\n",transaction);
 	/* printf("\n  %d transaction(s) have been made from your account\n\n",transaction); */
 
