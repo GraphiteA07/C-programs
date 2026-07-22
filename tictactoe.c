@@ -1,56 +1,33 @@
-//STATUS: Game logic remaining 
+//STATUS: Column and Diagonal logic remaining 
 
 #include <stdio.h>
 #include <conio.h>
 #include <unistd.h>
 
-int delay = 60000;   /*41900*/
-
-void TicTacToeAnimate() {
-
-  // distance from stat " (2)
-printf("   _____ ___ ____ _____  _    ____ _____ ___  _____ \n");
-usleep(delay);
-printf("  |_   _|_ _/ ___|_   _|/ \\  / ___|_   _/ _ \\| ____|\n");
-usleep(delay);
-printf("    | |  | | |     | | / _ \\| |     | || | | |  _|  \n");
-usleep(delay);
-printf("    | |  | | |___  | |/ ___ \\ |___  | || |_| | |___ \n");
-usleep(delay);
-printf("    |_| |___\\____| |_/_/   \\_\\____| |_| \\___/|_____|\n");
-
-}
-
-void TicTacToe() {
-
-  // distance from stat " (2)
-printf("   _____ ___ ____ _____  _    ____ _____ ___  _____ \n");
-printf("  |_   _|_ _/ ___|_   _|/ \\  / ___|_   _/ _ \\| ____|\n");
-printf("    | |  | | |     | | / _ \\| |     | || | | |  _|  \n");
-printf("    | |  | | |___  | |/ ___ \\ |___  | || |_| | |___ \n");
-printf("    |_| |___\\____| |_/_/   \\_\\____| |_| \\___/|_____|\n");
-
-}
+#define DELAY         60000 /*41900*/
+#define ASCII_NUM0    48
+#define ASCII_NUM_X   40
+#define ASCII_NUM_O   31
 
 
+void TicTacToeAnimate();
+void TicTacToe();
+/* int RowCheck(int current_player, char array[]); */
 
+int winner = 0;
 
 int main() {
 
-
   char game_table[9] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-                               
-
   char mark_display[2] = {'X','O'};
   char leave_game;
 
-
-
-  int state = 0;
+  int active_mark = 0;
   int interaction = 0;
   int player_move;
   int menu_option;
-  int player_display[2] = {1,2};
+  int player_display = 1;
+
 
   enum GameState {
 
@@ -76,31 +53,32 @@ int main() {
 
   };
 
+
   do {
 
-  system("cls");
+    system("cls");
 
-  if (interaction == 0) {
-  TicTacToeAnimate();
-  }
+    if (interaction == 0) {
+      TicTacToeAnimate();
+    }
 
-  else {
-    TicTacToe();
-  }
+    else {
+      TicTacToe();
+    }
 
 
-  // distance 13 spaces
+    // distance 13 spaces
 
-  printf("\n\n             [1] Play \n");
-  printf("\n             [2] Exit \n");
-  printf("\n             Input : ");
-  menu_option = getche();
+    printf("\n\n             [1] Play \n");
+    printf("\n             [2] Exit \n");
+    printf("\n             Input : ");
+    menu_option = getche();
 
-  interaction = 1;
+    interaction = 1;
 
-  if (menu_option == PLAY || menu_option == EXIT) {
-    break;
-  } 
+    if (menu_option == PLAY || menu_option == EXIT) {
+      break;
+    } 
 
 
   } while (menu_option != PLAY || menu_option != EXIT);
@@ -111,69 +89,114 @@ int main() {
     case PLAY:
 
 
-   while (1) {
+      while (1) {
 
 game:
 
 
 	system("cls");
 
-      TicTacToe();
-
-
-      printf("\n\n\n");
-
-
-      printf("              +-----+-----+-----+\n");
-      printf("              |  %c  |  %c  |  %c  |\n",'0' + game_table[0], '0' + game_table[1], '0' + game_table[2]);
-      printf("              |     |     |     |\n");
-      printf("              +-----+-----+-----+\n");
-      printf("              |  %c  |  %c  |  %c  |\n",'0' + game_table[3], '0' + game_table[4], '0' + game_table[5]);
-      printf("              |     |     |     |\n");
-      printf("              +-----+-----+-----+\n");
-      printf("              |  %c  |  %c  |  %c  |\n",'0' + game_table[6], '0' + game_table[7], '0' + game_table[8]);
-      printf("              |     |     |     |\n");
-      printf("              +-----+-----+-----+");
+	TicTacToe();
 
 
 
-      printf("\n\n\n");
 
 
-      printf("\t       Player %d [ %c ] : ",player_display[state],mark_display[state]);
-      player_move = getche();
 
-      if (player_move != n1 && player_move != n2 && player_move != n3 &&                                                                           player_move != n4 && player_move != n5 && player_move != n6 &&                                                                           player_move != n7 && player_move != n8 && player_move != n9) {
+	printf("\n\n\n");
 
 
-	printf("\n\n\t       Exit? (y/n) : ");
-	leave_game = getche();
-	if (leave_game == yes || leave_game == YES) {
+	printf("              +-----+-----+-----+\n");
+	printf("              |  %c  |  %c  |  %c  |\n",'0' + game_table[0], '0' + game_table[1], '0' + game_table[2]);
+	printf("              |     |     |     |\n");
+	printf("              +-----+-----+-----+\n");
+	printf("              |  %c  |  %c  |  %c  |\n",'0' + game_table[3], '0' + game_table[4], '0' + game_table[5]);
+	printf("              |     |     |     |\n");
+	printf("              +-----+-----+-----+\n");
+	printf("              |  %c  |  %c  |  %c  |\n",'0' + game_table[6], '0' + game_table[7], '0' + game_table[8]);
+	printf("              |     |     |     |\n");
+	printf("              +-----+-----+-----+");
+
+
+	if (winner == 1) {
+
+	  if (player_display == 2) {
+	    player_display -= 1; 
+	  }
+
+	  else if (player_display == 1) {
+	    player_display+=1;
+	  } 
+
+	  printf("\n\n\t         PLAYER %d WINS!\n\n", player_display);
 	  break;
+
 	}
 
-	if ( leave_game == no || leave_game == NO ){
-	 goto game; 
+
+
+
+
+
+	printf("\n\n\n");
+
+
+	printf("\t       Player %d [ %c ] : ", player_display, mark_display[active_mark]);
+	player_move = getche();
+
+	if (player_move != n1 && player_move != n2 && player_move != n3 &&  
+	    player_move != n4 && player_move != n5 && player_move != n6 &&
+	    player_move != n7 && player_move != n8 && player_move != n9 ) {
+
+
+	  printf("\n\n\t       Exit? (y/n) : ");
+	  leave_game = getche();
+
+	  if (leave_game == yes || leave_game == YES) {
+	    break;
+	  }
+
+	  if ( leave_game == no || leave_game == NO ){
+	    goto game; 
+	  }
+
 	}
-	
-      }
 
 
-      player_move -= 48;
-      player_move -= 1;
+	player_move -= ASCII_NUM0;
+	player_move -= 1;          //-1 because of game_table[] index.
 
 
-      if (state == 0) {
+	if (player_display == 1) {
 
-         game_table[player_move] = 40;	
-	 state += 1;
-      }
+	  game_table[player_move] = ASCII_NUM_X;	
+	  player_display += 1;
+	  active_mark += 1;
 
-      else if (state == 1) {
+	}
 
-         game_table[player_move] = 31;	
-	 state -= 1;
-      }
+	else if (player_display == 2) {
+
+	  game_table[player_move] = ASCII_NUM_O;	
+	  player_display -= 1;
+	  active_mark -= 1;
+	}
+
+
+	if ( (game_table[0] == ASCII_NUM_X && game_table[1] == ASCII_NUM_X && game_table[2] == ASCII_NUM_X) || 
+	    (game_table[3] == ASCII_NUM_X && game_table[4] == ASCII_NUM_X && game_table[5] == ASCII_NUM_X) ||
+	    (game_table[6] == ASCII_NUM_X && game_table[7] == ASCII_NUM_X && game_table[8] == ASCII_NUM_X) ) {
+
+	  winner = 1;
+	}
+
+	else if ( (game_table[0] == ASCII_NUM_O && game_table[1] == ASCII_NUM_O && game_table[2] == ASCII_NUM_O) || 
+	    (game_table[3] == ASCII_NUM_O && game_table[4] == ASCII_NUM_O && game_table[5] == ASCII_NUM_O) ||
+	    (game_table[6] == ASCII_NUM_O && game_table[7] == ASCII_NUM_O && game_table[8] == ASCII_NUM_O) ) {
+
+	  winner = 1;
+	}
+
 
 
 
@@ -182,7 +205,7 @@ game:
       } //end of loop
 
 
- /* while (player_move != 1 || player_move != 2 || player_move != 3 || player_move != 4 || player_move != 5 || player_move != 6 || player_move != 7 || player_move != 8 || player_move != 9); */
+      /* while (player_move != 1 || player_move != 2 || player_move != 3 || player_move != 4 || player_move != 5 || player_move != 6 || player_move != 7 || player_move != 8 || player_move != 9); */
 
 
 
@@ -202,3 +225,40 @@ game:
 
   return 0;
 }
+
+
+void TicTacToeAnimate() {
+
+  // distance from stat " (2)
+  printf("   _____ ___ ____ _____  _    ____ _____ ___  _____ \n");
+  usleep(DELAY);
+  printf("  |_   _|_ _/ ___|_   _|/ \\  / ___|_   _/ _ \\| ____|\n");
+  usleep(DELAY);
+  printf("    | |  | | |     | | / _ \\| |     | || | | |  _|  \n");
+  usleep(DELAY);
+  printf("    | |  | | |___  | |/ ___ \\ |___  | || |_| | |___ \n");
+  usleep(DELAY);
+  printf("    |_| |___\\____| |_/_/   \\_\\____| |_| \\___/|_____|\n");
+
+}
+
+void TicTacToe() {
+
+  // distance from stat " (2)
+  printf("   _____ ___ ____ _____  _    ____ _____ ___  _____ \n");
+  printf("  |_   _|_ _/ ___|_   _|/ \\  / ___|_   _/ _ \\| ____|\n");
+  printf("    | |  | | |     | | / _ \\| |     | || | | |  _|  \n");
+  printf("    | |  | | |___  | |/ ___ \\ |___  | || |_| | |___ \n");
+  printf("    |_| |___\\____| |_/_/   \\_\\____| |_| \\___/|_____|\n");
+
+}
+
+
+
+
+
+
+
+
+
+
