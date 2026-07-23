@@ -6,6 +6,7 @@
 #include <stdlib.h>
 
 #define DELAY         60000 /*41900*/
+#define DRAW          81
 #define ASCII_NUM0    48
 #define ASCII_NUM_X   40
 #define ASCII_NUM_O   31
@@ -17,7 +18,8 @@ void scan_mark_override(char game_grid[]);
 
 
 int scan_for_winner(char game_grid[]);
-int winner = 0;
+int winner          = 0;
+int is_table_full   = 0;
 int player_move;
 
 char table_mem[9]        = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -115,6 +117,8 @@ game:
 
 	if (winner == 1) {
 
+	  winner = 0;
+
 	  if (player_display == 2) {
 	    player_display -= 1; 
 	  }
@@ -125,6 +129,14 @@ game:
 
 	  printf("\n\n\t         PLAYER %d WINS!\n\n", player_display);
 	  break;
+	}
+
+	if (is_table_full == DRAW) {
+
+	  is_table_full = 0;
+	  printf("\n\n\t\t  IT'S A TIE!\n\n");
+	  break;
+
 	}
 
 	printf("\n\n\n");
@@ -258,16 +270,6 @@ int scan_for_winner(char game_grid[]) {
 
   //for rows (player 1, player 2)
 
-  for (i = 0; i <= 6; i++) {
-
-    if (game_grid[i] == game_grid[i+1] && game_grid[i+1] == game_grid[i+2]) {
-      winner = 1;
-      i+=3;
-    }
-
-  }
-
-  *ptr = 0;
 
   //for columns (player 1, player 2)
 
@@ -289,7 +291,17 @@ int scan_for_winner(char game_grid[]) {
     winner = 1;
   }
 
+  //for draws (player 1, player 2)
+  
+  *ptr = 0;
+
+  for (i = 0; i <= 8; i++) {
+
+    if (game_grid[i] != 0 ) {
+	is_table_full += 1;
+    }
+
+  }
+
   return 0;
 }
-
-
