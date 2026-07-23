@@ -269,7 +269,17 @@ int scan_for_winner(char game_grid[]) {
   game_grid[10] = 0;
 
   //for rows (player 1, player 2)
+  
+  for (i = 0; i <= 6; i++) {
 
+    if (game_grid[i] == game_grid[i+1] && game_grid[i+1] == game_grid[i+2]) {
+      winner = 1;
+      i+=3;
+    }
+
+  }
+
+  *ptr = 0;
 
   //for columns (player 1, player 2)
 
