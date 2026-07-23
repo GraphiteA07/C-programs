@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <conio.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 #define DELAY         60000 /*41900*/
 #define ASCII_NUM0    48
