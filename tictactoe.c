@@ -1,4 +1,4 @@
-//STATUS: Game Logic Conpleted!   
+//STATUS: Requires Testing    
 
 #include <stdio.h>
 #include <conio.h>
@@ -6,28 +6,24 @@
 #include <stdlib.h>
 
 #define DELAY         60000 /*41900*/
-#define DRAW          81
-#define ASCII_NUM0    48
-#define ASCII_NUM_X   40
-#define ASCII_NUM_O   31
+#define ASCII_NUM_0    48
 
 
 void menu_ascii_animate();
 void menu_ascii();
 void scan_mark_override(char game_grid[]);
 
-
 int scan_for_winner(char game_grid[]);
-int winner          = 0;
-int is_table_full   = 0;
 int player_move;
+int winner  = 0;
+int draw    = 0;
 
-char table_mem[9]        = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+char table_mem[9]               = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
 
 int main() {
 
-  char game_table[9]            = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+  char game_table[9]            = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
   char mark_display[2]          = {'X','O'};
   char leave_game;
 
@@ -105,15 +101,16 @@ game:
 	printf("\n\n\n");
 
 	printf("              +-----+-----+-----+\n");
-	printf("              |  %c  |  %c  |  %c  |\n",'0' + game_table[0], '0' + game_table[1], '0' + game_table[2]);
+	printf("              |  %c  |  %c  |  %c  |\n",game_table[0], game_table[1], game_table[2]);
 	printf("              |     |     |     |\n");
 	printf("              +-----+-----+-----+\n");
-	printf("              |  %c  |  %c  |  %c  |\n",'0' + game_table[3], '0' + game_table[4], '0' + game_table[5]);
+	printf("              |  %c  |  %c  |  %c  |\n",game_table[3], game_table[4], game_table[5]);
 	printf("              |     |     |     |\n");
 	printf("              +-----+-----+-----+\n");
-	printf("              |  %c  |  %c  |  %c  |\n",'0' + game_table[6], '0' + game_table[7], '0' + game_table[8]);
+	printf("              |  %c  |  %c  |  %c  |\n",game_table[6], game_table[7], game_table[8]);
 	printf("              |     |     |     |\n");
 	printf("              +-----+-----+-----+");
+
 
 	if (winner == 1) {
 
@@ -131,9 +128,10 @@ game:
 	  break;
 	}
 
-	if (is_table_full == DRAW) {
 
-	  is_table_full = 0;
+	if (draw == 1) {
+
+	  draw = 0;
 	  printf("\n\n\t\t  IT'S A TIE!\n\n");
 	  break;
 
@@ -148,29 +146,33 @@ game:
 	    player_move != n4 && player_move != n5 && player_move != n6 &&
 	    player_move != n7 && player_move != n8 && player_move != n9 ) {
 
+	  do {
+
 	  printf("\n\n\t       Exit? (y/n) : ");
 	  leave_game = getche();
 
+
 	  if (leave_game == yes || leave_game == YES) {
-	    break;
+	    goto exit;
 	  }
 
 	  if ( leave_game == no || leave_game == NO ){
+
 	    goto game; 
 	  }
 
+
+
+	  }while (leave_game != yes && leave_game != YES && leave_game != no && leave_game != NO); 
+
 	}
 
-	player_move -= ASCII_NUM0;
+	player_move -= ASCII_NUM_0;
 	player_move -= 1;          //-1 because of game_table[] index.
 				   
-	int verify = 1;
-	verify += player_move; 
-
-
 	if (player_display == 1) {
 
-	  game_table[player_move] = ASCII_NUM_X;	
+	  game_table[player_move] = 'X';	
 
 	  player_display += 1;
 	  active_mark += 1;
@@ -178,17 +180,20 @@ game:
 
 	else if (player_display == 2) {
 
-	  game_table[player_move] = ASCII_NUM_O;	
+	  game_table[player_move] = 'O';	
 
 	  player_display -= 1;
 	  active_mark -= 1;
 	}
+
 
 	scan_mark_override(game_table);
 
 	scan_for_winner(game_table);
 
       } //end of loop
+	
+exit:
       break;
 
     case EXIT:
@@ -225,61 +230,49 @@ void menu_ascii() {
 
 void scan_mark_override(char game_grid[]) {
 
-  game_grid[10] = 0;
 
   /* mark_override[player_move]  => table_mem[player_move]*/
   /* game_table[player_move]     => game_grid[player_move] */    
 
   
 
-  if (table_mem[player_move] == 0 && game_grid[player_move] == ASCII_NUM_X) {
-      game_grid[player_move] = ASCII_NUM_X;
-      table_mem[player_move] = ASCII_NUM_X;
+  if (table_mem[player_move] == 0 && game_grid[player_move] == 'X') {
+    table_mem[player_move] = 'X';
   }
 
-  //if player 2 overrides player 1's mark
-
-  else if (table_mem[player_move] != 0 && table_mem[player_move] > ASCII_NUM_O &&
-           game_grid[player_move] == ASCII_NUM_O ){
-
-      game_grid[player_move] = ASCII_NUM_X;
-    }
-
-  if (table_mem[player_move] == 0 && game_grid[player_move] == ASCII_NUM_O) {
-      game_grid[player_move] = ASCII_NUM_O;
-      table_mem[player_move] = ASCII_NUM_O;
+  else if (table_mem[player_move] == 0 && game_grid[player_move] == 'O') {
+    table_mem[player_move] = 'O';
   }
 
-  //if player 1 overrides player 2's mark
-
-  else if (table_mem[player_move] != 0 && table_mem[player_move] < ASCII_NUM_X &&
-      game_grid[player_move] == ASCII_NUM_X ) {
-
-    game_grid[player_move] = ASCII_NUM_O;
+  //if Player 1 tries to override Player 2's mark -> REVERT to 'O'!
+  else if (table_mem[player_move] == 'O' && game_grid[player_move] == 'X') {
+    game_grid[player_move] = 'O';
   }
 
+  //if Player 2 tries to override Player 1's 'X' -> REVERT to 'X'!
+  else if (table_mem[player_move] == 'X' && game_grid[player_move] == 'O') {
+    game_grid[player_move] = 'X';
+  }
 
 }
+
 
 
 int scan_for_winner(char game_grid[]) {
 
   int i = 0;
-  int *ptr = &i;
-  game_grid[10] = 0;
 
   //for rows (player 1, player 2)
   
-  for (i = 0; i <= 6; i++) {
+  for (i = 0; i <= 6; i +=3) {
 
-    if (game_grid[i] == game_grid[i+1] && game_grid[i+1] == game_grid[i+2]) {
+
+    if (game_grid[i] == game_grid[i+1] && game_grid[i+1] == game_grid[i+2]){
       winner = 1;
-      i+=3;
     }
 
   }
 
-  *ptr = 0;
 
   //for columns (player 1, player 2)
 
@@ -303,15 +296,17 @@ int scan_for_winner(char game_grid[]) {
 
   //for draws (player 1, player 2)
   
-  *ptr = 0;
 
-  for (i = 0; i <= 8; i++) {
+    if (table_mem[0] != 0 && winner == 0 && table_mem[1] != 0 && winner == 0 && 
+        table_mem[2] != 0 && winner == 0 && table_mem[3] != 0 && winner == 0 &&
+	table_mem[4] != 0 && winner == 0 && table_mem[5] != 0 && winner == 0 &&
+	table_mem[6] != 0 && winner == 0 && table_mem[7] != 0 && winner == 0 && 
+	table_mem[8] != 0 && winner == 0 ) {
 
-    if (game_grid[i] != 0 ) {
-	is_table_full += 1;
+       draw = 1;
     }
-
-  }
 
   return 0;
 }
+
+
