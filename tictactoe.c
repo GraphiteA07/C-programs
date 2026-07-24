@@ -83,7 +83,7 @@ int main() {
       break;
     } 
 
-  } while (menu_option != PLAY || menu_option != EXIT);
+  } while (menu_option != PLAY && menu_option != EXIT);
 
 
   switch (menu_option) {
