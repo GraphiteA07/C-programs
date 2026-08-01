@@ -1,3 +1,7 @@
+syntax on 
+set number
+set termguicolors      
+vnoremap <C-c> "+y
 
 
 " Use the GCC compiler plugin
@@ -6,75 +10,60 @@ compiler gcc
 " Compile C program only (F6)
 nnoremap <F6> :!gcc -Wall -Wextra -std=c11 "%:p" -o "%:p:r.exe"<CR>
 
-"Ctrl + C copy
-vnoremap <C-c> "+y
-
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
-
-
-
 " Compile and run C program (F5)
 " nnoremap <F5> :!gcc -Wall -Wextra -std=c11 ""%:p" -o ""%:p:r.exe" &&   ""%:p:r.exe"<CR>
 
 
-" Enable wildmenu for visual command completion
+"tab and indents
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set cindent
+
+"sentence backspace
+inoremap <C-BS> <C-W>
+set backspace=indent,eol,start
+
+"wildmenu 
 set wildmenu
-
-" Make completion behave like a modern bash/zsh shell:
-" 1st Tab: complete to longest match
-" 2nd Tab: show popup list and start cycling
 set wildmode=longest:full,full
+set wildoptions=pum 
 
-" Enhancements for wildmenu navigation
-set wildoptions=pum " Displays wildmenu as a vertical popup menu instead of a horizontal bar
-
-
-
-
-syntax on 
-
+"search
 set laststatus=2
-
 set incsearch
 
+"buffers
 nnoremap H :bprevious<CR>
 nnoremap L :bnext<CR>
 
+"tabs
+nnoremap <Space>t :tabe<CR>
+nnoremap <C-t> :tabnew<CR>
+nnoremap <C-h> :tabprevious<CR>
+nnoremap <C-l> :tabnext<CR>
+
+
+"colorscheme
 let g:lightline = {
       \ 'colorscheme': 'ayu_dark',
       \ }
 
 colorscheme ayu  
 
-"for centered Ctrl+u and Ctrl+d
+"centered Ctrl+u and Ctrl+d
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 
-
+"font
 set guifont=Fira\ Code\ Retina\:h10
 
-"Map <Space>l to open the Lex file explorer
+"Lex
 nnoremap <Space>l :Lex<CR> 
-
-setlocal autoindent
-
-set number
-
-"enable true colors support
-set termguicolors      
-
 
 "TO Split on the right side
 set splitright 
-
-" set cindent
-
-set smarttab
-
-set shiftwidth=2
 
 "For the block cursor
 if has("autocmd")
@@ -82,8 +71,6 @@ if has("autocmd")
   autocmd InsertLeave * set guicursor= 
 endif
 
-"For the line cursor
-"  set guicursor=n-v-c:ver25,i-ci:ver25,r-cr:hor20 
 
 "For The Vim-Plug to work you need to make a folder named 'plugged' without
 "commas and then give the plug begin the path like
@@ -91,15 +78,42 @@ endif
 
 call plug#begin('C:\Users\Zain_Computer\vimfiles\plugged')
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-commentary'
+Plug 'justinmk/vim-sneak'
+Plug 'girishji/vimcomplete'
 Plug 'ayu-theme/ayu-vim'
 Plug 'cocopon/iceberg.vim'
-Plug 'tpope/vim-commentary'
-Plug 'easymotion/vim-easymotion'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'sonph/onehalf', { 'rtp': 'vim' } 
-Plug 'girishji/vimcomplete'
+" Plug 'easymotion/vim-easymotion'
 "Plug 'ayu-theme/ayu-vim' 
 call plug#end()
+
+"for sneak.vim
+let g:sneak#label = 1
+
+" Define green-on-charcoal function
+" function! FixSneakColors() abort
+"   " Force ALL Sneak target groups (first match + secondary matches)
+"   highlight Sneak             guifg=#00FF66 guibg=#1E1E1E gui=bold ctermfg=green ctermbg=black
+"   highlight SneakScope        guifg=#00FF66 guibg=#1E1E1E gui=bold ctermfg=green ctermbg=black
+"   highlight SneakLabel        guifg=#00FF66 guibg=#1E1E1E gui=bold ctermfg=green ctermbg=black
+"   highlight SneakPluginTarget guifg=#00FF66 guibg=#1E1E1E gui=bold ctermfg=green ctermbg=black
+"   highlight SneakStreakTarget guifg=#00FF66 guibg=#1E1E1E gui=bold ctermfg=green ctermbg=black
+"   highlight SneakReset        guifg=#00FF66 guibg=#1E1E1E gui=bold ctermfg=green ctermbg=black
+" endfunction
+
+" augroup FixSneakGroup
+"   autocmd!
+"   " Apply on startup & theme changes
+"   autocmd ColorScheme,VimEnter * call FixSneakColors()
+"   " Hook into Sneak's internal load event so it can't reset back to magenta
+"   autocmd User SneakInit call FixSneakColors()
+" augroup END
+
+" " Run immediately
+" call FixSneakColors()
+
 
 
 
@@ -107,8 +121,8 @@ filetype plugin indent on
 
 " --- Windows...EasyMotion Rendering Fixes ---
 
-nmap ,w <Plug>(easymotion-bd-w)
-let g:EasyMotion_keys = 'abcdefghijklmnopqrstuw;' " Prioritize (a-z) targets, and use ';' as the prefix for 2-key combos 
+" nmap ,w <Plug>(easymotion-bd-w)
+" let g:EasyMotion_keys = 'abcdefghijklmnopqrstuw;' " Prioritize (a-z) targets, and use ';' as the prefix for 2-key combos 
 set ttyfast
 set redrawtime=10000
 let g:EasyMotion_do_shade = 0
@@ -124,4 +138,71 @@ set guioptions-=T  " Removes the Tool icon shortcut bar
 " set guioptions-=r  " Removes the right-hand scrollbar
 set guioptions-=L  " Removes the left-hand scrollbar
 
+
+
+"" =============================================================================
+"" LIGHTLINE CUSTOM COLOR REGISTRATION
+"" =============================================================================
+"let s:ink   = '#050300'
+"let s:base  = '#FF9900'
+"let s:dim   = '#804D00'
+"let s:line  = '#140A00'
+
+"let s:p = { 'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {} }
+
+"let s:p.normal.left     = [ [ s:base, s:ink, 'bold' ], [ s:base, s:line ] ]
+"let s:p.normal.middle   = [ [ s:base, s:ink ] ]
+"let s:p.normal.right    = [ [ s:base, s:ink ], [ s:base, s:line ] ]
+
+"let s:p.inactive.left   = [ [ s:dim, s:line ], [ s:dim, s:line ] ]
+"let s:p.inactive.middle = [ [ s:dim, s:ink ] ]
+"let s:p.inactive.right  = [ [ s:dim, s:line ], [ s:dim, s:line ] ]
+
+"let s:p.insert.left     = [ [ s:base, s:ink, 'bold' ], [ s:base, s:line ] ]
+"let s:p.visual.left     = [ [ s:base, s:ink, 'bold' ], [ s:base, s:line ] ]
+"let s:p.replace.left    = [ [ s:base, s:ink, 'bold' ], [ s:base, s:line ] ]
+
+"let s:p.tabline.left    = [ [ s:base, s:line ] ]
+"let s:p.tabline.tabsel  = [ [ s:base, s:ink, 'bold' ] ]
+"let s:p.tabline.middle  = [ [ s:base, s:ink ] ]
+"let s:p.tabline.right   = [ [ s:base, s:ink ] ]
+
+"""Register the custom profile globally with Lightline
+"let g:lightline#colorscheme#retro_amber_la#palette = lightline#colorscheme#fill(s:p)
+
+"" " Force Lightline to point to our custom engine by default
+"let g:lightline = {
+"      \ 'colorscheme': 'retro_amber_la',
+"      \ 'active': {
+"      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ]
+"      \ }
+"      \ }
+
+
+" 1. Explicitly enable Sneak's Label/Streak mode
+let g:sneak#label = 1
+
+" 2. Configure colors for matches and labels
+function! FixSneakLabelsAndColors() abort
+  " The targets / current cursor landing spot (Bright Green on Charcoal)
+  highlight Sneak             guifg=#00FF66 guibg=#1E1E1E gui=bold ctermfg=green ctermbg=black
+  highlight SneakCurrent      guifg=#00FF66 guibg=#1E1E1E gui=bold ctermfg=green ctermbg=black
+  highlight SneakPluginTarget guifg=#00FF66 guibg=#1E1E1E gui=bold ctermfg=green ctermbg=black
+
+  " The Label key letters to type (Bright Yellow on Charcoal so they pop out clearly)
+  highlight SneakLabel        guifg=#FFFF00 guibg=#1E1E1E gui=bold,underline ctermfg=yellow ctermbg=black
+  highlight SneakStreakTarget guifg=#FFFF00 guibg=#1E1E1E gui=bold ctermfg=yellow ctermbg=black
+
+  " Hide original characters under the label without magenta bleeding
+  highlight SneakLabelMask    guifg=#1E1E1E guibg=#1E1E1E ctermfg=black ctermbg=black
+  highlight SneakStreakMask   guifg=#1E1E1E guibg=#1E1E1E ctermfg=black ctermbg=black
+endfunction
+
+" 3. Ensure colors apply on startup and theme reloads
+augroup SneakFixFinal
+  autocmd!
+  autocmd ColorScheme,VimEnter * call FixSneakLabelsAndColors()
+augroup END
+
+call FixSneakLabelsAndColors()
 
