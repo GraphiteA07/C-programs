@@ -14,6 +14,7 @@
    struct name,
    enum name
 */
+#define __USE_MINGW_ANSI_STDIO 1
 
 #include <stdio.h>                                  
 #include <string.h>
@@ -23,12 +24,13 @@
 #include "Beep.c"
 
 
-#define MINLENGTH 25
-#define MAXLENGTH 40 
-#define COUNTER   16 
+#define MINLENGTH   25
+#define MAX_BALANCE 9223372036854775804
+#define MAXLENGTH   40 
+#define COUNTER     16 
 #define MEMORY    (COUNTER + 2)
 
-int delay3 = 60000;   /*41900*/
+unsigned int delay3 = 60000;   /*41900*/
 
 void Welcome() {
 
@@ -94,7 +96,6 @@ int main() {
   int masked_password      = 0;  
   int transaction          = 0;
   long long int balance    = 0; 
-  int after_transaction    = 0;
   int interaction          = 0; // for Menu()
   long long int deposit;
   long long int withdraw;
@@ -265,7 +266,6 @@ int main() {
   }
 
 
-
   while (current_user < COUNTER) {
 
     if ( strcmp((ptr + current_user)->Name,user_name)==0 || strcmp((ptr + current_user)->FullName,user_name)==0) {
@@ -376,7 +376,7 @@ int main() {
 	  transaction -= 1;
 	}
 
-	if ( (ptr + current_user)->AccountBalance >= 9223372036854775804 ) { 
+	if ( (ptr + current_user)->AccountBalance >= MAX_BALANCE ) { 
 
 	  printf("\n\n  Error: Maximum account limit reached.\n\n");
 	  transaction -= 1;
@@ -437,7 +437,6 @@ int main() {
 	printf("----------------------------------\n\n");
 
 	printf("  Display all users account no. (y/n) : ");
-	/* can_display_user = getche(); */
 	scanf("%1s",&can_display_user);
 	getchar();
 
@@ -467,7 +466,6 @@ int main() {
 	while (1) {
 
 	  printf("\n  Search User (y/n) : ");
-	  /* can_search_user = getche(); */
 	  scanf("%1s",&can_search_user);
 	  getchar();
 
@@ -628,7 +626,7 @@ int main() {
     }
 
     printf("\n  Press any key ...\n  ");
-    after_transaction = _getch();
+    (void)getch();
     interaction = 1;
 
 

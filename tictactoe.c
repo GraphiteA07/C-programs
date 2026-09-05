@@ -2,22 +2,20 @@
 
 #include <stdio.h>
 #include <conio.h>
-#include <stdlib.h>
 #include <windows.h>
 
-#define DELAY         60 
-#define ASCII_NUM_0   48
+#define DELAY         60  //15 for animated game board.
+#define ASCII_ZERO    48
 
 
-void console_init       ();
 void set_color          (int color);
-void reset_color        ();
 void print_cell         (char value, int index);
 void menu_ascii         ();
 void menu_ascii_animate ();
 void scan_color_override();
 void scan_mark_override (char* game_table);
 int scan_for_winner     (char* game_table);
+
 
 //color system
 HANDLE console;
@@ -51,17 +49,18 @@ WORD colors[] =
   FOREGROUND_INTENSITY
 };
 
+//global variables
+int cell_color[9]  = {NORMAL,NORMAL,NORMAL, NORMAL,NORMAL,NORMAL, NORMAL,NORMAL,NORMAL};
+char table_mem[9]  = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 int player_move;
 int mark_override  = 0;
 int winner         = 0;
 int draw           = 0;
-int cell_color[9]  = {NORMAL,NORMAL,NORMAL, NORMAL,NORMAL,NORMAL, NORMAL,NORMAL,NORMAL};
-char table_mem[9]  = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 
 int main() {
 
-  console_init();
+  console = GetStdHandle(STD_OUTPUT_HANDLE);
 
   char game_table[9]  = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
   char game_state[4]  = {'1', '2', 'X', 'O'};
@@ -69,6 +68,7 @@ int main() {
   int state_idx       = 0;
   int first_launch    = 0;
   int menu_option;
+
 
   enum Options {
 
@@ -114,9 +114,15 @@ int main() {
 
     first_launch = 1;
 
-    if (menu_option == PLAY || menu_option == EXIT) {
+    if (menu_option == PLAY) {
       break;
     } 
+
+    else if (menu_option == EXIT) {
+
+        printf("\n\n\n Exited Successfully...");
+        break;
+    }
 
   } while (menu_option != PLAY && menu_option != EXIT);
 
@@ -153,35 +159,85 @@ game:
         menu_ascii();
         printf("\n\n\n");
 
+        /* //animated game board */
+        /* printf("              +-----+-----+-----+\n"); */
+        /* Sleep(DELAY); */
+        /* printf("              |  "); */
+        /* Sleep(DELAY); */
+        /* print_cell(game_table[0],0); */
+        /* printf("  |  "); */
+        /* Sleep(DELAY); */
+        /* print_cell(game_table[1],1); */
+        /* printf("  |  "); */
+        /* Sleep(DELAY); */
+        /* print_cell(game_table[2],2); */
+        /* printf("  |\n"); */
+        /* Sleep(DELAY); */
+        /* printf("              |     |     |     |\n"); */
+        /* Sleep(DELAY); */
+        /* printf("              +-----+-----+-----+\n"); */
+        /* Sleep(DELAY); */
+        /* printf("              |  "); */
+        /* Sleep(DELAY); */
+        /* print_cell(game_table[3],3); */
+        /* printf("  |  "); */
+        /* Sleep(DELAY); */
+        /* print_cell(game_table[4],4); */
+        /* printf("  |  "); */
+        /* Sleep(DELAY); */
+        /* print_cell(game_table[5],5); */
+        /* printf("  |\n"); */
+        /* Sleep(DELAY); */
+        /* printf("              |     |     |     |\n"); */
+        /* Sleep(DELAY); */
+        /* printf("              +-----+-----+-----+\n"); */
+        /* Sleep(DELAY); */
+        /* printf("              |  "); */
+        /* Sleep(DELAY); */
+        /* print_cell(game_table[6],6); */
+        /* printf("  |  "); */
+        /* Sleep(DELAY); */
+        /* print_cell(game_table[7],7); */
+        /* printf("  |  "); */
+        /* Sleep(DELAY); */
+        /* print_cell(game_table[8],8); */
+        /* printf("  |\n"); */
+        /* Sleep(DELAY); */
+        /* printf("              |     |     |     |\n"); */
+        /* Sleep(DELAY); */
+        /* printf("              +-----+-----+-----+"); */
+        
+
         //game board
-        printf("              +-----+-----+-----+\n");
-        printf("              |  ");
-        print_cell(game_table[0],0);
-        printf("  |  ");
-        print_cell(game_table[1],1);
-        printf("  |  ");
-        print_cell(game_table[2],2);
-        printf("  |\n");
-        printf("              |     |     |     |\n");
-        printf("              +-----+-----+-----+\n");
-        printf("              |  ");
-        print_cell(game_table[3],3);
-        printf("  |  ");
-        print_cell(game_table[4],4);
-        printf("  |  ");
-        print_cell(game_table[5],5);
-        printf("  |\n");
-        printf("              |     |     |     |\n");
-        printf("              +-----+-----+-----+\n");
-        printf("              |  ");
-        print_cell(game_table[6],6);
-        printf("  |  ");
-        print_cell(game_table[7],7);
-        printf("  |  ");
-        print_cell(game_table[8],8);
-        printf("  |\n");
-        printf("              |     |     |     |\n");
-        printf("              +-----+-----+-----+");
+         printf("              +-----+-----+-----+\n");
+         printf("              |  ");
+         print_cell(game_table[0],0);
+         printf("  |  ");
+         print_cell(game_table[1],1);
+         printf("  |  ");
+         print_cell(game_table[2],2);
+         printf("  |\n");
+         printf("              |     |     |     |\n");
+         printf("              +-----+-----+-----+\n");
+         printf("              |  ");
+         print_cell(game_table[3],3);
+         printf("  |  ");
+         print_cell(game_table[4],4);
+         printf("  |  ");
+         print_cell(game_table[5],5);
+         printf("  |\n");
+         printf("              |     |     |     |\n");
+         printf("              +-----+-----+-----+\n");
+         printf("              |  ");
+         print_cell(game_table[6],6);
+         printf("  |  ");
+         print_cell(game_table[7],7);
+         printf("  |  ");
+         print_cell(game_table[8],8);
+         printf("  |\n");
+         printf("              |     |     |     |\n"); 
+         printf("              +-----+-----+-----+"); 
+        
 
         if (winner == 1) {
             winner = 0;
@@ -219,7 +275,8 @@ game:
         }
         
         printf("%c", game_state[state_idx + 2]);
-        reset_color(); 
+        set_color(NORMAL);
+ 
         printf(" ] : ");
         player_move = getche();
 
@@ -234,6 +291,7 @@ game:
 
 
             if (leave_game == yes || leave_game == YES) {
+                printf("\n\n\n Exited Successfully...");
               goto exit;
             }
 
@@ -244,7 +302,7 @@ game:
           }while (leave_game != yes && leave_game != YES && leave_game != no && leave_game != NO); 
         }
 
-        player_move -= ASCII_NUM_0;
+        player_move -= ASCII_ZERO;
         player_move -= 1;             //-1 because of game_table[] index.
 
         if (state_idx == 0) {         //PLAYER 1 [ X ] because of game_state[]
@@ -276,29 +334,18 @@ exit:
   return 0;
 } //end of main()
 
-void console_init()
-{
-  console = GetStdHandle(STD_OUTPUT_HANDLE);
-}
 
+void set_color(int color) {
 
-void set_color(int color)
-{
   SetConsoleTextAttribute(console, colors[color]);
 }
 
+void print_cell(char value, int index) {
 
-void reset_color()
-{
-  set_color(NORMAL);
-}
-
-
-void print_cell(char value, int index)
-{
   set_color(cell_color[index]);
   printf("%c", value);
-  reset_color();
+  set_color(NORMAL);
+
 }
 
 void menu_ascii_animate() {
@@ -424,4 +471,5 @@ int scan_for_winner(char* game_table) {
 
   return 0;
 }
+
 
