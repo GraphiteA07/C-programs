@@ -5,15 +5,6 @@
    1) Increase COUNTER
    2) Increase AccountNo ( of user ) */
 
-/* Casing Structure 
-
-   1)  Macros, enum varibles : SCREAMING_SNAKE_CASE 
-   2)  Functions()           : Capital_Snake_Case 
-   3)  Local Variables       : snake_case
-   4)  Struct Variables,     : PascalCase
-   struct name,
-   enum name
-*/
 #define __USE_MINGW_ANSI_STDIO 1
 
 #include <stdio.h>                                  
@@ -23,61 +14,17 @@
 #include <windows.h>
 #include "Beep.c"
 
-
-#define MINLENGTH   25
-#define MAX_BALANCE 9223372036854775804
-#define MAXLENGTH   40 
-#define COUNTER     16 
+#define MIN_LENGTH   25
+#define MAX_LENGTH   40 
+#define MAX_BALANCE  9223372036854775804
+#define COUNTER      18 
 #define MEMORY    (COUNTER + 2)
 
 unsigned int delay3 = 60000;   /*41900*/
 
-void Welcome() {
-
-  //gap from ( " ) 4 ( Only ASCII )
-
-  printf("\n\n    e   e  e eeee e     eeee eeeee eeeeeee eeee \n");
-  usleep(delay3);
-  printf("    8   8  8 8    8     8  8 8  88 8  8  8 8    \n");
-  usleep(delay3);
-  printf("    8e  8  8 8eee 8e    8e   8   8 8e 8  8 8eee \n");
-  usleep(delay3);
-  printf("    88  8  8 88   88    88   8   8 88 8  8 88   \n");
-  usleep(delay3);
-  printf("    88ee8ee8 88ee 88eee 88e8 8eee8 88 8  8 88ee \n");
-
-  printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n\n");
-} 
-
-
-void Menu() {
-
-  //gap from ( " ) 4 ( Only ASCII )
-
-  printf("\n\n    eeeeeee eeeee e  eeeee    eeeeeee eeee eeeee e   e\n");
-  printf("    8  8  8 8   8 8  8   8    8  8  8 8    8   8 8   8\n");
-  printf("    8e 8  8 8eee8 8  8e  8    8e 8  8 8eee 8e  8 8e  8\n");
-  printf("    88 8  8 88  8 8  88  8    88 8  8 88   88  8 88  8\n");
-  printf("    88 8  8 88  8 8  88  8    88 8  8 88ee 88  8 88ee8\n");
-  printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n");
-} 
-
-void Directing() {
-
-  printf("\n\n  Directing");
-
-  usleep(95000); 
-  printf(".");
-  usleep(95000); 
-  printf(".");
-  usleep(95000); 
-  printf(".");
-  usleep(99999); 
-
-
-  printf("\n");
-} 
-
+void Welcome(); 
+void Menu(); 
+void Directing(); 
 
 
 int main() {
@@ -85,18 +32,17 @@ int main() {
 
 
   /* local variables */
-  char user_password[MINLENGTH]; 
-  char user_name[MAXLENGTH];
-  char input_transfer_user[MAXLENGTH];
+  char user_name[MAX_LENGTH];
+  char user_password[MIN_LENGTH]; 
+  char input_transfer_user[MAX_LENGTH];
   char menu_option;
   char can_search_user;
   char can_display_user;
 
-
   int masked_password      = 0;  
   int transaction          = 0;
   long long int balance    = 0; 
-  int interaction          = 0; // for Menu()
+  int first_launch          = 0; // for Menu()
   long long int deposit;
   long long int withdraw;
   long long int transfer_amount;
@@ -123,15 +69,17 @@ int main() {
 
   struct UserDetails {
 
-    char           Password[MINLENGTH];
+    char           Password[MIN_LENGTH];
     long long int  AccountBalance;
     int            AccountNo;
-    char           Name[MINLENGTH];
-    char           FullName[MAXLENGTH];
+    char           Name[MIN_LENGTH];
+    char           FullName[MAX_LENGTH];
 
   };
 
-  struct UserDetails Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil,Burhan,Tanveer,Ar_ryan,Umair,Zuhair,Mahad;
+  struct UserDetails Ryan, Shayan, Ahmed, Khuzema, Fawad, Talha, Muaz, Ali,
+                     Saffi, Muzammil, Burhan, Tanveer, Ar_ryan, Umair, Zuhair, Mahad,
+                     Rafay,Ubaid;
 
   strcpy(Ryan.Password, "ryan");
   Ryan.AccountBalance = 100000;
@@ -243,10 +191,21 @@ int main() {
   strcpy(Mahad.Name, "mahad");
   strcpy(Mahad.FullName, "muhammad mahad asif");
 
-  struct UserDetails user_data[MEMORY]= {Ryan,Shayan,Ahmed,Khuzema,Fawad,Talha,Muaz,Ali,Saffi,Muzammil,Burhan,Tanveer,Ar_ryan,Umair,Zuhair,Mahad};
+  strcpy(Rafay.Password, "rafay");
+  Rafay.AccountBalance = 100000;
+  Rafay.AccountNo = 1017;
+  strcpy(Rafay.Name, "rafay");
+  strcpy(Rafay.FullName, "abdul rafay usaid rehmani");
 
+  strcpy(Ubaid.Password, "ubaid");
+  Ubaid.AccountBalance = 100000;
+  Ubaid.AccountNo = 1018;
+  strcpy(Ubaid.Name, "ubaid");
+  strcpy(Ubaid.FullName, "ubaid sheikh");
 
-
+  struct UserDetails user_data[MEMORY]= {Ryan, Shayan, Ahmed, Khuzema, Fawad, Talha, Muaz,Ali,
+                                         Saffi, Muzammil, Burhan, Tanveer, Ar_ryan, Umair, Zuhair, Mahad,
+                                         Rafay,Ubaid};
 
   struct UserDetails *ptr = user_data;
 
@@ -261,21 +220,21 @@ int main() {
 
   //This removes the \n from fgets;
   size_t len = strlen(user_name);
-  if (len > 0 && user_name[len - 1] == '\n') {
+  if ( len > 0 && user_name[len - 1] == '\n' ) {
     user_name[len - 1] = '\0'; 
   }
 
 
-  while (current_user < COUNTER) {
+  while (current_user < COUNTER ) {
 
-    if ( strcmp((ptr + current_user)->Name,user_name)==0 || strcmp((ptr + current_user)->FullName,user_name)==0) {
+    if ( strcmp((ptr + current_user)->Name,user_name)==0 || strcmp((ptr + current_user)->FullName,user_name)==0 ) {
       break;
     }
     current_user++;
   }
 
 
-  if ( strcmp((ptr + current_user)->Name,user_name)!=0 && strcmp((ptr + current_user)->FullName,user_name)!=0) {
+  if ( strcmp((ptr + current_user)->Name,user_name)!=0 && strcmp((ptr + current_user)->FullName,user_name)!=0 ) {
     printf("\n Error: Username not found\n");
     return 0;
   }
@@ -288,7 +247,7 @@ int main() {
 
     char ch = getch();
 
-    if (masked_password >= 20) {
+    if ( masked_password >= 20 ) {
 
       printf("\n\n Error: Password wasn't that long \n");
       return 0;
@@ -301,7 +260,7 @@ int main() {
 
     if ( ch == '\b' ) {
 
-      if (masked_password > 0) {
+      if ( masked_password > 0 ) {
 	masked_password--;
 	printf("\b \b");
 
@@ -334,7 +293,7 @@ int main() {
 
       system("cls");
 
-      if ( interaction == 1 ) {
+      if ( first_launch == 1 ) {
 	Menu();
       }
 
@@ -351,7 +310,7 @@ int main() {
       menu_option = getche();
       Sound();
 
-      if ( menu_option == DEPOSIT || menu_option == WITHDRAW || menu_option == TRANSFER || menu_option == ACCOUNT_DETAILS || menu_option == EXIT) {
+      if ( menu_option == DEPOSIT || menu_option == WITHDRAW || menu_option == TRANSFER || menu_option == ACCOUNT_DETAILS || menu_option == EXIT ) {
 	break;
       }
 
@@ -406,7 +365,7 @@ int main() {
 	scanf("%9lld",&withdraw);
 
 
-	if ( withdraw > (ptr + current_user)->AccountBalance) {
+	if ( withdraw > (ptr + current_user)->AccountBalance ) {
 	  printf("\n\n  Error: Insufficient funds for this transaction.\n\n");
 	  transaction -= 1;
 	}
@@ -416,7 +375,7 @@ int main() {
 	  transaction -= 1;
 	}
 
-	if ( withdraw <= (ptr + current_user)->AccountBalance && withdraw > 0) {
+	if ( withdraw <= (ptr + current_user)->AccountBalance && withdraw > 0 ) {
 	  (ptr + current_user)->AccountBalance -= withdraw;
 	  printf("\n\n-- Money Withdrawn --\n\n");
 	  printf("  Now Balance : %lld\n\n",(ptr + current_user)->AccountBalance);
@@ -445,7 +404,7 @@ int main() {
 	  printf("\n ");
 	}
 
-	if ( can_display_user == 'y') {
+	if ( can_display_user == 'y' ) {
 
 	  printf("\n\n");
 
@@ -458,7 +417,7 @@ int main() {
 
 	}
 
-	if ( can_display_user != 'y' && can_display_user != 'n') {
+	if ( can_display_user != 'y' && can_display_user != 'n' ) {
 	  transaction -= 1;
 	  break;
 	}
@@ -477,16 +436,16 @@ int main() {
 
 	    //This removes the \n from fgets;
 	    size_t len = strlen(input_transfer_user);
-	    if (len > 0 && input_transfer_user[len - 1] == '\n') {
+	    if ( len > 0 && input_transfer_user[len - 1] == '\n' ) {
 	      input_transfer_user[len - 1] = '\0'; 
 	    }
 
 
 	    search_transfer_user = 0;
-	    for (search_transfer_user = 0; search_transfer_user < COUNTER; search_transfer_user++) {
+	    for (search_transfer_user = 0; search_transfer_user < COUNTER; search_transfer_user++ ) {
 
 
-	      if ( strcmp((ptr + search_transfer_user)->Name,input_transfer_user)==0 || strcmp((ptr + search_transfer_user)->FullName,input_transfer_user)==0) {
+	      if ( strcmp((ptr + search_transfer_user)->Name,input_transfer_user)==0 || strcmp((ptr + search_transfer_user)->FullName,input_transfer_user)==0 ) {
 		printf("\n  %16s",(ptr + search_transfer_user)->FullName);
 		printf("\t: [ %d ]",(ptr + search_transfer_user)->AccountNo);
 		/* printf("\n"); */
@@ -494,13 +453,13 @@ int main() {
 	      }
 	    }
 
-	    if ( strcmp((ptr + search_transfer_user)->Name,input_transfer_user)!=0 && strcmp((ptr + search_transfer_user)->FullName,input_transfer_user)!=0 ) {
+	    if ( strcmp((ptr + search_transfer_user)->Name,input_transfer_user)!=0 && strcmp((ptr + search_transfer_user)->FullName,input_transfer_user)!=0  ) {
 	      printf("\n  Error: User not found\n");
 	    }
 
 	  }
 
-	  if ( strcmp((ptr + search_transfer_user)->Name,input_transfer_user)==0 || strcmp((ptr + search_transfer_user)->FullName,input_transfer_user)==0) {
+	  if ( strcmp((ptr + search_transfer_user)->Name,input_transfer_user)==0 || strcmp((ptr + search_transfer_user)->FullName,input_transfer_user)==0 ) {
 	    break;
 	  }
 
@@ -531,20 +490,20 @@ int main() {
 
 	while ( verify_acc < COUNTER ) {
 
-	  if ( (ptr + verify_acc)->AccountNo == acc_no) {
+	  if ( (ptr + verify_acc)->AccountNo == acc_no ) {
 	    break;
 	  }
 	  verify_acc++;
 	}
 
-	 if ( (ptr + verify_acc)->AccountNo != acc_no) {
+	 if ( (ptr + verify_acc)->AccountNo != acc_no ) {
 	  printf("\n  Error: Account not found\n");
 	  transaction -= 1;
 	  break;
 	}
 
 
-	 if (verify_acc == current_user) {
+	 if ( verify_acc == current_user ) {
 	   printf("\n  Error: You cannot transfer money to your own account.\n");
 	   transaction -= 1;
 	   break;
@@ -553,15 +512,15 @@ int main() {
 
 
 	 
-	 if ( (ptr + verify_acc)->AccountNo == acc_no) {
+	 if ( (ptr + verify_acc)->AccountNo == acc_no ) {
 
 
 	printf("\n  Enter amount : ");
 	scanf("%9lld",&transfer_amount);
 	printf("\n");
 
-	if ( transfer_amount > (ptr + current_user)->AccountBalance) {
-	  printf("\n  Error: Insufficient funds for this transaction\".\n\n");
+	if ( transfer_amount > (ptr + current_user)->AccountBalance ) {
+	  printf("\n  Error: Insufficient funds for this transaction.\n\n");
 	  getchar();
 	  transaction -= 1;
 	  break;
@@ -575,7 +534,7 @@ int main() {
 
 
 
-	if ( (ptr + verify_acc)->AccountNo == acc_no) {
+	if ( (ptr + verify_acc)->AccountNo == acc_no ) {
 
 	  if ( transfer_amount <= (ptr + current_user)->AccountBalance && transfer_amount > 0 ) {
 	    (ptr + current_user)->AccountBalance -= transfer_amount;
@@ -627,7 +586,7 @@ int main() {
 
     printf("\n  Press any key ...\n  ");
     (void)getch();
-    interaction = 1;
+    first_launch = 1;
 
 
 
@@ -638,4 +597,49 @@ int main() {
 }
 
 
+void Welcome() {
+
+  //gap from ( " ) 4 ( Only ASCII )
+
+  printf("\n\n    e   e  e eeee e     eeee eeeee eeeeeee eeee \n");
+  usleep(delay3);
+  printf("    8   8  8 8    8     8  8 8  88 8  8  8 8    \n");
+  usleep(delay3);
+  printf("    8e  8  8 8eee 8e    8e   8   8 8e 8  8 8eee \n");
+  usleep(delay3);
+  printf("    88  8  8 88   88    88   8   8 88 8  8 88   \n");
+  usleep(delay3);
+  printf("    88ee8ee8 88ee 88eee 88e8 8eee8 88 8  8 88ee \n");
+
+  printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n\n");
+} 
+
+
+void Menu() {
+
+  //gap from ( " ) 4 ( Only ASCII )
+
+  printf("\n\n    eeeeeee eeeee e  eeeee    eeeeeee eeee eeeee e   e\n");
+  printf("    8  8  8 8   8 8  8   8    8  8  8 8    8   8 8   8\n");
+  printf("    8e 8  8 8eee8 8  8e  8    8e 8  8 8eee 8e  8 8e  8\n");
+  printf("    88 8  8 88  8 8  88  8    88 8  8 88   88  8 88  8\n");
+  printf("    88 8  8 88  8 8  88  8    88 8  8 88ee 88  8 88ee8\n");
+  printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n");
+} 
+
+void Directing() {
+
+  printf("\n\n  Directing");
+
+  usleep(95000); 
+  printf(".");
+  usleep(95000); 
+  printf(".");
+  usleep(95000); 
+  printf(".");
+  usleep(99999); 
+
+
+  printf("\n");
+} 
 
