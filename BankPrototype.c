@@ -14,8 +14,8 @@
 #include <windows.h>
 #include "Beep.c"
 
-#define MIN_LENGTH   25
-#define MAX_LENGTH   40 
+#define MIN_CHAR_LEN   25
+#define MAX_CHAR_LEN   40 
 #define MAX_BALANCE  9223372036854775804
 #define COUNTER      18 
 #define MEMORY    (COUNTER + 2)
@@ -28,618 +28,672 @@ void Directing();
 
 
 int main() {
-  system("cls");
 
+    system("cls");
 
-  /* local variables */
-  char user_name[MAX_LENGTH];
-  char user_password[MIN_LENGTH]; 
-  char input_transfer_user[MAX_LENGTH];
-  char menu_option;
-  char can_search_user;
-  char can_display_user;
+    /* local variables */
+    char user_name[MAX_CHAR_LEN];
+    char user_password[MIN_CHAR_LEN]; 
+    char input_transfer_user[MAX_CHAR_LEN];
+    char menu_option;
+    char can_search_user;
+    char can_display_user;
+    char ch = '\0';
 
-  int masked_password      = 0;  
-  int transaction          = 0;
-  long long int balance    = 0; 
-  int first_launch          = 0; // for Menu()
-  long long int deposit;
-  long long int withdraw;
-  long long int transfer_amount;
-  int acc_no;
+    int size      = 0;  
+    int transaction          = 0;
+    long long int balance    = 0; 
+    int first_launch          = 0; // for Menu()
+    long long int deposit;
+    long long int withdraw;
+    long long int transfer_amount;
+    int acc_no;
 
 
-  /* loop variables */ 
-  int current_user         = 0;  //tracks current user
-  int display_users        = 0;  //displays all users and account no.
-  int search_transfer_user = 0;  //searches user to transfer money
-  int verify_acc           = 0;  //verifies acc no. is correct
+    /* loop variables */ 
+    int current_user         = 0;  //tracks current user
+    int display_users        = 0;  //displays all users and account no.
+    int search_transfer_user = 0;  //searches user to transfer money
+    int verify_acc           = 0;  //verifies acc no. is correct
 
 
-  enum BankingOptions{
+    enum BankingOptions{
 
-    DEPOSIT              = 49,
-    WITHDRAW             = 50,
-    TRANSFER             = 51,
-    ACCOUNT_DETAILS      = 52,
-    EXIT                 = 53,
-    /* TRANSACTION_DETAILS  = 54, */
+        DEPOSIT              = 49,
+        WITHDRAW             = 50,
+        TRANSFER             = 51,
+        ACCOUNT_DETAILS      = 52,
+        EXIT                 = 53,
+        /* TRANSACTION_DETAILS  = 54, */
 
-  };
+    };
 
-  struct UserDetails {
+    struct UserDetails {
 
-    char           Password[MIN_LENGTH];
-    long long int  AccountBalance;
-    int            AccountNo;
-    char           Name[MIN_LENGTH];
-    char           FullName[MAX_LENGTH];
+        char           Password[MIN_CHAR_LEN];
+        long long int  AccountBalance;
+        int            AccountNo;
+        char           Name[MIN_CHAR_LEN];
+        char           FullName[MAX_CHAR_LEN];
 
-  };
+    };
 
-  struct UserDetails Ryan, Shayan, Ahmed, Khuzema, Fawad, Talha, Muaz, Ali,
-                     Saffi, Muzammil, Burhan, Tanveer, Ar_ryan, Umair, Zuhair, Mahad,
-                     Rafay,Ubaid;
+    struct UserDetails Ryan, Shayan, Ahmed, Khuzema, Fawad, Talha, Muaz, Ali,
+                       Saffi, Muzammil, Burhan, Tanveer, Ar_ryan, Umair, Zuhair, Mahad,
+                       Rafay,Ubaid;
 
-  strcpy(Ryan.Password, "ryan");
-  Ryan.AccountBalance = 100000;
-  Ryan.AccountNo = 1001;
-  strcpy(Ryan.Name, "ryan");
-  strcpy(Ryan.FullName, "ryan asif");
+    strcpy(Ryan.Password, "ryan");
+    Ryan.AccountBalance = 100000;
+    Ryan.AccountNo = 1001;
+    strcpy(Ryan.Name, "ryan");
+    strcpy(Ryan.FullName, "ryan asif");
 
 
-  strcpy(Shayan.Password, "shayan");
-  Shayan.AccountBalance = 100000;
-  Shayan.AccountNo = 1002;
-  strcpy(Shayan.Name, "shayan");
-  strcpy(Shayan.FullName, "shayan siddiqui");
+    strcpy(Shayan.Password, "shayan");
+    Shayan.AccountBalance = 100000;
+    Shayan.AccountNo = 1002;
+    strcpy(Shayan.Name, "shayan");
+    strcpy(Shayan.FullName, "shayan siddiqui");
 
-  strcpy(Ahmed.Password, "ahmed");
-  Ahmed.AccountBalance = 100000;
-  Ahmed.AccountNo = 1003;
-  strcpy(Ahmed.Name, "ahmed");
-  strcpy(Ahmed.FullName, "ahmed dayan");
+    strcpy(Ahmed.Password, "ahmed");
+    Ahmed.AccountBalance = 100000;
+    Ahmed.AccountNo = 1003;
+    strcpy(Ahmed.Name, "ahmed");
+    strcpy(Ahmed.FullName, "ahmed dayan");
 
 
-  strcpy(Khuzema.Password, "khuzema");
-  Khuzema.AccountBalance = 100000;
-  Khuzema.AccountNo = 1004;
-  strcpy(Khuzema.Name, "khuzema");
-  strcpy(Khuzema.FullName, "khuzema afridi");
+    strcpy(Khuzema.Password, "khuzema");
+    Khuzema.AccountBalance = 100000;
+    Khuzema.AccountNo = 1004;
+    strcpy(Khuzema.Name, "khuzema");
+    strcpy(Khuzema.FullName, "khuzema afridi");
 
 
-  strcpy(Fawad.Password, "fawad");
-  Fawad.AccountBalance = 100000;
-  Fawad.AccountNo = 1005;
-  strcpy(Fawad.Name, "fawad");
-  strcpy(Fawad.FullName, "fawad ahmed");
+    strcpy(Fawad.Password, "fawad");
+    Fawad.AccountBalance = 100000;
+    Fawad.AccountNo = 1005;
+    strcpy(Fawad.Name, "fawad");
+    strcpy(Fawad.FullName, "fawad ahmed");
 
 
-  strcpy(Talha.Password, "talha");
-  Talha.AccountBalance = 100000;
-  Talha.AccountNo = 1006;
-  strcpy(Talha.Name, "talha");
-  strcpy(Talha.FullName, "talha qadri");
+    strcpy(Talha.Password, "talha");
+    Talha.AccountBalance = 100000;
+    Talha.AccountNo = 1006;
+    strcpy(Talha.Name, "talha");
+    strcpy(Talha.FullName, "talha qadri");
 
 
-  strcpy(Muaz.Password, "muaz");
-  Muaz.AccountBalance = 100000;
-  Muaz.AccountNo = 1007;
-  strcpy(Muaz.Name, "muaz");
-  strcpy(Muaz.FullName, "muaz khan");
+    strcpy(Muaz.Password, "muaz");
+    Muaz.AccountBalance = 100000;
+    Muaz.AccountNo = 1007;
+    strcpy(Muaz.Name, "muaz");
+    strcpy(Muaz.FullName, "muaz khan");
 
 
-  strcpy(Ali.Password, "ali");
-  Ali.AccountBalance = 100000;
-  Ali.AccountNo = 1008;
-  strcpy(Ali.Name, "ali");
-  strcpy(Ali.FullName, "muhammad ali raza");
+    strcpy(Ali.Password, "ali");
+    Ali.AccountBalance = 100000;
+    Ali.AccountNo = 1008;
+    strcpy(Ali.Name, "ali");
+    strcpy(Ali.FullName, "muhammad ali raza");
 
 
-  strcpy(Saffi.Password, "saffi");
-  Saffi.AccountBalance = 100000;
-  Saffi.AccountNo = 1009;
-  strcpy(Saffi.Name, "saffi");
-  strcpy(Saffi.FullName, "muhammad saffi");
+    strcpy(Saffi.Password, "saffi");
+    Saffi.AccountBalance = 100000;
+    Saffi.AccountNo = 1009;
+    strcpy(Saffi.Name, "saffi");
+    strcpy(Saffi.FullName, "muhammad saffi");
 
 
-  strcpy(Muzammil.Password, "muzammil");
-  Muzammil.AccountBalance = 100000;
-  Muzammil.AccountNo = 1010;
-  strcpy(Muzammil.Name, "muzammil");
-  strcpy(Muzammil.FullName, "muzammil ahmed");
+    strcpy(Muzammil.Password, "muzammil");
+    Muzammil.AccountBalance = 100000;
+    Muzammil.AccountNo = 1010;
+    strcpy(Muzammil.Name, "muzammil");
+    strcpy(Muzammil.FullName, "muzammil ahmed");
 
 
-  strcpy(Burhan.Password, "burhan");
-  Burhan.AccountBalance = 100000;
-  Burhan.AccountNo = 1011;
-  strcpy(Burhan.Name, "burhan");
-  strcpy(Burhan.FullName, "syed burhan jalali");
+    strcpy(Burhan.Password, "burhan");
+    Burhan.AccountBalance = 100000;
+    Burhan.AccountNo = 1011;
+    strcpy(Burhan.Name, "burhan");
+    strcpy(Burhan.FullName, "syed burhan jalali");
 
 
-  strcpy(Tanveer.Password, "tanveer");
-  Tanveer.AccountBalance = 100000;
-  Tanveer.AccountNo = 1012;
-  strcpy(Tanveer.Name, "tanveer");
-  strcpy(Tanveer.FullName, "tanveer ahmed");
+    strcpy(Tanveer.Password, "tanveer");
+    Tanveer.AccountBalance = 100000;
+    Tanveer.AccountNo = 1012;
+    strcpy(Tanveer.Name, "tanveer");
+    strcpy(Tanveer.FullName, "tanveer ahmed");
 
 
-  strcpy(Ar_ryan.Password, "ar-ryan");
-  Ar_ryan.AccountBalance = 100000;
-  Ar_ryan.AccountNo = 1013;
-  strcpy(Ar_ryan.Name, "ar-ryan");
-  strcpy(Ar_ryan.FullName, "ar-ryan ali");
+    strcpy(Ar_ryan.Password, "ar-ryan");
+    Ar_ryan.AccountBalance = 100000;
+    Ar_ryan.AccountNo = 1013;
+    strcpy(Ar_ryan.Name, "ar-ryan");
+    strcpy(Ar_ryan.FullName, "ar-ryan ali");
 
 
-  strcpy(Umair.Password, "umair");
-  Umair.AccountBalance = 100000;
-  Umair.AccountNo = 1014;
-  strcpy(Umair.Name, "umair");
-  strcpy(Umair.FullName, "umair iftikhar");
+    strcpy(Umair.Password, "umair");
+    Umair.AccountBalance = 100000;
+    Umair.AccountNo = 1014;
+    strcpy(Umair.Name, "umair");
+    strcpy(Umair.FullName, "umair iftikhar");
 
 
-  strcpy(Zuhair.Password, "zuhair");
-  Zuhair.AccountBalance = 100000;
-  Zuhair.AccountNo = 1015;
-  strcpy(Zuhair.Name, "zuhair");
-  strcpy(Zuhair.FullName, "syed zuhair raza abbas");
+    strcpy(Zuhair.Password, "zuhair gangster");
+    Zuhair.AccountBalance = 100000;
+    Zuhair.AccountNo = 1015;
+    strcpy(Zuhair.Name, "zuhair");
+    strcpy(Zuhair.FullName, "syed zuhair raza abbas");
 
 
-  strcpy(Mahad.Password, "mahad");
-  Mahad.AccountBalance = 100000;
-  Mahad.AccountNo = 1016;
-  strcpy(Mahad.Name, "mahad");
-  strcpy(Mahad.FullName, "muhammad mahad asif");
+    strcpy(Mahad.Password, "mahad");
+    Mahad.AccountBalance = 100000;
+    Mahad.AccountNo = 1016;
+    strcpy(Mahad.Name, "mahad");
+    strcpy(Mahad.FullName, "muhammad mahad asif");
 
-  strcpy(Rafay.Password, "rafay");
-  Rafay.AccountBalance = 100000;
-  Rafay.AccountNo = 1017;
-  strcpy(Rafay.Name, "rafay");
-  strcpy(Rafay.FullName, "abdul rafay usaid rehmani");
+    strcpy(Rafay.Password, "rafay");
+    Rafay.AccountBalance = 100000;
+    Rafay.AccountNo = 1017;
+    strcpy(Rafay.Name, "rafay");
+    strcpy(Rafay.FullName, "abdul rafay usaid rehmani");
 
-  strcpy(Ubaid.Password, "ubaid");
-  Ubaid.AccountBalance = 100000;
-  Ubaid.AccountNo = 1018;
-  strcpy(Ubaid.Name, "ubaid");
-  strcpy(Ubaid.FullName, "ubaid sheikh");
+    strcpy(Ubaid.Password, "ubaid");
+    Ubaid.AccountBalance = 100000;
+    Ubaid.AccountNo = 1018;
+    strcpy(Ubaid.Name, "ubaid");
+    strcpy(Ubaid.FullName, "ubaid sheikh");
 
-  struct UserDetails user_data[MEMORY]= {Ryan, Shayan, Ahmed, Khuzema, Fawad, Talha, Muaz,Ali,
-                                         Saffi, Muzammil, Burhan, Tanveer, Ar_ryan, Umair, Zuhair, Mahad,
-                                         Rafay,Ubaid};
+    struct UserDetails user_data[MEMORY]= {Ryan, Shayan, Ahmed, Khuzema, Fawad, Talha, Muaz,Ali,
+        Saffi, Muzammil, Burhan, Tanveer, Ar_ryan, Umair, Zuhair, Mahad,
+        Rafay,Ubaid};
 
-  struct UserDetails *ptr = user_data;
+    struct UserDetails *ptr = user_data;
 
-  printf("\n Enter name \n\n > ");
-  fgets(user_name,sizeof(user_name),stdin);
-  strlwr(user_name);
+    printf("\n Enter name \n\n > ");
 
-  if ( user_name[0] == '\n' ) {
-    printf("\n Error: User not found\n");
-    return 0;
-  }
 
-  //This removes the \n from fgets;
-  size_t len = strlen(user_name);
-  if ( len > 0 && user_name[len - 1] == '\n' ) {
-    user_name[len - 1] = '\0'; 
-  }
+    while (1) {
 
+        ch = getche();
 
-  while (current_user < COUNTER ) {
+        if (size == 0 && ch == '\r') {
+            printf("\n\n Error: No input found\n");
+            return 0;
+        }
 
-    if ( strcmp((ptr + current_user)->Name,user_name)==0 || strcmp((ptr + current_user)->FullName,user_name)==0 ) {
-      break;
-    }
-    current_user++;
-  }
+        /* temp = size; */
 
+        if (size > MAX_CHAR_LEN - 1) {
 
-  if ( strcmp((ptr + current_user)->Name,user_name)!=0 && strcmp((ptr + current_user)->FullName,user_name)!=0 ) {
-    printf("\n Error: Username not found\n");
-    return 0;
-  }
+            printf("\n\n Error: Are you writing a paragraph? \n");
+            return 0;
+        }
 
+        if (ch == '\r') {
+            user_name[size] = '\0';
+            break;
+        }
 
+        if (ch == '\b') {
 
-  printf("\n Enter password \n\n > ");
+            if (size == 0 && printf(" \b")) {
+                printf("\n\n Error: Invalid deletion operation\n");
+                return 0;
+            }
 
-  while (1) {
+            if (size > 0) {
 
-    char ch = getch();
+                size--;
 
-    if ( masked_password >= 20 ) {
 
-      printf("\n\n Error: Password wasn't that long \n");
-      return 0;
-    }
+                printf(" \b");
 
-    if ( ch == '\r' ) {
-      user_password[masked_password] = '\0';
-      break;
-    }
+            }
+        }
 
-    if ( ch == '\b' ) {
+        else {
+            user_name[size] = ch;
+            size++;
+        }
 
-      if ( masked_password > 0 ) {
-	masked_password--;
-	printf("\b \b");
-
-      }
     }
 
-    else {
-      user_password[masked_password] = ch;
-      printf("*");
-      masked_password++;
+    strlwr(user_name);
+
+
+    while (current_user < COUNTER) {
+
+        if (strcmp((ptr + current_user)->Name,user_name)==0 || strcmp((ptr + current_user)->FullName,user_name)==0) {
+            break;
+        }
+        current_user++;
     }
 
-  }
 
-      strlwr(user_password);
-
-
-  if ( strcmp((ptr + current_user)->Password,user_password)!=0 ) {  
-    printf("\n\n Error: Password not found\n");
-    return 0;
-  }
+    if (strcmp((ptr + current_user)->Name,user_name)!=0 && strcmp((ptr + current_user)->FullName,user_name)!=0) {
+        printf("\n\n Error: Username not found\n");
+        return 0;
+    }
 
 
-  Directing();
 
-  do {
+    printf("\n\n Enter password \n\n > ");
+    size = 0;
+    ch = '\0';
 
+
+
+    while (1) {
+
+
+        ch = getch();
+
+        if (size == 0 && ch == '\r') {
+            printf("\n\n Error: No input found\n");
+            return 0;
+        }
+
+        if (size > MIN_CHAR_LEN - 1) {
+
+            printf("\n\n Error: Password wasn't that long \n");
+            return 0;
+        }
+
+        if (ch == '\r') {
+            user_password[size] = '\0';
+            break;
+        }
+
+        if (ch == '\b') {
+
+            if (size == 0 && printf(" \b")) {
+                printf("\n\n Error: Invalid deletion operation\n");
+                return 0;
+            }
+
+
+
+            if (size > 0) {
+                size--;
+                printf(" \b");
+
+            }
+        }
+
+        else {
+            user_password[size] = ch;
+            printf("*");
+            size++;
+        }
+
+    }
+
+    strlwr(user_password);
+
+
+    if (strcmp((ptr + current_user)->Password,user_password)!=0) {  
+        printf("\n\n Error: Password not found\n");
+        return 0;
+    }
+
+
+    Directing();
 
     do {
 
-      system("cls");
 
-      if ( first_launch == 1 ) {
-	Menu();
-      }
+        do {
 
-      else {
-	Welcome();
-      }
+            system("cls");
 
-      printf("\n   [1] Deposite Money \t  [3] Transfer Money \n");
-      printf("\n   [2] Withdraw Money \t  [4] Account Details \n");
-      printf("\n   [5] Exit\n");
+            if (first_launch == 1) {
+                Menu();
+            }
 
+            else {
+                Welcome();
+            }
 
-      printf("\n\n   Input : ");
-      menu_option = getche();
-      Sound();
+            printf("\n   [1] Deposite Money \t  [3] Transfer Money \n");
+            printf("\n   [2] Withdraw Money \t  [4] Account Details \n");
+            printf("\n   [5] Exit\n");
 
-      if ( menu_option == DEPOSIT || menu_option == WITHDRAW || menu_option == TRANSFER || menu_option == ACCOUNT_DETAILS || menu_option == EXIT ) {
-	break;
-      }
 
-    } while ( menu_option != DEPOSIT || menu_option != WITHDRAW || menu_option != TRANSFER || menu_option != ACCOUNT_DETAILS || menu_option != EXIT);
+            printf("\n\n   Input : ");
+            menu_option = getche();
+            Sound();
 
+            if (menu_option == DEPOSIT || menu_option == WITHDRAW || menu_option == TRANSFER || menu_option == ACCOUNT_DETAILS || menu_option == EXIT) {
+                break;
+            }
 
-    switch (menu_option) {
+        } while ( menu_option != DEPOSIT || menu_option != WITHDRAW || menu_option != TRANSFER || menu_option != ACCOUNT_DETAILS || menu_option != EXIT);
 
-      case DEPOSIT: 
 
-	system("cls");
+        switch (menu_option) {
 
-	transaction += 1;
+            case DEPOSIT: 
 
-	printf("\n\n  DEPOSIT MONEY\n");
-	printf("----------------------------------");
-	printf("\n\n  Enter amount : ");
-	scanf("%9lld",&deposit);
+                system("cls");
 
-	if ( deposit <= 0 ) {
-	  printf("\n\n  Error: Invalid amount.\n\n");
-	  transaction -= 1;
-	}
+                transaction += 1;
 
-	if ( (ptr + current_user)->AccountBalance >= MAX_BALANCE ) { 
+                printf("\n\n  DEPOSIT MONEY\n");
+                printf("----------------------------------");
+                printf("\n\n  Enter amount : ");
+                scanf("%9lld",&deposit);
 
-	  printf("\n\n  Error: Maximum account limit reached.\n\n");
-	  transaction -= 1;
-	  break; //it just shows "Now Balance" because of (deposit > 0)
-	}
+                if (deposit <= 0) {
+                    printf("\n\n  Error: Invalid amount.\n\n");
+                    transaction -= 1;
+                }
 
+                if ((ptr + current_user)->AccountBalance >= MAX_BALANCE) { 
 
-	if ( deposit > 0 ) {
-	  (ptr + current_user)->AccountBalance += deposit;
-	  printf("\n\n-- Money Deposited --\n\n");
-	  printf("  Now Balance : %lld\n\n",(ptr + current_user)->AccountBalance);
-	}
+                    printf("\n\n  Error: Maximum account limit reached.\n\n");
+                    transaction -= 1;
+                    break; //it just shows "Now Balance" because of (deposit > 0)
+                }
 
-	getchar();  //fixes can_search_user by consuming '\n'
 
+                if (deposit > 0) {
+                    (ptr + current_user)->AccountBalance += deposit;
+                    printf("\n\n-- Money Deposited --\n\n");
+                    printf("  Now Balance : %lld\n\n",(ptr + current_user)->AccountBalance);
+                }
 
-	break;
+                getchar();  //fixes can_search_user by consuming '\n'
 
-      case WITHDRAW: 
-	system("cls");
 
-	transaction += 1;
+                break;
 
-	printf("\n\n  WITHDRAW MONEY\n");
-	printf("----------------------------------");
-	printf("\n\n  Enter amount : ");
-	scanf("%9lld",&withdraw);
+            case WITHDRAW: 
+                system("cls");
 
+                transaction += 1;
 
-	if ( withdraw > (ptr + current_user)->AccountBalance ) {
-	  printf("\n\n  Error: Insufficient funds for this transaction.\n\n");
-	  transaction -= 1;
-	}
+                printf("\n\n  WITHDRAW MONEY\n");
+                printf("----------------------------------");
+                printf("\n\n  Enter amount : ");
+                scanf("%9lld",&withdraw);
 
-	if ( withdraw <= 0 ) {
-	  printf("\n\n  Error: Invalid amount.\n\n");
-	  transaction -= 1;
-	}
 
-	if ( withdraw <= (ptr + current_user)->AccountBalance && withdraw > 0 ) {
-	  (ptr + current_user)->AccountBalance -= withdraw;
-	  printf("\n\n-- Money Withdrawn --\n\n");
-	  printf("  Now Balance : %lld\n\n",(ptr + current_user)->AccountBalance);
-	  /* balance = user_data[current_user].AccountBalance; */
-	}
+                if (withdraw > (ptr + current_user)->AccountBalance) {
+                    printf("\n\n  Error: Insufficient funds for this transaction.\n\n");
+                    transaction -= 1;
+                }
 
-	getchar();  //fixes can_search_user by consuming '\n'
+                if (withdraw <= 0) {
+                    printf("\n\n  Error: Invalid amount.\n\n");
+                    transaction -= 1;
+                }
 
-	break;
+                if (withdraw <= (ptr + current_user)->AccountBalance && withdraw > 0) {
+                    (ptr + current_user)->AccountBalance -= withdraw;
+                    printf("\n\n-- Money Withdrawn --\n\n");
+                    printf("  Now Balance : %lld\n\n",(ptr + current_user)->AccountBalance);
+                    /* balance = user_data[current_user].AccountBalance; */
+                }
 
+                getchar();  //fixes can_search_user by consuming '\n'
 
-      case TRANSFER: 
+                break;
 
-	system("cls");
 
-	transaction += 1;
-	printf("\n\n  FINDER\n");
-	printf("----------------------------------\n\n");
+            case TRANSFER: 
 
-	printf("  Display all users account no. (y/n) : ");
-	scanf("%1s",&can_display_user);
-	getchar();
+                system("cls");
 
+                transaction += 1;
+                printf("\n\n  FINDER\n");
+                printf("----------------------------------\n\n");
 
-	if ( can_display_user == 'n' ) {
-	  printf("\n ");
-	}
+                printf("  Display all users account no. (y/n) : ");
+                scanf("%1s",&can_display_user);
+                getchar();
 
-	if ( can_display_user == 'y' ) {
 
-	  printf("\n\n");
+                if (can_display_user == 'n') {
+                    printf("\n ");
+                }
 
-	  display_users = 0;
+                if (can_display_user == 'y') {
 
-	  while ( display_users < COUNTER ) {
-	    printf("  %20s  \t: [ %d ]\n",(ptr + display_users)->FullName,(ptr + display_users)->AccountNo);
-	    display_users++;
-	  }
+                    printf("\n\n");
 
-	}
+                    display_users = 0;
 
-	if ( can_display_user != 'y' && can_display_user != 'n' ) {
-	  transaction -= 1;
-	  break;
-	}
+                    while ( display_users < COUNTER) {
+                        printf("  %20s  \t: [ %d ]\n",(ptr + display_users)->FullName,(ptr + display_users)->AccountNo);
+                        display_users++;
+                    }
 
-	while (1) {
+                }
 
-	  printf("\n  Search User (y/n) : ");
-	  scanf("%1s",&can_search_user);
-	  getchar();
+                if (can_display_user != 'y' && can_display_user != 'n') {
+                    transaction -= 1;
+                    break;
+                }
 
-	  if ( can_search_user == 'y' || can_search_user == 'Y' ) {
+                while (1) {
 
-	    printf("\n  Enter name : ");
-	    fgets(input_transfer_user,sizeof(input_transfer_user),stdin);
-	    strlwr(input_transfer_user);
+                    printf("\n  Search User (y/n) : ");
+                    scanf("%1s",&can_search_user);
+                    getchar();
 
-	    //This removes the \n from fgets;
-	    size_t len = strlen(input_transfer_user);
-	    if ( len > 0 && input_transfer_user[len - 1] == '\n' ) {
-	      input_transfer_user[len - 1] = '\0'; 
-	    }
+                    if (can_search_user == 'y' || can_search_user == 'Y') {
 
+                        printf("\n  Enter name : ");
+                        fgets(input_transfer_user,sizeof(input_transfer_user),stdin);
+                        strlwr(input_transfer_user);
 
-	    search_transfer_user = 0;
-	    for (search_transfer_user = 0; search_transfer_user < COUNTER; search_transfer_user++ ) {
+                        //This removes the \n from fgets;
+                        size_t len = strlen(input_transfer_user);
+                        if (len > 0 && input_transfer_user[len - 1] == '\n') {
+                            input_transfer_user[len - 1] = '\0'; 
+                        }
 
 
-	      if ( strcmp((ptr + search_transfer_user)->Name,input_transfer_user)==0 || strcmp((ptr + search_transfer_user)->FullName,input_transfer_user)==0 ) {
-		printf("\n  %16s",(ptr + search_transfer_user)->FullName);
-		printf("\t: [ %d ]",(ptr + search_transfer_user)->AccountNo);
-		/* printf("\n"); */
-		break;
-	      }
-	    }
+                        search_transfer_user = 0;
+                        for (search_transfer_user = 0; search_transfer_user < COUNTER; search_transfer_user++) {
 
-	    if ( strcmp((ptr + search_transfer_user)->Name,input_transfer_user)!=0 && strcmp((ptr + search_transfer_user)->FullName,input_transfer_user)!=0  ) {
-	      printf("\n  Error: User not found\n");
-	    }
 
-	  }
+                            if (strcmp((ptr + search_transfer_user)->Name,input_transfer_user)==0 || strcmp((ptr + search_transfer_user)->FullName,input_transfer_user)==0) {
+                                printf("\n  %16s",(ptr + search_transfer_user)->FullName);
+                                printf("\t: [ %d ]",(ptr + search_transfer_user)->AccountNo);
+                                /* printf("\n"); */
+                                break;
+                            }
+                        }
 
-	  if ( strcmp((ptr + search_transfer_user)->Name,input_transfer_user)==0 || strcmp((ptr + search_transfer_user)->FullName,input_transfer_user)==0 ) {
-	    break;
-	  }
+                        if (strcmp((ptr + search_transfer_user)->Name,input_transfer_user)!=0 && strcmp((ptr + search_transfer_user)->FullName,input_transfer_user)!=0 ) {
+                            printf("\n  Error: User not found\n");
+                        }
 
+                    }
 
+                    if (strcmp((ptr + search_transfer_user)->Name,input_transfer_user)==0 || strcmp((ptr + search_transfer_user)->FullName,input_transfer_user)==0) {
+                        break;
+                    }
 
-	  if ( can_search_user == 'n' || can_search_user == 'N' ) {
-	    break;
-	  }
 
 
+                    if (can_search_user == 'n' || can_search_user == 'N') {
+                        break;
+                    }
 
 
-	  /* bytes = 0; */
-	}
 
-	printf("\n");
 
+                    /* bytes = 0; */
+                }
 
-	printf("\n\n  TRANSFER MONEY\n");
-	printf("----------------------------------\n\n");
+                printf("\n");
 
-	printf("  Enter account no. : ");
-	scanf("%4d",&acc_no);
 
-	getchar();
+                printf("\n\n  TRANSFER MONEY\n");
+                printf("----------------------------------\n\n");
 
-	verify_acc = 0;  
+                printf("  Enter account no. : ");
+                scanf("%4d",&acc_no);
 
-	while ( verify_acc < COUNTER ) {
+                getchar();
 
-	  if ( (ptr + verify_acc)->AccountNo == acc_no ) {
-	    break;
-	  }
-	  verify_acc++;
-	}
+                verify_acc = 0;  
 
-	 if ( (ptr + verify_acc)->AccountNo != acc_no ) {
-	  printf("\n  Error: Account not found\n");
-	  transaction -= 1;
-	  break;
-	}
+                while ( verify_acc < COUNTER) {
 
+                    if ((ptr + verify_acc)->AccountNo == acc_no) {
+                        break;
+                    }
+                    verify_acc++;
+                }
 
-	 if ( verify_acc == current_user ) {
-	   printf("\n  Error: You cannot transfer money to your own account.\n");
-	   transaction -= 1;
-	   break;
-	 }
+                if ((ptr + verify_acc)->AccountNo != acc_no) {
+                    printf("\n  Error: Account not found\n");
+                    transaction -= 1;
+                    break;
+                }
 
 
+                if (verify_acc == current_user) {
+                    printf("\n  Error: You cannot transfer money to your own account.\n");
+                    transaction -= 1;
+                    break;
+                }
 
-	 
-	 if ( (ptr + verify_acc)->AccountNo == acc_no ) {
 
 
-	printf("\n  Enter amount : ");
-	scanf("%9lld",&transfer_amount);
-	printf("\n");
 
-	if ( transfer_amount > (ptr + current_user)->AccountBalance ) {
-	  printf("\n  Error: Insufficient funds for this transaction.\n\n");
-	  getchar();
-	  transaction -= 1;
-	  break;
-	}
+                if ((ptr + verify_acc)->AccountNo == acc_no) {
 
-	if ( transfer_amount <= 0 ) {
-	  printf("\n  Error: Invalid amount.\n\n");
-	  transaction -= 1;
-	  break;
-	}
 
+                    printf("\n  Enter amount : ");
+                    scanf("%9lld",&transfer_amount);
+                    printf("\n");
 
+                    if (transfer_amount > (ptr + current_user)->AccountBalance) {
+                        printf("\n  Error: Insufficient funds for this transaction.\n\n");
+                        getchar();
+                        transaction -= 1;
+                        break;
+                    }
 
-	if ( (ptr + verify_acc)->AccountNo == acc_no ) {
+                    if (transfer_amount <= 0) {
+                        printf("\n  Error: Invalid amount.\n\n");
+                        transaction -= 1;
+                        break;
+                    }
 
-	  if ( transfer_amount <= (ptr + current_user)->AccountBalance && transfer_amount > 0 ) {
-	    (ptr + current_user)->AccountBalance -= transfer_amount;
-	    (ptr + verify_acc)->AccountBalance += transfer_amount;
-	    printf("\n-- Money Transferred --\n\n");
-	  }
 
-	}
 
+                    if ((ptr + verify_acc)->AccountNo == acc_no) {
 
+                        if (transfer_amount <= (ptr + current_user)->AccountBalance && transfer_amount > 0) {
+                            (ptr + current_user)->AccountBalance -= transfer_amount;
+                            (ptr + verify_acc)->AccountBalance += transfer_amount;
+                            printf("\n-- Money Transferred --\n\n");
+                        }
 
-	 }
+                    }
 
 
 
+                }
 
 
-	break;
 
 
-      case ACCOUNT_DETAILS: 
 
-	system("cls");
-	balance = (ptr + current_user)->AccountBalance;
-	printf("\n\n  ACCOUNT DETAILS\n");
-	printf("----------------------------------\n\n");
+                break;
 
-	printf("  Name                 : %s\n",(ptr + current_user)->FullName);
-	printf("  Password             : %s\n",(ptr + current_user)->Password);
-	printf("  Account no.          : %d\n",(ptr + current_user)->AccountNo);
-	printf("  Total Balance        : %lld\n",balance);
-	printf("  No. of transactions  : %d\n\n",transaction);
-	/* printf("\n  %d transaction(s) have been made from your account\n\n",transaction); */
 
-	break;
+            case ACCOUNT_DETAILS: 
 
+                system("cls");
+                balance = (ptr + current_user)->AccountBalance;
+                printf("\n\n  ACCOUNT DETAILS\n");
+                printf("----------------------------------\n\n");
 
-	/* case TRANSACTION_DETAILS: */
+                printf("  Name                 : %s\n",(ptr + current_user)->FullName);
+                printf("  Password             : %s\n",(ptr + current_user)->Password);
+                printf("  Account no.          : %d\n",(ptr + current_user)->AccountNo);
+                printf("  Total Balance        : %lld\n",balance);
+                printf("  No. of transactions  : %d\n\n",transaction);
+                /* printf("\n  %d transaction(s) have been made from your account\n\n",transaction); */
 
-	/* break; */
+                break;
 
 
-      case EXIT: 
+                /* case TRANSACTION_DETAILS: */
 
-	printf("\n\n  Exited Successfully..\n");
-	return 0;
-	break;
-    }
+                /* break; */
 
-    printf("\n  Press any key ...\n  ");
-    (void)getch();
-    first_launch = 1;
 
+            case EXIT: 
 
+                printf("\n\n  Exited Successfully..\n");
+                return 0;
+                break;
+        }
 
-  } while (menu_option != EXIT) ;
+        printf("\n  Press any key ...\n  ");
+        (void)getch();
+        first_launch = 1;
 
-  return 0;
+
+
+    } while (menu_option != EXIT) ;
+
+    return 0;
 
 }
 
 
 void Welcome() {
 
-  //gap from ( " ) 4 ( Only ASCII )
+    //gap from ( " ) 4 ( Only ASCII )
 
-  printf("\n\n    e   e  e eeee e     eeee eeeee eeeeeee eeee \n");
-  usleep(delay3);
-  printf("    8   8  8 8    8     8  8 8  88 8  8  8 8    \n");
-  usleep(delay3);
-  printf("    8e  8  8 8eee 8e    8e   8   8 8e 8  8 8eee \n");
-  usleep(delay3);
-  printf("    88  8  8 88   88    88   8   8 88 8  8 88   \n");
-  usleep(delay3);
-  printf("    88ee8ee8 88ee 88eee 88e8 8eee8 88 8  8 88ee \n");
+    printf("\n\n    e   e  e eeee e     eeee eeeee eeeeeee eeee \n");
+    usleep(delay3);
+    printf("    8   8  8 8    8     8  8 8  88 8  8  8 8    \n");
+    usleep(delay3);
+    printf("    8e  8  8 8eee 8e    8e   8   8 8e 8  8 8eee \n");
+    usleep(delay3);
+    printf("    88  8  8 88   88    88   8   8 88 8  8 88   \n");
+    usleep(delay3);
+    printf("    88ee8ee8 88ee 88eee 88e8 8eee8 88 8  8 88ee \n");
 
-  printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n\n");
+    printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n\n");
 } 
 
 
 void Menu() {
 
-  //gap from ( " ) 4 ( Only ASCII )
+    //gap from ( " ) 4 ( Only ASCII )
 
-  printf("\n\n    eeeeeee eeeee e  eeeee    eeeeeee eeee eeeee e   e\n");
-  printf("    8  8  8 8   8 8  8   8    8  8  8 8    8   8 8   8\n");
-  printf("    8e 8  8 8eee8 8  8e  8    8e 8  8 8eee 8e  8 8e  8\n");
-  printf("    88 8  8 88  8 8  88  8    88 8  8 88   88  8 88  8\n");
-  printf("    88 8  8 88  8 8  88  8    88 8  8 88ee 88  8 88ee8\n");
-  printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n");
+    printf("\n\n    eeeeeee eeeee e  eeeee    eeeeeee eeee eeeee e   e\n");
+    printf("    8  8  8 8   8 8  8   8    8  8  8 8    8   8 8   8\n");
+    printf("    8e 8  8 8eee8 8  8e  8    8e 8  8 8eee 8e  8 8e  8\n");
+    printf("    88 8  8 88  8 8  88  8    88 8  8 88   88  8 88  8\n");
+    printf("    88 8  8 88  8 8  88  8    88 8  8 88ee 88  8 88ee8\n");
+    printf(" -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n");
 } 
 
 void Directing() {
 
-  printf("\n\n  Directing");
+    printf("\n\n  Directing");
 
-  usleep(95000); 
-  printf(".");
-  usleep(95000); 
-  printf(".");
-  usleep(95000); 
-  printf(".");
-  usleep(99999); 
+    usleep(95000); 
+    printf(".");
+    usleep(95000); 
+    printf(".");
+    usleep(95000); 
+    printf(".");
+    usleep(99999); 
 
 
-  printf("\n");
+    printf("\n");
 } 
 
