@@ -1,5 +1,4 @@
-// STATUS : TRANSACTION_DETAILS is not active 	 
-
+// STATUS : user_name and user_password input validated. 
 /* For adding new Users :
 
    1) Increase COUNTER
