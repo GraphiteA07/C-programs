@@ -8,14 +8,15 @@
 #define ASCII_ZERO    48
 
 
-void set_color          (int color);
-void print_cell         (char value, int index);
-void menu_ascii         ();
-void menu_ascii_animate ();
-void scan_color_override();
-void scan_mark_override (char* game_table);
-int scan_for_winner     (char* game_table);
+void set_color           (int color);
+void print_cell          (char value, int index);
+void menu_ascii          ();
+void menu_ascii_animate  ();
+void scan_color_override (int player_move, char *table_mem); 
+void scan_mark_override  (int player_move, int *mark_override, char *game_table, char *table_mem); 
+int scan_for_winner      (int *winner, int *draw, char *game_table, char *table_mem);
 
+                        
 
 //color system
 HANDLE console;
@@ -49,13 +50,7 @@ WORD colors[] =
   FOREGROUND_INTENSITY
 };
 
-//global variables
 int cell_color[9]  = {NORMAL,NORMAL,NORMAL, NORMAL,NORMAL,NORMAL, NORMAL,NORMAL,NORMAL};
-char table_mem[9]  = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-int player_move;
-int mark_override  = 0;
-int winner         = 0;
-int draw           = 0;
 
 
 int main() {
@@ -63,11 +58,19 @@ int main() {
   console = GetStdHandle(STD_OUTPUT_HANDLE);
 
   char game_table[9]  = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+  char table_mem[9]   = { 0,   0,   0,   0,   0,   0,   0,   0,   0};
   char game_state[4]  = {'1', '2', 'X', 'O'};
   char leave_game;
+  int player_move;
   int state_idx       = 0;
-  int first_launch    = 0;
   int menu_option;
+
+  //flags
+  int first_launch    = 0;
+  int mark_override   = 0;
+  int winner          = 0;
+  int draw            = 0;
+
 
 
   enum Options {
@@ -159,7 +162,40 @@ game:
         menu_ascii();
         printf("\n\n\n");
 
-        /* //animated game board */
+
+        //game board
+         printf("              +-----+-----+-----+\n");
+         printf("              |  ");
+         print_cell(game_table[0],0);
+         printf("  |  ");
+         print_cell(game_table[1],1);
+         printf("  |  ");
+         print_cell(game_table[2],2);
+         printf("  |\n");
+         printf("              |     |     |     |\n");
+         printf("              +-----+-----+-----+\n");
+         printf("              |  ");
+         print_cell(game_table[3],3);
+         printf("  |  ");
+         print_cell(game_table[4],4);
+         printf("  |  ");
+         print_cell(game_table[5],5);
+         printf("  |\n");
+         printf("              |     |     |     |\n");
+         printf("              +-----+-----+-----+\n");
+         printf("              |  ");
+         print_cell(game_table[6],6);
+         printf("  |  ");
+         print_cell(game_table[7],7);
+         printf("  |  ");
+         print_cell(game_table[8],8);
+         printf("  |\n");
+         printf("              |     |     |     |\n"); 
+         printf("              +-----+-----+-----+"); 
+
+
+
+        //animated game board
         /* printf("              +-----+-----+-----+\n"); */
         /* Sleep(DELAY); */
         /* printf("              |  "); */
@@ -208,35 +244,6 @@ game:
         /* printf("              +-----+-----+-----+"); */
         
 
-        //game board
-         printf("              +-----+-----+-----+\n");
-         printf("              |  ");
-         print_cell(game_table[0],0);
-         printf("  |  ");
-         print_cell(game_table[1],1);
-         printf("  |  ");
-         print_cell(game_table[2],2);
-         printf("  |\n");
-         printf("              |     |     |     |\n");
-         printf("              +-----+-----+-----+\n");
-         printf("              |  ");
-         print_cell(game_table[3],3);
-         printf("  |  ");
-         print_cell(game_table[4],4);
-         printf("  |  ");
-         print_cell(game_table[5],5);
-         printf("  |\n");
-         printf("              |     |     |     |\n");
-         printf("              +-----+-----+-----+\n");
-         printf("              |  ");
-         print_cell(game_table[6],6);
-         printf("  |  ");
-         print_cell(game_table[7],7);
-         printf("  |  ");
-         print_cell(game_table[8],8);
-         printf("  |\n");
-         printf("              |     |     |     |\n"); 
-         printf("              +-----+-----+-----+"); 
         
 
         if (winner == 1) {
@@ -257,7 +264,6 @@ game:
         }
 
         if (draw == 1) {
-
           draw = 0;
           printf("\n\n\t\t  IT'S A TIE!\n\n");
           printf("\n\t        Press any key..");
@@ -306,22 +312,20 @@ game:
         player_move -= 1;             //-1 because of game_table[] index.
 
         if (state_idx == 0) {         //PLAYER 1 [ X ] because of game_state[]
-
           game_table[player_move] = 'X';	
           cell_color[player_move] = BRIGHT_CYAN;
           state_idx += 1;
         }
 
         else if (state_idx == 1) {   //PLAYER 2 [ O ] because of game_state[]
-
           game_table[player_move] = 'O';	
           cell_color[player_move] = BRIGHT_RED;
           state_idx -= 1;
         }
 
-        scan_color_override();
-        scan_mark_override(game_table);
-        scan_for_winner(game_table);
+        scan_color_override(player_move, table_mem); 
+        scan_mark_override(player_move, &mark_override, game_table, table_mem); 
+        scan_for_winner(&winner, &draw, game_table, table_mem); 
       } //end of loop
 
 exit:
@@ -370,7 +374,7 @@ void menu_ascii() {
   printf("    |_| |___\\____| |_/_/   \\_\\____| |_| \\___/|_____|\n");
 }
 
-void scan_color_override() {
+void scan_color_override(int player_move, char *table_mem) {
 
   if (table_mem[player_move] == 'X' && cell_color[player_move] == BRIGHT_RED) {
     cell_color[player_move] = BRIGHT_CYAN;
@@ -381,7 +385,7 @@ void scan_color_override() {
   }
 }
 
-void scan_mark_override(char* game_table) {
+void scan_mark_override(int player_move, int *mark_override, char *game_table, char *table_mem) {
 
   if (table_mem[player_move] == 0 && game_table[player_move] == 'X') {
     table_mem[player_move] = 'X';
@@ -394,27 +398,27 @@ void scan_mark_override(char* game_table) {
   //if Player 1 tries to override Player 2's mark -> REVERT to 'O'!
   else if (table_mem[player_move] == 'O' && game_table[player_move] == 'X') {
     game_table[player_move] = 'O';
-    mark_override = 1;
+   *mark_override = 1;
   }
 
   //if Player 1 replays his move 
   else if (table_mem[player_move] == 'X' && game_table[player_move] == 'X') {
-    mark_override = 1;
+   *mark_override = 1;
   }
 
   //if Player 2 tries to override Player 1's 'X' -> REVERT to 'X'!
   else if (table_mem[player_move] == 'X' && game_table[player_move] == 'O') {
     game_table[player_move] = 'X';
-    mark_override = 1;
+   *mark_override = 1;
   }
 
   //if Player 2 replays his move 
   else if (table_mem[player_move] == 'O' && game_table[player_move] == 'O') {
-    mark_override = 1;
+   *mark_override = 1;
   }
 }
 
-int scan_for_winner(char* game_table) {
+int scan_for_winner(int *winner, int *draw, char *game_table, char *table_mem) {
 
   int i = 0;
 
@@ -423,7 +427,7 @@ int scan_for_winner(char* game_table) {
 
     if (game_table[i] == game_table[i+1] && game_table[i+1] == game_table[i+2]){
 
-      winner = 1;
+      *winner = 1;
       cell_color[i]     = BRIGHT_GREEN;
       cell_color[i + 1] = BRIGHT_GREEN;
       cell_color[i + 2] = BRIGHT_GREEN;
@@ -435,7 +439,7 @@ int scan_for_winner(char* game_table) {
 
     if (game_table[i] == game_table[i+3] && game_table[i+3] == game_table[i+6]) {
 
-      winner = 1;
+      *winner = 1;
       cell_color[i]     = BRIGHT_GREEN;
       cell_color[i + 3] = BRIGHT_GREEN;
       cell_color[i + 6] = BRIGHT_GREEN;
@@ -445,7 +449,7 @@ int scan_for_winner(char* game_table) {
   //for diagonals (player 1, player 2)
   if (game_table[0] == game_table[4] && game_table[4] == game_table[8]) {
 
-    winner = 1;
+    *winner = 1;
     cell_color[0] = BRIGHT_GREEN;
     cell_color[4] = BRIGHT_GREEN;
     cell_color[8] = BRIGHT_GREEN;
@@ -453,7 +457,7 @@ int scan_for_winner(char* game_table) {
 
   else if (game_table[2] == game_table[4] && game_table[4] == game_table[6]) {
 
-    winner = 1;
+    *winner = 1;
     cell_color[2] = BRIGHT_GREEN;
     cell_color[4] = BRIGHT_GREEN;
     cell_color[6] = BRIGHT_GREEN;
@@ -466,10 +470,11 @@ int scan_for_winner(char* game_table) {
       table_mem[6] != 0 && winner == 0 && table_mem[7] != 0 && winner == 0 && 
       table_mem[8] != 0 && winner == 0 ) {
 
-    draw = 1;
+    *draw = 1;
   }
 
   return 0;
 }
+
 
 
