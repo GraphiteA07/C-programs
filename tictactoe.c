@@ -143,19 +143,11 @@ game:
         }
 
         else {
-
           mark_override = 0;
           printf("\n\n    Cell already taken, press any key to continue...");
           getch();
-
-          if (state_idx == 1) {        //PLAYER 2 [ O ] because of game_state[]
-            state_idx -= 1; 
-          }
-
-          else if (state_idx == 0) {   //PLAYER 1 [ X ] because of game_state[]
-            state_idx += 1;
-          } 
-
+          state_idx ^= 1; // (XOR) Flips 0 -> 1 and 1 -> 0 
+                          
           goto game;
         }
 
@@ -249,14 +241,7 @@ game:
         if (winner == 1) {
             winner = 0;
 
-          if (state_idx == 1) {        //PLAYER 2 [ O ] because of game_state[]
-            state_idx -= 1; 
-          }
-
-          else if (state_idx == 0) {   //PLAYER 1 [ X ] because of game_state[]
-            state_idx += 1;
-          } 
-
+          state_idx ^= 1; // (XOR) Flips 0 -> 1 and 1 -> 0 
           printf("\n\n\t         PLAYER %c WINS!\n\n", game_state[state_idx]);
           printf("\n\t        Press any key..");
           getch();
@@ -463,12 +448,14 @@ int scan_for_winner(int *winner, int *draw, char *game_table, char *table_mem) {
     cell_color[6] = BRIGHT_GREEN;
   }
 
+
   //for draws (player 1, player 2)
-  if (table_mem[0] != 0 && winner == 0 && table_mem[1] != 0 && winner == 0 && 
-      table_mem[2] != 0 && winner == 0 && table_mem[3] != 0 && winner == 0 &&
-      table_mem[4] != 0 && winner == 0 && table_mem[5] != 0 && winner == 0 &&
-      table_mem[6] != 0 && winner == 0 && table_mem[7] != 0 && winner == 0 && 
-      table_mem[8] != 0 && winner == 0 ) {
+  
+  if (table_mem[0] != 0 && *winner == 0 && table_mem[1] != 0 && *winner == 0 && 
+      table_mem[2] != 0 && *winner == 0 && table_mem[3] != 0 && *winner == 0 &&
+      table_mem[4] != 0 && *winner == 0 && table_mem[5] != 0 && *winner == 0 &&
+      table_mem[6] != 0 && *winner == 0 && table_mem[7] != 0 && *winner == 0 && 
+      table_mem[8] != 0 && *winner == 0 ) {
 
     *draw = 1;
   }
