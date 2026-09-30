@@ -1,4 +1,6 @@
-//STATUS: Requires Testing
+
+/* STATUS : Increased board size, Requires Testing */
+/* Author : Zain */
 
 #include <stdio.h>
 #include <conio.h>
@@ -9,14 +11,13 @@
 
 
 void set_color           (int color);
-void print_cell          (char value, int index);
+void display_color       (int index);
 void menu_ascii          ();
 void menu_ascii_animate  ();
 void scan_color_override (int player_move, char *table_mem); 
 void scan_mark_override  (int player_move, int *mark_override, char *game_table, char *table_mem); 
 int scan_for_winner      (int *winner, int *draw, char *game_table, char *table_mem);
 
-                        
 
 //color system
 HANDLE console;
@@ -155,87 +156,165 @@ game:
         printf("\n\n\n");
 
 
+
+
+
         //game board
-         printf("              +-----+-----+-----+\n");
-         printf("              |  ");
-         print_cell(game_table[0],0);
-         printf("  |  ");
-         print_cell(game_table[1],1);
-         printf("  |  ");
-         print_cell(game_table[2],2);
-         printf("  |\n");
-         printf("              |     |     |     |\n");
-         printf("              +-----+-----+-----+\n");
-         printf("              |  ");
-         print_cell(game_table[3],3);
-         printf("  |  ");
-         print_cell(game_table[4],4);
-         printf("  |  ");
-         print_cell(game_table[5],5);
-         printf("  |\n");
-         printf("              |     |     |     |\n");
-         printf("              +-----+-----+-----+\n");
-         printf("              |  ");
-         print_cell(game_table[6],6);
-         printf("  |  ");
-         print_cell(game_table[7],7);
-         printf("  |  ");
-         print_cell(game_table[8],8);
-         printf("  |\n");
-         printf("              |     |     |     |\n"); 
-         printf("              +-----+-----+-----+"); 
+        printf("              +-----+-----+-----+\n");
+        printf("              |     |     |     |");
+        printf("\n\t      |");
+        set_color(cell_color[0]);
+        printf("  %c ",game_table[0]);
+        set_color(NORMAL);
+
+        printf(" |");
+        set_color(cell_color[1]);
+        printf("  %c ",game_table[1]);
+        set_color(NORMAL);
+
+        printf(" |");
+        set_color(cell_color[2]);
+        printf("  %c ",game_table[2]);
+        set_color(NORMAL);
+        printf(" |\n");
+
+        printf("              |     |     |     |\n");
+        printf("              +-----+-----+-----+\n");
+        printf("              |     |     |     |");
+
+        printf("\n\t      |");
+        set_color(cell_color[3]);
+        printf("  %c ",game_table[3]);
+        set_color(NORMAL);
+
+        printf(" |");
+        set_color(cell_color[4]);
+        printf("  %c ",game_table[4]);
+        set_color(NORMAL);
+
+        printf(" |");
+        set_color(cell_color[5]);
+        printf("  %c ",game_table[5]);
+        set_color(NORMAL);
+        printf(" |\n");
+
+        printf("              |     |     |     |\n");
+        printf("              +-----+-----+-----+\n");
+        printf("              |     |     |     |");
+
+        printf("\n\t      |");
+        set_color(cell_color[6]);
+        printf("  %c ",game_table[6]);
+        set_color(NORMAL);
+
+        printf(" |");
+        set_color(cell_color[7]);
+        printf("  %c ",game_table[7]);
+        set_color(NORMAL);
+
+        printf(" |");
+        set_color(cell_color[8]);
+        printf("  %c ",game_table[8]);
+        set_color(NORMAL);
+        printf(" |\n");
+
+        printf("              |     |     |     |\n"); 
+        printf("              +-----+-----+-----+"); 
 
 
 
         //animated game board
         /* printf("              +-----+-----+-----+\n"); */
         /* Sleep(DELAY); */
-        /* printf("              |  "); */
+        /* printf("              |     |     |     |"); */
         /* Sleep(DELAY); */
-        /* print_cell(game_table[0],0); */
-        /* printf("  |  "); */
+        /* printf("\n\t      |"); */
         /* Sleep(DELAY); */
-        /* print_cell(game_table[1],1); */
-        /* printf("  |  "); */
+        /* set_color(cell_color[0]); */
+        /* printf("  %c ",game_table[0]); */
         /* Sleep(DELAY); */
-        /* print_cell(game_table[2],2); */
-        /* printf("  |\n"); */
-        /* Sleep(DELAY); */
-        /* printf("              |     |     |     |\n"); */
-        /* Sleep(DELAY); */
-        /* printf("              +-----+-----+-----+\n"); */
-        /* Sleep(DELAY); */
-        /* printf("              |  "); */
-        /* Sleep(DELAY); */
-        /* print_cell(game_table[3],3); */
-        /* printf("  |  "); */
-        /* Sleep(DELAY); */
-        /* print_cell(game_table[4],4); */
-        /* printf("  |  "); */
-        /* Sleep(DELAY); */
-        /* print_cell(game_table[5],5); */
-        /* printf("  |\n"); */
-        /* Sleep(DELAY); */
-        /* printf("              |     |     |     |\n"); */
-        /* Sleep(DELAY); */
-        /* printf("              +-----+-----+-----+\n"); */
-        /* Sleep(DELAY); */
-        /* printf("              |  "); */
-        /* Sleep(DELAY); */
-        /* print_cell(game_table[6],6); */
-        /* printf("  |  "); */
-        /* Sleep(DELAY); */
-        /* print_cell(game_table[7],7); */
-        /* printf("  |  "); */
-        /* Sleep(DELAY); */
-        /* print_cell(game_table[8],8); */
-        /* printf("  |\n"); */
-        /* Sleep(DELAY); */
-        /* printf("              |     |     |     |\n"); */
-        /* Sleep(DELAY); */
-        /* printf("              +-----+-----+-----+"); */
-        
+        /* set_color(NORMAL); */
 
+        /* printf(" |"); */
+        /* Sleep(DELAY); */
+        /* set_color(cell_color[1]); */
+        /* printf("  %c ",game_table[1]); */
+        /* Sleep(DELAY); */
+        /* set_color(NORMAL); */
+
+        /* printf(" |"); */
+        /* Sleep(DELAY); */
+        /* set_color(cell_color[2]); */
+        /* printf("  %c ",game_table[2]); */
+        /* Sleep(DELAY); */
+        /* set_color(NORMAL); */
+        /* printf(" |\n"); */
+        /* Sleep(DELAY); */
+
+        /* printf("              |     |     |     |\n"); */
+        /* Sleep(DELAY); */
+        /* printf("              +-----+-----+-----+\n"); */
+        /* Sleep(DELAY); */
+        /* printf("              |     |     |     |"); */
+        /* Sleep(DELAY); */
+
+        /* printf("\n\t      |"); */
+        /* Sleep(DELAY); */
+        /* set_color(cell_color[3]); */
+        /* printf("  %c ",game_table[3]); */
+        /* Sleep(DELAY); */
+        /* set_color(NORMAL); */
+
+        /* printf(" |"); */
+        /* Sleep(DELAY); */
+        /* set_color(cell_color[4]); */
+        /* printf("  %c ",game_table[4]); */
+        /* Sleep(DELAY); */
+        /* set_color(NORMAL); */
+
+        /* printf(" |"); */
+        /* Sleep(DELAY); */
+        /* set_color(cell_color[5]); */
+        /* printf("  %c ",game_table[5]); */
+        /* Sleep(DELAY); */
+        /* set_color(NORMAL); */
+        /* printf(" |\n"); */
+        /* Sleep(DELAY); */
+
+        /* printf("              |     |     |     |\n"); */
+        /* Sleep(DELAY); */
+        /* printf("              +-----+-----+-----+\n"); */
+        /* Sleep(DELAY); */
+        /* printf("              |     |     |     |"); */
+        /* Sleep(DELAY); */
+
+        /* printf("\n\t      |"); */
+        /* Sleep(DELAY); */
+        /* set_color(cell_color[6]); */
+        /* printf("  %c ",game_table[6]); */
+        /* Sleep(DELAY); */
+        /* set_color(NORMAL); */
+
+        /* printf(" |"); */
+        /* Sleep(DELAY); */
+        /* set_color(cell_color[7]); */
+        /* printf("  %c ",game_table[7]); */
+        /* Sleep(DELAY); */
+        /* set_color(NORMAL); */
+
+        /* printf(" |"); */
+        /* Sleep(DELAY); */
+        /* set_color(cell_color[8]); */
+        /* printf("  %c ",game_table[8]); */
+        /* Sleep(DELAY); */
+        /* set_color(NORMAL); */
+        /* printf(" |\n"); */
+        /* Sleep(DELAY); */
+
+        /* printf("              |     |     |     |\n"); */ 
+        /* Sleep(DELAY); */
+        /* printf("              +-----+-----+-----+"); */ 
+        /* Sleep(DELAY); */
         
 
         if (winner == 1) {
@@ -329,10 +408,9 @@ void set_color(int color) {
   SetConsoleTextAttribute(console, colors[color]);
 }
 
-void print_cell(char value, int index) {
+void display_color(int index) {
 
   set_color(cell_color[index]);
-  printf("%c", value);
   set_color(NORMAL);
 
 }

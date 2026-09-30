@@ -8,10 +8,39 @@ vnoremap <C-c> "+y
 compiler gcc
 
 " Compile C program only (F6)
-nnoremap <F6> :!gcc -Wall -Wextra -std=c11 "%:p" -o "%:p:r.exe"<CR>
+" nnoremap <F6> :!javac -Xlint:all -Werror \"%:p"<CR>
 
-" Compile and run C program (F5)
-" nnoremap <F5> :!gcc -Wall -Wextra -std=c11 ""%:p" -o ""%:p:r.exe" &&   ""%:p:r.exe"<CR>
+" Set makeprg to handle paths with spaces
+
+set makeprg=gcc\ -Wall\ -Wextra\ -std=c99\ \"%:p\"\ -o\ \"%:p:r.exe\"
+
+" Compile C with F5
+function! CompileAndCheck()
+    make
+    if !empty(getqflist())
+        copen
+    else
+        cclose
+    endif
+endfunction
+
+nnoremap <F5> :call CompileAndCheck()<CR>
+
+
+" Compile C++ with F6
+function! CompileCppAndCheck()
+    let &makeprg = 'g++ -Wall -Wextra -std=c++17 "%:p" -o "%:p:r.exe"'
+    make
+
+    if !empty(getqflist())
+        copen
+    else
+        cclose
+    endif
+endfunction
+
+nnoremap <F6> :call CompileCppAndCheck()<CR>
+
 
 
 "tab and indents
@@ -65,7 +94,10 @@ nnoremap <Space>l :Lex<CR>
 "TO Split on the right side
 set splitright 
 
-"For the block cursor
+"For thin cursor
+" set guicursor=a:ver25-Cursor
+
+"For block cursor
 if has("autocmd")
   autocmd InsertEnter * set guicursor=a:block
   autocmd InsertLeave * set guicursor= 
@@ -133,9 +165,9 @@ let g:EasyMotion_force_csapprox = 0
 set noshowmode 
 
 " Strip away GUI window bars to mimic a clean terminal matrix
-set guioptions-=m  " Removes the top Menu bar (File, Edit, Window, etc.)
+" set guioptions-=m  " Removes the top Menu bar (File, Edit, Window, etc.)
 set guioptions-=T  " Removes the Tool icon shortcut bar
-" set guioptions-=r  " Removes the right-hand scrollbar
+ " set guioptions-=r  " Removes the right-hand scrollbar
 set guioptions-=L  " Removes the left-hand scrollbar
 
 
